@@ -1,7 +1,7 @@
 # Part I Fundamental Mathematics
 
-- Calculus
-- Discrete Mathematics
+- [Calculus](Calc/0.README.md)
+- [Discrete Mathematics](DM/0.README.md)
 
 ## Linear Algebra
 
