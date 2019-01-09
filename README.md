@@ -1,6 +1,4 @@
-Introduction
-
-#Part I Fundamental Mathematics
+# Part I Fundamental Mathematics
 
 - Calculus
 - Discrete Mathematics
@@ -27,6 +25,11 @@ Introduction
 - Formal Language and Automata
 - Machine Learning
 - Distributed System
+
+## Front-End Programming
+
+* 
+* JavaScript
 
 # Part IV Data Science Tools
 
