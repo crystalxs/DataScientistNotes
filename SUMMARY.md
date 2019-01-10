@@ -5,6 +5,8 @@
 ## Part I Fundamental Mathematics
 * [0.1. Calculus](Calc/0.README.md)
 * [0.2. Discrete Mathematics](DM/0.README.md)
+
+## Linear Algebra
 * [1.0. Linear Algebra](LA/0.README.md)
 * [1.1. Matrix Theory](MT/0.README.md)
 * [1.2. Numerical Algorithms](NA/0.README.md)
@@ -70,8 +72,13 @@
     * [1.0. Pyspark](Spark/1.0.pyspark.md)
     * [Loading data](Spark/loadingData.md)
 
-## Front-End Programming
+## Front-End Programming (Data Visualization)
 * [5.0. HTML](HTML/0.README.md)
-  * 
-* [5.1. Javascript](JS/0.README.md)
+* [5.1. CSS](CSS/0.README.md)
+* [5.2. Javascript](JS/0.README.md)
+
+#### Front-End framework
+
+* [6.0. Vuejs](Vue/0.README.md)
+* 
 
