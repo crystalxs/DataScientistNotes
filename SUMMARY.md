@@ -75,10 +75,21 @@
 ## Front-End Programming (Data Visualization)
 * [5.0. HTML](HTML/0.README.md)
 * [5.1. CSS](CSS/0.README.md)
-* [5.2. Javascript](JS/0.README.md)
+* [5.2. JavaScript](JS/0.README.md)
+* NodeJS
+* webpack
+* jekyll
 
-#### Front-End framework
+#### JavaScrpit framework
 
 * [6.0. Vuejs](Vue/0.README.md)
 * 
 
+#### JavaScript Library
+
+* Echarts
+
+* ReactJS
+* Leaflet
+* MapBox GL
+* Morris
