@@ -2,6 +2,11 @@
 
 * [0.0. Introduction](README.md)
 
+## Part 0 Cheat Sheet
+* [Git/github](CheatSheet/git.md)
+* [Shell/Bash](CheatSheet/bash.md)
+* [Gitbook](CheatSheet/gitbook.md)
+
 ## Part I Fundamental Mathematics
 * [0.1. Calculus](Calc/0.README.md)
 * [0.2. Discrete Mathematics](DM/0.README.md)
@@ -15,12 +20,12 @@
 * [2.2. Linear Regression](LR/0.README.md)
 * [2.3. Time Series](TS/0.README.md)
     * [0.1. Interview Questions](TS/0.1.interviewQ.md)
-    * [0.2. Stationary](TS/0.2.stationary.md)
+    * [0.2. Classic Decomposition](TS/0.2.decomposition.md)
+    * [0.3. Stationary](TS/0.3.stationary.md)
+    * [0.4. Serial Correlation](TS/0.4.serialCorrelation.md)
     * [1.1. Univariance - ARMA models](TS/1.1.ARMA.md)
-    * [1.2. Univariance - ARIMA models](TS/1.2.ARIMA.md)
-    * [1.3. Univariance - SARIMA models](TS/1.3.SARIMA.md)
-    * [1.4. Univariance - Box-Jankins Methodology](TS/1.4.Box-Jankins.md)
-    * [1.5. Univariance - Holt-Winters Methodology](TS/1.5.Holt-Winters.md)
+    * [1.2. Univariance - Non-Stationary Time Series models](TS/1.2.non-stationary.md)
+    * [1.3. Univariance - Holt-Winters Methodology](TS/1.3.Holt-Winters.md)
     * [2.1. Multivariance](TS/2.1.Multivariance.md)
 
 ## Part III Computer Science Fundamentals
@@ -52,8 +57,8 @@
 
 ## Part IV Data Science Tools
 * [4.0. R](R/0.README.md)
-    * [Using R for Linear Regression](R/LR.md)
-    * [Using R for time series](R/TS.md)
+    * [1.0. Using R for Linear Regression](R/1.0.LR.md)
+    * [1.1. Using R for time series](R/1.1.TS.md)
 * [4.1. SQL](Sql/0.README.md)
 * [4.2. Python](Python/0.README.md)
     * [Running Time](Python/running_time.md)
@@ -67,6 +72,14 @@
 * [4.3. Spark](Spark/0.README.md)
     * [0.1. Distributed Computing](Spark/0.1.distributedComputing.md)
     * [0.2. MapReduece](Spark/0.2.mapReduc.md)
-    * [1.0. Pyspark](Spark/1.0.pyspark.md)
-    * [Loading data](Spark/loadingData.md)
+    * [1.0. Loading data](Spark/1.0.loadingData.md)
+    * [1.1. Pyspark](Spark/1.1.pyspark.md)
+    * [1.2. Efficiency](Spark/1.2.persist.md)
+    * [2.0. YARN Cluster](Spark/2.0.YARNcluster.md)
+    * [3.0. Spark SQL](Spark/3.0.sql.md)
+    * [3.1. MLlib](Spark/3.1.MLlib.md)
+* [4.4. MongoDB](Mongodb/0.README.md)
+    * [0.1. Launching](Mongodb/0.2.launching.md)
+    * [1.0. Operations](Mongodb/1.0.operations.md)
+    * [1.1. Distribution Model](Mongodb/1.1.distribution.md)
 

@@ -1,0 +1,138 @@
+{
+    "title": "Study for Data Scientist",
+    "author": "crystalxs",
+    "output.name": "site",
+    "language": "en",
+    "gitbook": "3.2.3",
+    "root": ".",
+    "structure": {
+        "readme": "README.md"
+    },
+    "links": {
+        "sidebar": {
+            "Home": "http://crystalxs.github.io"
+        }
+    },
+    "plugins": [
+        "-lunr",
+        "-search",
+        "-highlight",
+        "-livereload",
+        "katex"
+    ],
+
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "disqus": {
+            "shortName": "gitbookuse"
+        },
+        "prism": {
+            "css": [
+                "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+            ]
+        },
+        "github": {
+            "url": "https://github.com/crystalxs/dataScientistNotes"
+        },
+        "github-buttons": {
+            "repo": "crystalxs/dataScientistNotes",
+            "types": [
+                "star"
+            ],
+            "size": "small"
+        },
+        "include-codeblock": {
+            "template": "ace",
+            "unindent": true,
+            "edit": true
+        },
+        "sharing": {
+           "douban": false,
+           "facebook": false,
+           "google": true,
+           "hatenaBookmark": false,
+           "instapaper": false,
+           "line": false,
+           "linkedin": true,
+           "messenger": false,
+           "pocket": false,
+           "qq": false,
+           "qzone": false,
+           "stumbleupon": false,
+           "twitter": false,
+           "viber": false,
+           "vk": false,
+           "weibo": true,
+           "whatsapp": false,
+           "all": [
+               "facebook", "google", "twitter",
+               "weibo", "instapaper", "linkedin",
+               "pocket", "stumbleupon", "qq", "qzone"
+           ]
+       },
+        "tbfed-pagefooter": {
+            "modify_label": "Modified",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "3-ba": {
+            "token": "ff100361cdce95dd4c8fb96b4009f7bc"
+        },
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        },
+        "edit-link": {
+            "base": "https://github.com/crystalxs/dataScientistNotes/edit/master",
+            "label": "Edit This Page"
+        },
+        "sitemap-general": {
+            "prefix": "http://gitbook.crystalxs.com"
+        },
+        "anchor-navigation-ex": {
+            "isRewritePageTitle": false,
+            "tocLevel1Icon": "fa fa-hand-o-right",
+            "tocLevel2Icon": "fa fa-hand-o-right",
+            "tocLevel3Icon": "fa fa-hand-o-right"
+        },
+        "sectionx": {
+            "tag": "b"
+        },
+        "favicon": {
+            "shortcut": "favicon.ico",
+            "bookmark": "favicon.ico"
+        },
+        "terminal": {
+            "copyButtons": true,
+            "fade": false,
+            "style": "flat"
+        },
+
+        "versions": {
+            "options": [
+                {
+                    "value": "http://gitbook.zhangjikai.com",
+                    "text": "v3.2.3"
+                },
+                {
+                    "value": "http://gitbook.zhangjikai.com/v2/",
+                    "text": "v2.6.4"
+                }
+            ]
+        },
+
+        "rss": {
+            "title": "GitBook 使用教程",
+            "description": "记录 GitBook 的配置和一些插件的使用",
+            "author": "Jikai Zhang",
+            "feed_url": "http://gitbook.zhangjikai.com/rss",
+            "site_url": "http://gitbook.zhangjikai.com/",
+            "managingEditor": "me@zhangjikai.com",
+            "webMaster": "me@zhangjikai.com",
+            "categories": [
+                "gitbook"
+            ]
+        }
+    }
+}
