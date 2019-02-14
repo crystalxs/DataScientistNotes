@@ -60,6 +60,7 @@
     * [Using R for time series](R/TS.md)
 * [4.1. SQL](Sql/0.README.md)
 * [4.2. Python](Python/0.README.md)
+    * [Object-oriented programming](Python/OO.md)
     * [Running Time](Python/running_time.md)
     * [AWS](Python/AWS.md)
     * [Web](Python/web.md)
