@@ -30,6 +30,8 @@
 * [3.1. Operating System](OS/0.README.md)
 * [3.2. Data Structure](DS/0.README.md)
 * [3.3. Algorithm](Algorithm/0.README.md)
+    * [0.0. Complexity](Algorithm/0.Complexity.md)
+    * 
 * [3.4. Formal Language and Automata](FL/0.README.md)
 * [3.5. Machine Learning](ML/0.README.md)
     * [0.0. Cost Function](ML/0.0.costFunction.md)
