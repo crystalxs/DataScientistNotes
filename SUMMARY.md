@@ -76,20 +76,17 @@
 * [5.0. HTML](HTML/0.README.md)
 * [5.1. CSS](CSS/0.README.md)
 * [5.2. JavaScript](JS/0.README.md)
-* NodeJS
-* webpack
-* jekyll
 
-#### JavaScrpit framework
+  * NodeJS
+  * webpack
+  * [Jekyll](Jekyll/0.README.md)
 
-* [6.0. Vuejs](Vue/0.README.md)
-* 
+  * [Vuejs](Vue/0.README.md)
 
-#### JavaScript Library
+  * Echarts
+  * ReactJS
+  * Leaflet
+  * MapBox GL
+  * Morris
 
-* Echarts
-
-* ReactJS
-* Leaflet
-* MapBox GL
-* Morris
+  
