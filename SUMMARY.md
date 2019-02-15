@@ -33,6 +33,7 @@
 * [3.1. Operating System](OS/0.README.md)
 * [3.2. Data Structure](DS/0.README.md)
 * [3.3. Algorithm](Algorithm/0.README.md)
+    * [0.0. Complexity](Algorithm/0.Complexity.md)
 * [3.4. Formal Language and Automata](FL/0.README.md)
 * [3.5. Machine Learning](ML/0.README.md)
     * [0.0. Cost Function](ML/0.0.costFunction.md)
@@ -61,6 +62,7 @@
     * [1.1. Using R for time series](R/1.1.TS.md)
 * [4.1. SQL](Sql/0.README.md)
 * [4.2. Python](Python/0.README.md)
+    * [Object-oriented programming](Python/OO.md)
     * [Running Time](Python/running_time.md)
     * [AWS](Python/AWS.md)
     * [Web](Python/web.md)
@@ -82,4 +84,18 @@
     * [0.1. Launching](Mongodb/0.2.launching.md)
     * [1.0. Operations](Mongodb/1.0.operations.md)
     * [1.1. Distribution Model](Mongodb/1.1.distribution.md)
+
+## Part V Front-End Programming (Data Visualization)
+* [5.0. HTML](HTML/0.README.md)
+* [5.1. CSS](CSS/0.README.md)
+* [5.2. JavaScript](JS/0.README.md)
+    * NodeJS
+    * webpack
+    * [Jekyll](Jekyll/0.README.md)
+    * [Vuejs](Vue/0.README.md)
+    * Echarts
+    * ReactJS
+    * Leaflet
+    * MapBox GL
+    * Morris
 
