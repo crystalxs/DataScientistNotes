@@ -3,8 +3,8 @@
 * [0.0. Introduction](README.md)
 
 ## Part 0 Cheat Sheet
-* [Git/github](CheatSheet/git.md)
-* [Shell/Bash](CheatSheet/bash.md)
+* [Git & GitHub](CheatSheet/git.md)
+* [Shell](CheatSheet/shell.md)
 * [Gitbook](CheatSheet/gitbook.md)
 
 ## Part I Fundamental Mathematics
@@ -32,8 +32,15 @@
 * [3.0. Machine Architecture and Organization](MAO/0.README.md)
 * [3.1. Operating System](OS/0.README.md)
 * [3.2. Data Structure](DS/0.README.md)
+    * [0.0. Elementary Data Structure](DS/Elementary.md)
+    * [1.0. Hash Table](DS/HashTable.md)
+    * [1.1. Binary Search Tree](DS/BTree.md)
+    * [1.2. Red Black Tree](DS/RBTree.md)
 * [3.3. Algorithm](Algorithm/0.README.md)
-    * [0.0. Complexity](Algorithm/0.Complexity.md)
+    * [0.0. Complexity](Algorithm/Complexity.md)
+    * [0.1. Recursion](Algorithm/Recursion.md)
+    * [1.1. Walking Data Structure](Algorithm/Walk.md)
+    * [1.2. Searching](Algorithm/Search.md)
 * [3.4. Formal Language and Automata](FL/0.README.md)
 * [3.5. Machine Learning](ML/0.README.md)
     * [0.0. Cost Function](ML/0.0.costFunction.md)
@@ -62,7 +69,7 @@
     * [1.1. Using R for time series](R/1.1.TS.md)
 * [4.1. SQL](Sql/0.README.md)
 * [4.2. Python](Python/0.README.md)
-    * [Object-oriented programming](Python/OO.md)
+    * [0.0 Object-oriented programming](Python/OO.md)
     * [Running Time](Python/running_time.md)
     * [AWS](Python/AWS.md)
     * [Web](Python/web.md)
