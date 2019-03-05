@@ -76,17 +76,3 @@ def add(p:TreeNode, value) -> None:
         else: p.right = TreeNode(value)
     # do nothing if equal (already there)
 ```
-
-### Graph
-
-```python
-class Node:
-  def __init__(self, value):
-    self.value = value
-    self.edges = [] # outgoing edges
-  def add(self, target):
-    self.edges.append(target)
-```
-
-
-

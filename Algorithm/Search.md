@@ -1,10 +1,18 @@
 # 1.2. Searching
 
-## Data Structure
+* Linear: scan data structure looking for element(s);
+* Binary
+* Binary Search Tree
+* Hash table
+* State machines
+
+## Binary Search
+
+If we know data is sorted, split recursively in half.
 
 ### Binary Tree
 
-$T(n) = k+2T(\frac{n}{2})​$
+$T(n) = k+2T(\frac{n}{2})$
 
 ```python
 def search_tree(p:TreeNode, x:object) -> TreeNode:
@@ -15,7 +23,7 @@ def search_tree(p:TreeNode, x:object) -> TreeNode:
     return search_tree(p.right, x)
 ```
 
-### Binary Search Tree
+## Binary Search Tree
 
 $T(n) = k+T(\frac{n}{2})$
 
@@ -29,4 +37,8 @@ def search(p:TreeNode, x:object) -> TreeNode:
     # x == p.value
     return p
 ```
+
+## Hash Search
+
+### Idea
 
