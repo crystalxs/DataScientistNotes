@@ -1,0 +1,589 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Pyspark · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="big_data_vs_distributed_computing.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Python/">
+            
+                <a href="../Python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Python/running_time.html">
+            
+                <a href="../Python/running_time.html">
+            
+                    
+                    Running Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Python/AWS.html">
+            
+                <a href="../Python/AWS.html">
+            
+                    
+                    AWS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Python/web.html">
+            
+                <a href="../Python/web.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Python/data_source_from_web.html">
+            
+                <a href="../Python/data_source_from_web.html">
+            
+                    
+                    Data Source from Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Python/green_unicorm.html">
+            
+                <a href="../Python/green_unicorm.html">
+            
+                    
+                    Green unicorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Python/lambda_expression.html">
+            
+                <a href="../Python/lambda_expression.html">
+            
+                    
+                    Lambda Expression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Python/environment.html">
+            
+                <a href="../Python/environment.html">
+            
+                    
+                    Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Python/code_conventions.html">
+            
+                <a href="../Python/code_conventions.html">
+            
+                    
+                    Code Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../R/">
+            
+                <a href="../R/">
+            
+                    
+                    R
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Spark
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="big_data_vs_distributed_computing.html">
+            
+                <a href="big_data_vs_distributed_computing.html">
+            
+                    
+                    Big Data VS Distributed Computing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="pyspark.html">
+            
+                <a href="pyspark.html">
+            
+                    
+                    Pyspark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Pyspark</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="pyspark">Pyspark</h1>
+<p><a href="https://spark.apache.org/docs/2.1.0/quick-start.html" target="_blank">https://spark.apache.org/docs/2.1.0/quick-start.html</a></p>
+<h2 id="running-a-spark-application-using-the-spark-submit">Running a spark application using the spark-submit</h2>
+<pre><code>spark-submit yourscript
+</code></pre><h2 id="sparkcontext">SparkContext</h2>
+<h3 id="load-pyspark-package">Load pyspark package</h3>
+<pre><code>import pyspark
+</code></pre><h3 id="sparkcontext-object">SparkContext Object</h3>
+<p>A driver program can access spark.</p>
+<p>Application instance representing the connection to the spark cluster.</p>
+<p>Instantiated at the beginning of a Spark application and created by spark driver.</p>
+<p>Once we have a SparkContext, we can use it to build resilient distributed data set (RDDs).</p>
+<h3 id="create-a-sparkcontext-object">Create a SparkContext Object</h3>
+<pre><code>sc = pyspark.Sparkcontext(appName = &quot;MSDS694&quot;)
+sc = pyspark.SparkContext(appName=&apos;day2_ex01&apos;).getOrCreate()
+</code></pre><h3 id="stop-sparkcontext">Stop SparkContext</h3>
+<pre><code>sc.stop()
+</code></pre><h2 id="resilient-distributed-dataset-rdd">Resilient Distributed Dataset (RDD)</h2>
+<p>Distributed datasets that consists of records.</p>
+<h3 id="key-ideas">Key ideas</h3>
+<ul>
+<li>Distributed: The data in RDDs is divided into one or many partitions as in-memory collections of objects across worker nodes.</li>
+<li>Immutable: Read-only, once created, RDD never change.</li>
+<li>Resilient: Automatically rebuilt on failure, RDDs track lineage info to rebuild lost data (instead of replication).</li>
+</ul>
+<h3 id="create-distributed-data-sets">Create distributed data sets</h3>
+<pre><code># load external data
+lines = sc.textFile(&quot;README.md&quot;, Partition#)
+
+# take a collection or list of values
+lines = sc.parallelize([&quot;spark&quot;, &quot;spark is fun!&quot;], Partition#))
+</code></pre><h3 id="get-the-number-of-partitions">Get the number of partitions</h3>
+<pre><code>lines.getNumPartitions()
+</code></pre><h3 id="coalescing-data-within-each-partition-and-see-what-is-in-each-partition">Coalescing data within each partition and see what is in each partition</h3>
+<pre><code>lines.glom().collect()
+</code></pre><p><code>glom()</code>: return the RDD created by coalescing all elements within each partition into a list.</p>
+<p><code>collect()</code>: return a list that contains all of the elements in this RDD.</p>
+<p>Try to output the content of RDDs every-time after each operation.</p>
+<h3 id="save-distributed-data-sets">Save distributed data sets</h3>
+<p><code>saveAsTextFile(new_subdir_name)</code>: return multiple output files (each partition in a separate file + success indicator: <code>_SUCCESS</code>) underneath the <code>new_subdir_name</code>, as spark writes the output from multiple nodes.</p>
+<h1 id="rdd-operation">RDD Operation</h1>
+<p><a href="http://spark.apache.org/docs/latest/rdd-programming-guide.html" target="_blank">http://spark.apache.org/docs/latest/rdd-programming-guide.html</a></p>
+<h2 id="transformation-operation">Transformation Operation</h2>
+<p>Perform functions against each element in an RDD and return a new RDD. <strong>Doesn&apos;t change the original RDDs.</strong></p>
+<p>Lazy evaluation: operations are only evaluated when an action is requested. Doesn&apos;t return the output, return something like: <code>PythonRDD[10] at RDD at PythonRDD.scala:49</code>.</p>
+<h3 id="element-wise-transformation">Element wise transformation</h3>
+<p><code>map(func)</code>: apply a function to each element in the RDD.</p>
+<p><code>flatmap(func)</code>: similar to <code>map()</code>, but concatenates multiple arrays into a collections that has one level structure, generate a list of words within one level structure.</p>
+<p><code>filter(func)</code>: return an RDD that passes the filtering requirement.</p>
+<h3 id="partition-wise-transformation">Partition wise transformation</h3>
+<p><code>mapPartitions(func)</code>: return a new RDD by applying a function to each partition of the RDD.</p>
+<h3 id="set-operation">Set Operation</h3>
+<p>format: <code>rdd1.operation(rdd2)</code></p>
+<p><code>distinct()</code>: return only one of each element.</p>
+<p><code>union()</code>: return all duplicates.</p>
+<p><code>intersection()</code>: return common elements.</p>
+<p><code>substract()</code>: return elements that are in rdd1 only.</p>
+<p><code>cartesian()</code>: return cartesian product.</p>
+<h3 id="sample">Sample</h3>
+<p>Create a sampled subset RDD from an original RDD based on a percentage of the overall data set.</p>
+<p>Format: <code>rdd.sample(withReplacement, fraction, seed)</code></p>
+<p><code>withReplacement</code>: <code>True/False</code> Allow sample multiple times.</p>
+<p><code>fraction</code>:</p>
+<ul>
+<li>When replacement is used:<ul>
+<li>expected number of times each element is going to be sampled (positive double);</li>
+</ul>
+</li>
+<li>When replacement is not used:<ul>
+<li>expected probability that each element is going to be sampled ( between 0 and 1);</li>
+<li>if fraction is &gt; 1, it will default back to 1;</li>
+</ul>
+</li>
+</ul>
+<p><code>seed</code>: Random number generation to determine whether to include an element in the resulting RDD. <strong>When a seed is given, it will generate same output.</strong></p>
+<p>This is not guaranteed to provide exactly the fraction specified of the total count. It won&apos;t return the exactly number, but the roughly number.</p>
+<h2 id="action-operation">Action Operation</h2>
+<p>Trigger a computation and return a value to the Spark driver.</p>
+<p>Return <strong>non-RDDs</strong> like a single number, string, array, etc.</p>
+<p><code>collect()</code>: return a list that contains all of the elements of the dataset. <strong>This is usually useful after a filter or other operation that returns a sufficiently small subset of the data.</strong></p>
+<p><code>first()</code>: return a list that contain the first item of the dataset, similar to <code>take(1)</code>.</p>
+<p><code>take(n)</code>: return an array with the first n elements of the dataset.</p>
+<p><code>top(n)</code>: return the top (largest) n elements of the RDD.</p>
+<p><code>count()</code>: return the number of items in the dataset.</p>
+<p><code>countByValue()</code>: return a default dictionary of the number of times each element occurs in the RDD.</p>
+<p><code>reduce(func)</code>: </p>
+<ul>
+<li>take a function that operates on two elements of the type in RDD;</li>
+<li>returns a new element of the same type;</li>
+<li>when the partition or RDD is empty, <code>reduce()</code> don&apos;t do anything, return an error.</li>
+</ul>
+<p><code>fold(zero, func)</code>:</p>
+<ul>
+<li>same as <code>reduce()</code>;</li>
+<li>but with the provided <code>zero value</code>: deal with the situation when the partition or RDD is empty;</li>
+<li>add <code>zero value</code> into it at the first step and the last step;</li>
+<li>sensitive to how many partition RDD has, the number of <code>zero value</code> it added.</li>
+</ul>
+<p><code>aggregate(zero, SeqOp, combOp)</code>:</p>
+<ul>
+<li>Similar to <code>reduce()</code>;</li>
+<li>but used to return a different type: <code>SeqOp</code> works for each group, <code>combOp</code> merging outputs from different partitions;</li>
+<li></li>
+</ul>
+<p><code>saveAsTextFile(path)</code>: Write the elements of the dataset as a text file (or set of text files) in a given directory in the local filesystem, HDFS or any other Hadoop-supported file system. Spark will call toString on each element to convert it to a line of text in the file.</p>
+<p><code>takeSample(withReplacement, num, [seed])</code>:</p>
+<ul>
+<li>Return an <strong>array</strong></li>
+<li>with a random sample of num elements of the dataset, with or without replacement, optionally pre-specifying a random number generator seed.</li>
+</ul>
+<h3 id="numeric-rdd-action">Numeric RDD Action</h3>
+<p><code>count()</code>:</p>
+<table>
+<thead>
+<tr>
+<th>count()</th>
+<th>Return the number of elements in the RDD.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mean()</td>
+<td>Return the mean of the RDD&apos;s elements.</td>
+</tr>
+<tr>
+<td>sum()</td>
+<td>Add up the elements in the RDD.</td>
+</tr>
+<tr>
+<td>max()</td>
+<td>Return the maximum item in the RDD.</td>
+</tr>
+<tr>
+<td>min()</td>
+<td>Return the minimum item in the RDD.</td>
+</tr>
+<tr>
+<td>variance()</td>
+<td>Return the variance of the RDD&apos;s elements.</td>
+</tr>
+<tr>
+<td>stdev()</td>
+<td>Return the standard deviation of the RDD&apos;s elements.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>count()</th>
+<th>Return the number of elements in the RDD.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mean()</td>
+<td>Return the mean of the RDD&apos;s elements.</td>
+</tr>
+<tr>
+<td>sum()</td>
+<td>Add up the elements in the RDD.</td>
+</tr>
+<tr>
+<td>max()</td>
+<td>Return the maximum item in the RDD.</td>
+</tr>
+<tr>
+<td>min()</td>
+<td>Return the minimum item in the RDD.</td>
+</tr>
+<tr>
+<td>variance()</td>
+<td>Return the variance of the RDD&apos;s elements.</td>
+</tr>
+<tr>
+<td>stdev()</td>
+<td>Return the standard deviation of the RDD&apos;s elements.</td>
+</tr>
+</tbody>
+</table>
+<h2 id=""> </h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="big_data_vs_distributed_computing.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Big Data VS Distributed Computing">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Pyspark","level":"1.4.2","depth":2,"previous":{"title":"Big Data VS Distributed Computing","level":"1.4.1","depth":2,"path":"Spark/big_data_vs_distributed_computing.md","ref":"Spark/big_data_vs_distributed_computing.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Spark/pyspark.md","mtime":"2018-11-10T03:17:50.013Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-10T03:19:54.028Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,7 +1,5 @@
 # Summary
 
-* [Introduction](README.md)
-
 ## Part 0 Cheat Sheet
 * [Git & GitHub](CheatSheet/git.md)
 * [Shell](CheatSheet/shell.md)
@@ -49,23 +47,23 @@
 * [Machine Learning](ML/0.README.md)
     * [Cost Function](ML/0.0.costFunction.md)
     * [Bias vs Variance](ML/0.1.bias&variance.md)
-    * [Neural Network](ML/neuralNetwork.md)
-    * [knn](ML/1.0.knn.md)
-    * [Naive Bayes](ML/1.1.naiveBayes.md)
-    * [SVM](ML/1.2.SVM.md)
-    * [Decision Tree](ML/1.3.DT.md)
-    * [Random Forest](ML/1.4.RF.md)
-    * [Distance Metric](ML/distanceMetric.md)
-    * [Regularization](ML/regularization.md)
-    * [Classification Metrics](ML/classificationMetrics.md)
-    * [Information Theory](ML/informationTheory.md)
-    * [Unbalanced Data](ML/2.0.unbalancedData.md)
-    * [Feature Engineering](ML/2.1.featureEngineering.md)
-    * [Cross Validation](ML/2.2.crossValidation.md)
-    * [Pipeline](ML/2.3.pipeline.md)
-    * [Ensembling](ML/2.4.ensembling.md)
-    * [Grid Search](ML/2.5.gridSearch.md)
-* [Distributed Systme](DS/0.README.md)
+       * [Neural Network](ML/neuralNetwork.md)
+       * [knn](ML/1.0.knn.md)
+       * [Naive Bayes](ML/1.1.naiveBayes.md)
+       * [SVM](ML/1.2.SVM.md)
+       * [Decision Tree](ML/1.3.DT.md)
+       * [Random Forest](ML/1.4.RF.md)
+       * [Distance Metric](ML/distanceMetric.md)
+       * [Regularization](ML/regularization.md)
+       * [Classification Metrics](ML/classificationMetrics.md)
+       * [Information Theory](ML/informationTheory.md)
+       * [Unbalanced Data](ML/2.0.unbalancedData.md)
+       * [Feature Engineering](ML/2.1.featureEngineering.md)
+       * [Cross Validation](ML/2.2.crossValidation.md)
+       * [Pipeline](ML/2.3.pipeline.md)
+       * [Ensembling](ML/2.4.ensembling.md)
+       * [Grid Search](ML/2.5.gridSearch.md)
+* [Distributed System](DS/0.README.md)
 
 ## Part IV Data Science Tools
 * [R](R/0.README.md)
@@ -82,6 +80,7 @@
     * [Lambda Expression](Python/lambda_expression.md)
     * [Environment](Python/environment.md)
     * [Code Conventions](Python/code_conventions.md)
+    * [Jupyter Notebook Extensions](Python/jupyter.md)
 * [Spark](Spark/0.README.md)
     * [Distributed Computing](Spark/0.1.distributedComputing.md)
     * [MapReduece](Spark/0.2.mapReduc.md)
@@ -94,8 +93,6 @@
 * [MongoDB](Mongodb/0.README.md)
     * [Launching](Mongodb/0.2.launching.md)
     * [Operations](Mongodb/1.0.operations.md)
-    * [Distribution Model](Mongodb/1.1.distribution.md)
-
 ## Part V Front-End Programming (Data Visualization)
 * [HTML](HTML/0.README.md)
 * [CSS](CSS/0.README.md)
@@ -109,4 +106,3 @@
     * Leaflet
     * MapBox GL
     * Morris
-
