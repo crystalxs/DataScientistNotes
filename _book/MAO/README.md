@@ -1,2 +1,0 @@
-# Machine Architecture and Organization
-
