@@ -1,0 +1,36 @@
+# 3.2. Data Structure
+
+Data structures group or encode relationships between data elements.
+
+#### Advice
+
+* Using the simplest data structure you can initially
+
+* Wasting processor, memory power before brianpower
+* There is a trade off between time and space (always)
+* Prep work or more sophisticated data structure can help (???)
+
+## Methods
+
+- Physical adjacency or relative position in RAM
+- Pointers
+
+## Type
+
+| Abstract data type | Implementation data type |
+| ------------------ | ------------------------ |
+| list               | array                    |
+| dictionary         | hashtable                |
+|                    |                          |
+
+### Elemental data in memory
+
+* int, float, string
+* np.float32, np.float64
+* 
+
+### List
+
+* Array implementations is most common for list abstract data structure
+* Lists are ordered but items aren't necessarily sortable
+

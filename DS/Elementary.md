@@ -1,32 +1,44 @@
-# 0.0 Elementary Data Structure
+# Elementary Data Structure
 
-Data structures group or encode relationships between data elements.
+##Built-in
 
-#### Advice
+###Array
 
-- Using the simplest data structure you can initially
-- Wasting processor, memory power before brianpower
-- There is a trade off between time and space (always)
-- Prep work or more sophisticated data structure can help (???)
+`list` in python; if element is immutable, then `tuple` in python.
 
-## Methods
+- Arrays provide super fast random-access to the `i`th element.
+- Incrementing / decrementing a pointer or index is most common walk.
 
-- Physical adjacency or relative position in RAM
-- Pointers
+###Matrix
 
-## Type
+`table` in python; if all element are all numbers, then `matrix` in python.
 
-| Abstract data type | Implementation data type |
-| ------------------ | ------------------------ |
-| list               | array                    |
-| dictionary         | hashtable                |
-|                    |                          |
+- 2D arrays, random-access to `i,j`.
 
-### Elemental data in memory
+```
+def walk(A):
+    arow = A[0]
+    n = len(arow)
+    for i in range(n):
+        for j in range(n):
+            # process A[i][j] such as:
+            print(f" {A[i][j]}", end='')
+        print()
+```
 
-- int, float, string
-- np.float32, np.float64
-- 
+###Set
+
+All elements within a list are unique and unordered.
+
+
+
+###Dictionary
+
+Arrange two lists side-by-side and kind of glue them together, map one value to another.
+
+
+
+##Implement
 
 ### Linked List
 
@@ -37,42 +49,24 @@ class LLNode:
 		self.next = next
 ```
 
-### Set
+- Linked list doesn't have random-access to `i`th element.
+- From linked list we can look forward or backward.
+
+####Walk while Loop with Pointer
+
+```python
+p = head
+while p is not None:
+    print(p.value)
+    p = p.next
+```
 
 ### Queue
 
+First in first out.
+
 ### Stack
 
-### Dictionary
+First in last out.
 
-### Trees
-
-####Binary tree
-
-```
-class TreeNode:
-    def __init__(self, value, left, right):
-        self.value = value
-        self.left = left
-        self.right = right
-```
-
-#### Binary Search Tree
-
-```python
-class TreeNode:
-    def __init__(self, value, left, right):
-        self.value = value
-        self.left = left
-        self.right = right
-        
-def add(p:TreeNode, value) -> None:
-    "add nodes like a binary search tree"
-    if value < p.value:
-        if p.left is not None: add(p.left, value)
-        else: p.left = TreeNode(value)
-    if value > p.value:
-        if p.right is not None: add(p.right, value)
-        else: p.right = TreeNode(value)
-    # do nothing if equal (already there)
-```
+### 
