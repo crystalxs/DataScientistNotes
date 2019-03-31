@@ -2,7 +2,7 @@
 
 ##Binary tree
 
-```
+```python
 class TreeNode:
     def __init__(self, value, left, right):
         self.value = value
@@ -31,6 +31,18 @@ def walk_tree(p:TreeNode):
     walk_tree(p.right)
     print(p.value)
 ```
+
+### Recursion Tree
+
+```python
+def walk(p:TreeNode):
+		if p is None: return
+    print(p.value)
+    walk(p.left)
+    walk(p.right)
+```
+
+
 
 ##Binary Search Tree
 

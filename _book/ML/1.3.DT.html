@@ -1,0 +1,2334 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Decision Tree · Study for Data Scientist</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="crystalxs">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.4.RF.html" />
+    
+    
+    <link rel="prev" href="1.2.SVM.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://crystalxs.github.io" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 0 Cheat Sheet</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../CheatSheet/git.html">
+            
+                <a href="../CheatSheet/git.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Git & GitHub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../CheatSheet/bash.html">
+            
+                <a href="../CheatSheet/bash.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    bash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../CheatSheet/gitbook.html">
+            
+                <a href="../CheatSheet/gitbook.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../CheatSheet/zsh.html">
+            
+                <a href="../CheatSheet/zsh.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../CheatSheet/iterm2.html">
+            
+                <a href="../CheatSheet/iterm2.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    iterm2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I Fundamental Mathematics</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Calculus
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Discrete Mathematics
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Linear Algebra
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Matrix Theory
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" >
+            
+                <span>
+            
+                    
+                        <b>3.5.</b>
+                    
+                    Numerical Algorithms
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part II Statistics</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Prob/0.README.html">
+            
+                <a href="../Prob/0.README.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    Probability
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../Prob/Distribution.html">
+            
+                <a href="../Prob/Distribution.html">
+            
+                    
+                        <b>4.1.1.</b>
+                    
+                    Distributions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                        <b>4.2.</b>
+                    
+                    Statistics
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                        <b>4.3.</b>
+                    
+                    Linear Regression
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../TS/0.README.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.</b>
+                    
+                    Time Series
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="../TS/0.1.interviewQ.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.1.</b>
+                    
+                    Interview Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="../TS/0.2.decomposition.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.2.</b>
+                    
+                    Classic Decomposition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="../TS/0.3.stationary.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.3.</b>
+                    
+                    Stationary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="../TS/0.4.serialCorrelation.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.4.</b>
+                    
+                    Serial Correlation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="../TS/1.1.ARMA.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.5.</b>
+                    
+                    Univariance - ARMA models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="../TS/1.2.non-stationary.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.6.</b>
+                    
+                    Univariance - Non-Stationary Time Series models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7" data-path="../TS/1.3.Holt-Winters.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.7.</b>
+                    
+                    Univariance - Holt-Winters Methodology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8" data-path="../TS/2.1.Multivariance.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.8.</b>
+                    
+                    Multivariance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../Bayesian/0.README.html">
+            
+                <a href="../Bayesian/0.README.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    Computational Statistics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="../Bayesian/LossFunction.html">
+            
+                <a href="../Bayesian/LossFunction.html">
+            
+                    
+                        <b>4.5.1.</b>
+                    
+                    Loss Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part III Computer Science Fundamentals</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../DS/0.README.html">
+            
+                <a href="../DS/0.README.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    Data Structure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../DS/Elementary.html">
+            
+                <a href="../DS/Elementary.html">
+            
+                    
+                        <b>5.1.1.</b>
+                    
+                    Linear Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../DS/Tree.html">
+            
+                <a href="../DS/Tree.html">
+            
+                    
+                        <b>5.1.2.</b>
+                    
+                    Tree Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../DS/Graph.html">
+            
+                <a href="../DS/Graph.html">
+            
+                    
+                        <b>5.1.3.</b>
+                    
+                    Graph Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../Algorithm/0.README.html">
+            
+                <a href="../Algorithm/0.README.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    Algorithm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../Algorithm/Complexity.html">
+            
+                <a href="../Algorithm/Complexity.html">
+            
+                    
+                        <b>5.2.1.</b>
+                    
+                    Complexity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../Algorithm/Recursion.html">
+            
+                <a href="../Algorithm/Recursion.html">
+            
+                    
+                        <b>5.2.2.</b>
+                    
+                    Recursion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../Algorithm/Walk.html">
+            
+                <a href="../Algorithm/Walk.html">
+            
+                    
+                        <b>5.2.3.</b>
+                    
+                    Walking Data Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../Algorithm/Search.html">
+            
+                <a href="../Algorithm/Search.html">
+            
+                    
+                        <b>5.2.4.</b>
+                    
+                    Searching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.5" data-path="../Algorithm/Sort.html">
+            
+                <a href="../Algorithm/Sort.html">
+            
+                    
+                        <b>5.2.5.</b>
+                    
+                    Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                        <b>5.3.</b>
+                    
+                    Machine Architecture and Organization
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" >
+            
+                <span>
+            
+                    
+                        <b>5.4.</b>
+                    
+                    Operating System
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" >
+            
+                <span>
+            
+                    
+                        <b>5.5.</b>
+                    
+                    Formal Language and Automata
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="0.README.html">
+            
+                <a href="0.README.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Machine Learning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.6.1" data-path="0.0.costFunction.html">
+            
+                <a href="0.0.costFunction.html">
+            
+                    
+                        <b>5.6.1.</b>
+                    
+                    Cost Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.2" data-path="0.1.bias&variance.html">
+            
+                <a href="0.1.bias&variance.html">
+            
+                    
+                        <b>5.6.2.</b>
+                    
+                    Bias vs Variance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.3" data-path="neuralNetwork.html">
+            
+                <a href="neuralNetwork.html">
+            
+                    
+                        <b>5.6.3.</b>
+                    
+                    Neural Network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.4" data-path="1.0.knn.html">
+            
+                <a href="1.0.knn.html">
+            
+                    
+                        <b>5.6.4.</b>
+                    
+                    knn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.5" data-path="1.1.naiveBayes.html">
+            
+                <a href="1.1.naiveBayes.html">
+            
+                    
+                        <b>5.6.5.</b>
+                    
+                    Naive Bayes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.6" data-path="1.2.SVM.html">
+            
+                <a href="1.2.SVM.html">
+            
+                    
+                        <b>5.6.6.</b>
+                    
+                    SVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.6.7" data-path="1.3.DT.html">
+            
+                <a href="1.3.DT.html">
+            
+                    
+                        <b>5.6.7.</b>
+                    
+                    Decision Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.8" data-path="1.4.RF.html">
+            
+                <a href="1.4.RF.html">
+            
+                    
+                        <b>5.6.8.</b>
+                    
+                    Random Forest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.9" data-path="distanceMetric.html">
+            
+                <a href="distanceMetric.html">
+            
+                    
+                        <b>5.6.9.</b>
+                    
+                    Distance Metric
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.10" data-path="regularization.html">
+            
+                <a href="regularization.html">
+            
+                    
+                        <b>5.6.10.</b>
+                    
+                    Regularization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.11" data-path="classificationMetrics.html">
+            
+                <a href="classificationMetrics.html">
+            
+                    
+                        <b>5.6.11.</b>
+                    
+                    Classification Metrics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.12" data-path="informationTheory.html">
+            
+                <a href="informationTheory.html">
+            
+                    
+                        <b>5.6.12.</b>
+                    
+                    Information Theory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.13" data-path="2.0.unbalancedData.html">
+            
+                <a href="2.0.unbalancedData.html">
+            
+                    
+                        <b>5.6.13.</b>
+                    
+                    Unbalanced Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.14" data-path="2.1.featureEngineering.html">
+            
+                <a href="2.1.featureEngineering.html">
+            
+                    
+                        <b>5.6.14.</b>
+                    
+                    Feature Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.15" data-path="2.2.crossValidation.html">
+            
+                <a href="2.2.crossValidation.html">
+            
+                    
+                        <b>5.6.15.</b>
+                    
+                    Cross Validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.16" data-path="2.3.pipeline.html">
+            
+                <a href="2.3.pipeline.html">
+            
+                    
+                        <b>5.6.16.</b>
+                    
+                    Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.17" data-path="2.4.ensembling.html">
+            
+                <a href="2.4.ensembling.html">
+            
+                    
+                        <b>5.6.17.</b>
+                    
+                    Ensembling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.18" data-path="2.5.gridSearch.html">
+            
+                <a href="2.5.gridSearch.html">
+            
+                    
+                        <b>5.6.18.</b>
+                    
+                    Grid Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../DL/0.README.html">
+            
+                <a href="../DL/0.README.html">
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Deep Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV Data Science Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../R/0.README.html">
+            
+                <a href="../R/0.README.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    R
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../R/1.0.LR.html">
+            
+                <a href="../R/1.0.LR.html">
+            
+                    
+                        <b>6.1.1.</b>
+                    
+                    Using R for Linear Regression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../R/1.1.TS.html">
+            
+                <a href="../R/1.1.TS.html">
+            
+                    
+                        <b>6.1.2.</b>
+                    
+                    Using R for time series
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                        <b>6.2.</b>
+                    
+                    SQL
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../Python/0.README.html">
+            
+                <a href="../Python/0.README.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../Python/data.html">
+            
+                <a href="../Python/data.html">
+            
+                    
+                        <b>6.3.1.</b>
+                    
+                    Data Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.2" data-path="../Python/OO.html">
+            
+                <a href="../Python/OO.html">
+            
+                    
+                        <b>6.3.2.</b>
+                    
+                    Object-oriented programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.3" data-path="../Python/running_time.html">
+            
+                <a href="../Python/running_time.html">
+            
+                    
+                        <b>6.3.3.</b>
+                    
+                    Running Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.4" data-path="../Python/web.html">
+            
+                <a href="../Python/web.html">
+            
+                    
+                        <b>6.3.4.</b>
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.5" data-path="../Python/data_source_from_web.html">
+            
+                <a href="../Python/data_source_from_web.html">
+            
+                    
+                        <b>6.3.5.</b>
+                    
+                    Data Source from Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.6" data-path="../Python/green_unicorm.html">
+            
+                <a href="../Python/green_unicorm.html">
+            
+                    
+                        <b>6.3.6.</b>
+                    
+                    Green unicorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.7" data-path="../Python/lambda_expression.html">
+            
+                <a href="../Python/lambda_expression.html">
+            
+                    
+                        <b>6.3.7.</b>
+                    
+                    Lambda Expression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.8" data-path="../Python/environment.html">
+            
+                <a href="../Python/environment.html">
+            
+                    
+                        <b>6.3.8.</b>
+                    
+                    Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.9" data-path="../Python/code_conventions.html">
+            
+                <a href="../Python/code_conventions.html">
+            
+                    
+                        <b>6.3.9.</b>
+                    
+                    Code Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.10" data-path="../Python/jupyter.html">
+            
+                <a href="../Python/jupyter.html">
+            
+                    
+                        <b>6.3.10.</b>
+                    
+                    Jupyter Notebook Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../Spark/0.README.html">
+            
+                <a href="../Spark/0.README.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    Spark
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.4.1" data-path="../Spark/0.1.distributedComputing.html">
+            
+                <a href="../Spark/0.1.distributedComputing.html">
+            
+                    
+                        <b>6.4.1.</b>
+                    
+                    Distributed Computing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.2" data-path="../Spark/0.2.mapReduc.html">
+            
+                <a href="../Spark/0.2.mapReduc.html">
+            
+                    
+                        <b>6.4.2.</b>
+                    
+                    MapReduece
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.3" data-path="../Spark/1.0.loadingData.html">
+            
+                <a href="../Spark/1.0.loadingData.html">
+            
+                    
+                        <b>6.4.3.</b>
+                    
+                    Loading data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.4" data-path="../Spark/1.1.pyspark.html">
+            
+                <a href="../Spark/1.1.pyspark.html">
+            
+                    
+                        <b>6.4.4.</b>
+                    
+                    Pyspark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.5" data-path="../Spark/1.2.persist.html">
+            
+                <a href="../Spark/1.2.persist.html">
+            
+                    
+                        <b>6.4.5.</b>
+                    
+                    Efficiency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.6" data-path="../Spark/2.0.YARNcluster.html">
+            
+                <a href="../Spark/2.0.YARNcluster.html">
+            
+                    
+                        <b>6.4.6.</b>
+                    
+                    YARN Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.7" data-path="../Spark/3.0.sql.html">
+            
+                <a href="../Spark/3.0.sql.html">
+            
+                    
+                        <b>6.4.7.</b>
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.8" data-path="../Spark/3.1.MLlib.html">
+            
+                <a href="../Spark/3.1.MLlib.html">
+            
+                    
+                        <b>6.4.8.</b>
+                    
+                    MLlib
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../Mongodb/0.README.html">
+            
+                <a href="../Mongodb/0.README.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.5.1" data-path="../Mongodb/0.2.launching.html">
+            
+                <a href="../Mongodb/0.2.launching.html">
+            
+                    
+                        <b>6.5.1.</b>
+                    
+                    Launching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5.2" data-path="../Mongodb/1.0.operations.html">
+            
+                <a href="../Mongodb/1.0.operations.html">
+            
+                    
+                        <b>6.5.2.</b>
+                    
+                    Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../AWS/0.README.html">
+            
+                <a href="../AWS/0.README.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    AWS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part V Data Visualization (Web Development)</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../DV/0.README.html">
+            
+                <a href="../DV/0.README.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    Principle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.1" data-path="../DV/Terminology.html">
+            
+                <a href="../DV/Terminology.html">
+            
+                    
+                        <b>7.1.1.</b>
+                    
+                    Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.2" data-path="../DV/Perception.html">
+            
+                <a href="../DV/Perception.html">
+            
+                    
+                        <b>7.1.2.</b>
+                    
+                    Perception
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../HTML/0.README.html">
+            
+                <a href="../HTML/0.README.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../CSS/0.README.html">
+            
+                <a href="../CSS/0.README.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                        <b>7.4.</b>
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.1" >
+            
+                <span>
+            
+                    
+                        <b>7.4.1.</b>
+                    
+                    NodeJS
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2" >
+            
+                <span>
+            
+                    
+                        <b>7.4.2.</b>
+                    
+                    Framework
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.2.1" >
+            
+                <span>
+            
+                    
+                        <b>7.4.2.1.</b>
+                    
+                    Vuejs
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2.2" >
+            
+                <span>
+            
+                    
+                        <b>7.4.2.2.</b>
+                    
+                    ReactJS
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.</b>
+                    
+                    Library
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.3.1" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.1.</b>
+                    
+                    Echarts
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3.2" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.2.</b>
+                    
+                    Leaflet
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3.3" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.3.</b>
+                    
+                    MapBox GL
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3.4" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.4.</b>
+                    
+                    D3
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                        <b>7.5.</b>
+                    
+                    REST api
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.5.1" >
+            
+                <span>
+            
+                    
+                        <b>7.5.1.</b>
+                    
+                    PostgREST
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" >
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    Webpack
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" >
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Jekyll
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" >
+            
+                <span>
+            
+                    
+                        <b>7.8.</b>
+                    
+                    Morris
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part VI Algorithm Interview</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../Interview/">
+            
+                <a href="../Interview/">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    Data Structure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../Interview/array.html">
+            
+                <a href="../Interview/array.html">
+            
+                    
+                        <b>8.1.1.</b>
+                    
+                    Array&String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../Interview/hash.html">
+            
+                <a href="../Interview/hash.html">
+            
+                    
+                        <b>8.1.2.</b>
+                    
+                    Hash table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.3" data-path="../Interview/linkedlist.html">
+            
+                <a href="../Interview/linkedlist.html">
+            
+                    
+                        <b>8.1.3.</b>
+                    
+                    Linked list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.4" data-path="../Interview/stack.html">
+            
+                <a href="../Interview/stack.html">
+            
+                    
+                        <b>8.1.4.</b>
+                    
+                    Stack & Queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.5" data-path="../Interview/tree.html">
+            
+                <a href="../Interview/tree.html">
+            
+                    
+                        <b>8.1.5.</b>
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.6" data-path="../Interview/graph.html">
+            
+                <a href="../Interview/graph.html">
+            
+                    
+                        <b>8.1.6.</b>
+                    
+                    Graph
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" >
+            
+                <span>
+            
+                    
+                        <b>8.2.</b>
+                    
+                    Algorithm
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.2.1" >
+            
+                <span>
+            
+                    
+                        <b>8.2.1.</b>
+                    
+                    Bit Manipulation
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.2" >
+            
+                <span>
+            
+                    
+                        <b>8.2.2.</b>
+                    
+                    Memory (stack & heap)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.3" >
+            
+                <span>
+            
+                    
+                        <b>8.2.3.</b>
+                    
+                    Recursion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.4" >
+            
+                <span>
+            
+                    
+                        <b>8.2.4.</b>
+                    
+                    Dynamic Programming
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Decision Tree</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="13-decision-tree">1.3. Decision Tree</h1>
+<p>supervised, non-parametric</p>
+<p>A series of binary splits that define a path which leads to an outcome.</p>
+<h2 id="terminology">terminology</h2>
+<p>Root: located on the top, the first split.</p>
+<p>Node: do a binary split on a feature based a specific value of a specific attribute to minimize entropy.</p>
+<p>Leaf (perminal node): classifies <strong>all</strong> members in the defined feature space as belonging to a <strong>single</strong> class (final prediction) (decision boundary).</p>
+<h2 id="advantages">Advantages</h2>
+<ul>
+<li>Simple to use (explain and visualize)</li>
+<li>DT requires little data preparation</li>
+<li>Handle numerical and categorical data</li>
+<li>Handle many types of outputs (regression and multi-class classification)</li>
+</ul>
+<h2 id="disadvantage">Disadvantage</h2>
+<ul>
+<li><p><strong>Easily overfit</strong></p>
+</li>
+<li><p>Cannot deal with complex data</p>
+</li>
+<li><p>Cannot deal with unbalanced data</p>
+<ul>
+<li>DT is low bias, thus might overfit the most frequent class.</li>
+</ul>
+</li>
+</ul>
+<h3 id="avoiding-overfit">Avoiding overfit</h3>
+<ol>
+<li><p>Acquire more training data</p>
+</li>
+<li><p>Pruning</p>
+<ul>
+<li><p>Pruning of the decision tree is done by replacing a whole subtree by a leaf node.</p>
+</li>
+<li><p>The replacement takes place if a decision rule establishes that the expected error rate in the subtree is greater than in the single leaf.</p>
+</li>
+<li>In the applied setting, it is better to prefer pre-prune. It is faster because it requires fewer passes over the data.</li>
+</ul>
+</li>
+<li><p>Setting the maximum depth of the tree</p>
+</li>
+<li><p>Setting the minimum number of samples required at each leaf node</p>
+</li>
+<li><p>Setting how much IG required to make another split</p>
+</li>
+</ol>
+<h1 id="handle-build-a-decision-tree">Handle build a Decision Tree</h1>
+<p>Decision Trees learn <strong>top-down, greedily, recursively</strong>.</p>
+<h3 id="divide-and-conquer">Divide-and-conquer</h3>
+<p>Split the data into subsets, which are then split repeatedly into even smaller subsets, &#x2026;</p>
+<p>The process stops when the algorithm determines the data within the subsets are sufficiently homogeneous (or another stopping criterion has been met).</p>
+<h3 id="top-down">Top-down</h3>
+<p>From a single split.</p>
+<h3 id="greedily">Greedily</h3>
+<p>Choose the split that has results in the most pure feature space (current best value).</p>
+<p>Greedy algorithms can have local minimums. There could be complex / future choice dependent rules that could perform better.</p>
+<h3 id="stop">Stop</h3>
+<p>The goal of DT is divide the dataset into pure regions.</p>
+<p>Slide Type-SlideSub-SlideFragmentSkipNotes</p>
+<ol>
+<li>All instances are in same class (simplest and most often used)</li>
+<li>The number of instances is less than a specified minimum</li>
+<li>The tree is deeper than some minimum</li>
+<li>The improvement of class impurity is less than a specified minimum</li>
+</ol>
+<h3 id="step">Step</h3>
+<ol>
+<li>Start with a single leaf node containing all data</li>
+<li>Search for a decision rule for a single value on a single dimensions that maximally reduces the entropy<ol>
+<li>Calculate the entropy of the dataset</li>
+<li>For every feature, calculate the entropy for all values</li>
+<li>Pick feature and value that has the highest Information Gain</li>
+</ol>
+</li>
+<li>Stop based on criteria</li>
+</ol>
+<h2 id="data-preparation">Data Preparation</h2>
+<ul>
+<li>data normalization</li>
+<li>dummy variables need to be created</li>
+<li>blank values to be removed</li>
+</ul>
+<h2 id="feature-selection">Feature Selection</h2>
+<h3 id="multi-nominal-feature">Multi-nominal feature</h3>
+<ol>
+<li>Consider all possible pairs of splits. For k classes there are 2k-1-1 splits, which is computationally prohibitive if k is a large number.</li>
+<li>If there are ordered classes, then we do version of binary search. This reduces the search to k-1 possible splits for k classes.</li>
+<li>If there are have many ks, a One-Versus-All-The-Rest reduces the search to linear for number of k.</li>
+</ol>
+<h3 id="continuous-feature">Continuous feature</h3>
+<p>We need a threshold split (i.e., x &#x2264; 42)</p>
+<p>One option is too sort the data and perform binary search for optional split value.</p>
+<p>This could be computational intractable because it requires sorting O(nlogn) then binary search O(logn).</p>
+<h3 id="methods">Methods</h3>
+<p>Aka: measure purity of a feature space</p>
+<ul>
+<li>Classification Error</li>
+<li>Information Gain</li>
+<li><p>Gini Index</p>
+</li>
+<li><p>Gain ratio</p>
+</li>
+<li>Twoing criteria</li>
+<li>Distance Measure</li>
+<li>Likelihood-Ratio Chi&#x2013;Squared Statistics</li>
+<li>DKM Criterion</li>
+<li>Normalized Impurity Based Criteria</li>
+<li>Binary Criteria</li>
+<li>Orthogonal (ORT) Criterion</li>
+<li>Kolmogorov&#x2013;Smirnov Criterion</li>
+<li>AUC&#x2013;Splitting Criteria</li>
+</ul>
+<h4 id="classification-error">Classification Error</h4>
+<p>$\text{&#x1D436;&#x1D459;&#x1D44E;&#x1D460;&#x1D460;&#x1D456;&#x1D453;&#x1D456;&#x1D450;&#x1D44E;&#x1D461;&#x1D456;&#x1D45C;&#x1D45B; &#x1D438;&#x1D45F;&#x1D45F;&#x1D45C;&#x1D45F;}=1&#x2212;&#x1D45A;&#x1D44E;&#x1D465;&#x1D45D;_&#x1D458;$</p>
+<p>where $&#x1D45D;_&#x1D458;$ denotes the proportion of instances belonging to class $&#x1D458;$.</p>
+<h4 id="information-gain">Information Gain</h4>
+<p>aka, KL Divergence or Relative Gain or Relative Entropy.</p>
+<p><strong>Choose one split over another</strong>: find the attribute that returns the highest information gain (i.e., the most homogeneous branches).</p>
+<p>$\text{Information Gain} = \text{entropy}(parent) - \text{weighted average of entropy}(children)$</p>
+<p>Always choose the largest Information Gain.</p>
+<h4 id="gini-index">Gini Index</h4>
+<p>A measure of how often a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset.</p>
+<p>Computed by summing the probability $&#x1D45D;<em>&#x1D456;$ of an item with label $&#x1D456;$ being chosen times the probability $\sum</em>{&#x1D456; \neq &#x1D456;}&#x1D45D;<em>&#x1D458;=1&#x2212;&#x1D45D;</em>&#x1D456;$ of a mistake in categorizing that item.</p>
+<p>$Gini = 1 - \sum_{i=1}^K p_k^2$</p>
+<p>Properties:</p>
+<ul>
+<li>Maximized when elements are heterogeneous (impure).</li>
+<li>Minimized when elements are homogenous (pure).</li>
+</ul>
+<h4 id="limitations">Limitations</h4>
+<ul>
+<li><p>Classification Error</p>
+<ul>
+<li>Bad idea (remember the problems with accuracy)</li>
+</ul>
+</li>
+<li><p>Information Gain</p>
+<ul>
+<li>Favors many valued features (e.g., multinomial or continuous). Since All things being equal, entropy is higher in those cases, Information Gain is Bias towards many valued features (e.g., multinomial or continuous). </li>
+</ul>
+</li>
+<li><p>Gini Index</p>
+<ul>
+<li>Favors equal-sized partitions with purity.</li>
+<li>Has difficulties when the number of classes is large.</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-would-we-split-for-multi-nominal-features">How would we split for multi-nominal features?</h2>
+<ol>
+<li>Consider all possible pairs of splits. For k classes there are 2k-1-1 splits, which is computationally prohibitive if k is a large number.</li>
+<li>If there are ordered classes, then we do version of binary search. This reduces the search to k-1 possible splits for k classes.</li>
+<li>If there are have many ks, a One-Versus-All-The-Rest reduces the search to linear for number of k.</li>
+</ol>
+<h2 id="how-would-we-split-for-continuous-features">How would we split for continuous features?</h2>
+<p>We need a threshold split (i.e., x &#x2264; 42)</p>
+<p>One option is too sort the data and perform binary search for optional split value.</p>
+<p>This could be computational intractable because it requires sorting O(nlogn) then binary search O(logn).</p>
+<h2 id="sklearn">Sklearn</h2>
+<p><a href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.tree" target="_blank">https://scikit-learn.org/stable/modules/classes.html#module-sklearn.tree</a></p>
+<pre><code class="lang-python">from sklearn import tree
+# from sklearn.tree import DecisionTreeClassifier
+
+features_train, labels_train, features_test, labels_test
+clf = tree.DecisionTreeClasifier()
+clf = clf.fit(features_train, labels_train)
+clf.predict(features_test)
+</code></pre>
+<h3 id="tunning-the-pararmeters">Tunning the pararmeters</h3>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html" target="_blank">https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html</a></p>
+<pre><code class="lang-python">class sklearn.tree.DecisionTreeClassifier(criterion=&#x2019;gini&#x2019;, splitter=&#x2019;best&#x2019;, max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=None, random_state=None, max_leaf_nodes=None, min_impurity_decrease=0.0, min_impurity_split=None, class_weight=None, presort=False)
+</code></pre>
+<p><code>min_samples_split</code>: minimum number of elements in each leaf.</p>
+<p><code>min_samples_split</code> vs overfitting:</p>
+<h3 id="plot-decision-tree">Plot Decision Tree</h3>
+<pre><code class="lang-python">from IPython.display import Image  
+from sklearn.externals.six import StringIO  
+from sklearn.tree import export_graphviz
+import pydotplus
+
+dot_data = StringIO()
+export_graphviz(dt, out_file=dot_data,  
+                filled=True, rounded=True, special_characters=True)
+graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
+Image(graph.create_png())
+</code></pre>
+<h3 id="tree-attribute"><code>tree_</code> Attribute</h3>
+<p>The decision estimator has an attribute called tree_ which stores the entire tree structure and allows access to low level attributes.</p>
+<pre><code class="lang-python"># number of node in the dt
+n_nodes = dt.tree_.node_count
+# id of the left child of the node
+children_left = dt.tree_.children_left
+# id of the right child of the node
+children_right = dt.tree_.children_right
+# feature used for splitting the node
+feature = dt.tree_.feature
+# threshold value at the node
+threshold = dt.tree_.threshold
+</code></pre>
+<h2 id="type">Type</h2>
+<h3 id="classification-trees">Classification Trees</h3>
+<ul>
+<li>Predict: class label</li>
+<li>Training: minimize impurity</li>
+<li>Inference: assign majority class label of leaf node</li>
+</ul>
+<h3 id="regression-trees">Regression Trees</h3>
+<ul>
+<li>Predict: value</li>
+<li>Training: minimize error (typically mean squared)</li>
+<li>Inference: mean of the leaf node</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.2.SVM.html" class="navigation navigation-prev " aria-label="Previous page: SVM">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.4.RF.html" class="navigation navigation-next " aria-label="Next page: Random Forest">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Decision Tree","level":"5.6.7","depth":2,"next":{"title":"Random Forest","level":"5.6.8","depth":2,"path":"ML/1.4.RF.md","ref":"ML/1.4.RF.md","articles":[]},"previous":{"title":"SVM","level":"5.6.6","depth":2,"path":"ML/1.2.SVM.md","ref":"ML/1.2.SVM.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","mathjax","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"Modified","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/crystalxs/dataScientistNotes"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"sitemap-general":{"prefix":"http://gitbook.crystalxs.com"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"title":"GitBook 使用教程","description":"记录 GitBook 的配置和一些插件的使用","author":"Jikai Zhang","feed_url":"http://gitbook.zhangjikai.com/rss","site_url":"http://gitbook.zhangjikai.com/","managingEditor":"me@zhangjikai.com","webMaster":"me@zhangjikai.com","categories":["gitbook"]},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"crystalxs/dataScientistNotes","types":["star"],"size":"small"},"3-ba":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"versions":{"options":[{"value":"http://gitbook.zhangjikai.com","text":"v3.2.3"},{"value":"http://gitbook.zhangjikai.com/v2/","text":"v2.6.4"}]},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"edit-link":{"base":"https://github.com/crystalxs/dataScientistNotes/edit/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"crystalxs","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Study for Data Scientist","language":"en","output.name":"site","links":{"sidebar":{"Home":"http://crystalxs.github.io"}},"gitbook":"3.2.3"},"file":{"path":"ML/1.3.DT.md","mtime":"2018-11-29T07:20:29.800Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-31T20:19:18.671Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

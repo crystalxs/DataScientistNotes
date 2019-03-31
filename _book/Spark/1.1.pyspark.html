@@ -1,0 +1,2323 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Pyspark · Study for Data Scientist</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="crystalxs">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.2.persist.html" />
+    
+    
+    <link rel="prev" href="1.0.loadingData.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://crystalxs.github.io" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 0 Cheat Sheet</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../CheatSheet/git.html">
+            
+                <a href="../CheatSheet/git.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Git & GitHub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../CheatSheet/bash.html">
+            
+                <a href="../CheatSheet/bash.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    bash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../CheatSheet/gitbook.html">
+            
+                <a href="../CheatSheet/gitbook.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../CheatSheet/zsh.html">
+            
+                <a href="../CheatSheet/zsh.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../CheatSheet/iterm2.html">
+            
+                <a href="../CheatSheet/iterm2.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    iterm2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I Fundamental Mathematics</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Calculus
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Discrete Mathematics
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Linear Algebra
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Matrix Theory
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" >
+            
+                <span>
+            
+                    
+                        <b>3.5.</b>
+                    
+                    Numerical Algorithms
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part II Statistics</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Prob/0.README.html">
+            
+                <a href="../Prob/0.README.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    Probability
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../Prob/Distribution.html">
+            
+                <a href="../Prob/Distribution.html">
+            
+                    
+                        <b>4.1.1.</b>
+                    
+                    Distributions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                        <b>4.2.</b>
+                    
+                    Statistics
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                        <b>4.3.</b>
+                    
+                    Linear Regression
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../TS/0.README.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.</b>
+                    
+                    Time Series
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="../TS/0.1.interviewQ.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.1.</b>
+                    
+                    Interview Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="../TS/0.2.decomposition.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.2.</b>
+                    
+                    Classic Decomposition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="../TS/0.3.stationary.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.3.</b>
+                    
+                    Stationary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="../TS/0.4.serialCorrelation.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.4.</b>
+                    
+                    Serial Correlation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="../TS/1.1.ARMA.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.5.</b>
+                    
+                    Univariance - ARMA models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="../TS/1.2.non-stationary.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.6.</b>
+                    
+                    Univariance - Non-Stationary Time Series models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7" data-path="../TS/1.3.Holt-Winters.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.7.</b>
+                    
+                    Univariance - Holt-Winters Methodology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8" data-path="../TS/2.1.Multivariance.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.8.</b>
+                    
+                    Multivariance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../Bayesian/0.README.html">
+            
+                <a href="../Bayesian/0.README.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    Computational Statistics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="../Bayesian/LossFunction.html">
+            
+                <a href="../Bayesian/LossFunction.html">
+            
+                    
+                        <b>4.5.1.</b>
+                    
+                    Loss Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part III Computer Science Fundamentals</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../DS/0.README.html">
+            
+                <a href="../DS/0.README.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    Data Structure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../DS/Elementary.html">
+            
+                <a href="../DS/Elementary.html">
+            
+                    
+                        <b>5.1.1.</b>
+                    
+                    Linear Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../DS/Tree.html">
+            
+                <a href="../DS/Tree.html">
+            
+                    
+                        <b>5.1.2.</b>
+                    
+                    Tree Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../DS/Graph.html">
+            
+                <a href="../DS/Graph.html">
+            
+                    
+                        <b>5.1.3.</b>
+                    
+                    Graph Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../Algorithm/0.README.html">
+            
+                <a href="../Algorithm/0.README.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    Algorithm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../Algorithm/Complexity.html">
+            
+                <a href="../Algorithm/Complexity.html">
+            
+                    
+                        <b>5.2.1.</b>
+                    
+                    Complexity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../Algorithm/Recursion.html">
+            
+                <a href="../Algorithm/Recursion.html">
+            
+                    
+                        <b>5.2.2.</b>
+                    
+                    Recursion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../Algorithm/Walk.html">
+            
+                <a href="../Algorithm/Walk.html">
+            
+                    
+                        <b>5.2.3.</b>
+                    
+                    Walking Data Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../Algorithm/Search.html">
+            
+                <a href="../Algorithm/Search.html">
+            
+                    
+                        <b>5.2.4.</b>
+                    
+                    Searching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.5" data-path="../Algorithm/Sort.html">
+            
+                <a href="../Algorithm/Sort.html">
+            
+                    
+                        <b>5.2.5.</b>
+                    
+                    Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                        <b>5.3.</b>
+                    
+                    Machine Architecture and Organization
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" >
+            
+                <span>
+            
+                    
+                        <b>5.4.</b>
+                    
+                    Operating System
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" >
+            
+                <span>
+            
+                    
+                        <b>5.5.</b>
+                    
+                    Formal Language and Automata
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../ML/0.README.html">
+            
+                <a href="../ML/0.README.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Machine Learning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.6.1" data-path="../ML/0.0.costFunction.html">
+            
+                <a href="../ML/0.0.costFunction.html">
+            
+                    
+                        <b>5.6.1.</b>
+                    
+                    Cost Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.2" data-path="../ML/0.1.bias&variance.html">
+            
+                <a href="../ML/0.1.bias&variance.html">
+            
+                    
+                        <b>5.6.2.</b>
+                    
+                    Bias vs Variance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.3" data-path="../ML/neuralNetwork.html">
+            
+                <a href="../ML/neuralNetwork.html">
+            
+                    
+                        <b>5.6.3.</b>
+                    
+                    Neural Network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.4" data-path="../ML/1.0.knn.html">
+            
+                <a href="../ML/1.0.knn.html">
+            
+                    
+                        <b>5.6.4.</b>
+                    
+                    knn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.5" data-path="../ML/1.1.naiveBayes.html">
+            
+                <a href="../ML/1.1.naiveBayes.html">
+            
+                    
+                        <b>5.6.5.</b>
+                    
+                    Naive Bayes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.6" data-path="../ML/1.2.SVM.html">
+            
+                <a href="../ML/1.2.SVM.html">
+            
+                    
+                        <b>5.6.6.</b>
+                    
+                    SVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.7" data-path="../ML/1.3.DT.html">
+            
+                <a href="../ML/1.3.DT.html">
+            
+                    
+                        <b>5.6.7.</b>
+                    
+                    Decision Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.8" data-path="../ML/1.4.RF.html">
+            
+                <a href="../ML/1.4.RF.html">
+            
+                    
+                        <b>5.6.8.</b>
+                    
+                    Random Forest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.9" data-path="../ML/distanceMetric.html">
+            
+                <a href="../ML/distanceMetric.html">
+            
+                    
+                        <b>5.6.9.</b>
+                    
+                    Distance Metric
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.10" data-path="../ML/regularization.html">
+            
+                <a href="../ML/regularization.html">
+            
+                    
+                        <b>5.6.10.</b>
+                    
+                    Regularization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.11" data-path="../ML/classificationMetrics.html">
+            
+                <a href="../ML/classificationMetrics.html">
+            
+                    
+                        <b>5.6.11.</b>
+                    
+                    Classification Metrics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.12" data-path="../ML/informationTheory.html">
+            
+                <a href="../ML/informationTheory.html">
+            
+                    
+                        <b>5.6.12.</b>
+                    
+                    Information Theory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.13" data-path="../ML/2.0.unbalancedData.html">
+            
+                <a href="../ML/2.0.unbalancedData.html">
+            
+                    
+                        <b>5.6.13.</b>
+                    
+                    Unbalanced Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.14" data-path="../ML/2.1.featureEngineering.html">
+            
+                <a href="../ML/2.1.featureEngineering.html">
+            
+                    
+                        <b>5.6.14.</b>
+                    
+                    Feature Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.15" data-path="../ML/2.2.crossValidation.html">
+            
+                <a href="../ML/2.2.crossValidation.html">
+            
+                    
+                        <b>5.6.15.</b>
+                    
+                    Cross Validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.16" data-path="../ML/2.3.pipeline.html">
+            
+                <a href="../ML/2.3.pipeline.html">
+            
+                    
+                        <b>5.6.16.</b>
+                    
+                    Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.17" data-path="../ML/2.4.ensembling.html">
+            
+                <a href="../ML/2.4.ensembling.html">
+            
+                    
+                        <b>5.6.17.</b>
+                    
+                    Ensembling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.18" data-path="../ML/2.5.gridSearch.html">
+            
+                <a href="../ML/2.5.gridSearch.html">
+            
+                    
+                        <b>5.6.18.</b>
+                    
+                    Grid Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../DL/0.README.html">
+            
+                <a href="../DL/0.README.html">
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Deep Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV Data Science Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../R/0.README.html">
+            
+                <a href="../R/0.README.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    R
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../R/1.0.LR.html">
+            
+                <a href="../R/1.0.LR.html">
+            
+                    
+                        <b>6.1.1.</b>
+                    
+                    Using R for Linear Regression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../R/1.1.TS.html">
+            
+                <a href="../R/1.1.TS.html">
+            
+                    
+                        <b>6.1.2.</b>
+                    
+                    Using R for time series
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                        <b>6.2.</b>
+                    
+                    SQL
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../Python/0.README.html">
+            
+                <a href="../Python/0.README.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../Python/data.html">
+            
+                <a href="../Python/data.html">
+            
+                    
+                        <b>6.3.1.</b>
+                    
+                    Data Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.2" data-path="../Python/OO.html">
+            
+                <a href="../Python/OO.html">
+            
+                    
+                        <b>6.3.2.</b>
+                    
+                    Object-oriented programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.3" data-path="../Python/running_time.html">
+            
+                <a href="../Python/running_time.html">
+            
+                    
+                        <b>6.3.3.</b>
+                    
+                    Running Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.4" data-path="../Python/web.html">
+            
+                <a href="../Python/web.html">
+            
+                    
+                        <b>6.3.4.</b>
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.5" data-path="../Python/data_source_from_web.html">
+            
+                <a href="../Python/data_source_from_web.html">
+            
+                    
+                        <b>6.3.5.</b>
+                    
+                    Data Source from Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.6" data-path="../Python/green_unicorm.html">
+            
+                <a href="../Python/green_unicorm.html">
+            
+                    
+                        <b>6.3.6.</b>
+                    
+                    Green unicorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.7" data-path="../Python/lambda_expression.html">
+            
+                <a href="../Python/lambda_expression.html">
+            
+                    
+                        <b>6.3.7.</b>
+                    
+                    Lambda Expression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.8" data-path="../Python/environment.html">
+            
+                <a href="../Python/environment.html">
+            
+                    
+                        <b>6.3.8.</b>
+                    
+                    Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.9" data-path="../Python/code_conventions.html">
+            
+                <a href="../Python/code_conventions.html">
+            
+                    
+                        <b>6.3.9.</b>
+                    
+                    Code Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.10" data-path="../Python/jupyter.html">
+            
+                <a href="../Python/jupyter.html">
+            
+                    
+                        <b>6.3.10.</b>
+                    
+                    Jupyter Notebook Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="0.README.html">
+            
+                <a href="0.README.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    Spark
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.4.1" data-path="0.1.distributedComputing.html">
+            
+                <a href="0.1.distributedComputing.html">
+            
+                    
+                        <b>6.4.1.</b>
+                    
+                    Distributed Computing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.2" data-path="0.2.mapReduc.html">
+            
+                <a href="0.2.mapReduc.html">
+            
+                    
+                        <b>6.4.2.</b>
+                    
+                    MapReduece
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.3" data-path="1.0.loadingData.html">
+            
+                <a href="1.0.loadingData.html">
+            
+                    
+                        <b>6.4.3.</b>
+                    
+                    Loading data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.4.4" data-path="1.1.pyspark.html">
+            
+                <a href="1.1.pyspark.html">
+            
+                    
+                        <b>6.4.4.</b>
+                    
+                    Pyspark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.5" data-path="1.2.persist.html">
+            
+                <a href="1.2.persist.html">
+            
+                    
+                        <b>6.4.5.</b>
+                    
+                    Efficiency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.6" data-path="2.0.YARNcluster.html">
+            
+                <a href="2.0.YARNcluster.html">
+            
+                    
+                        <b>6.4.6.</b>
+                    
+                    YARN Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.7" data-path="3.0.sql.html">
+            
+                <a href="3.0.sql.html">
+            
+                    
+                        <b>6.4.7.</b>
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.8" data-path="3.1.MLlib.html">
+            
+                <a href="3.1.MLlib.html">
+            
+                    
+                        <b>6.4.8.</b>
+                    
+                    MLlib
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../Mongodb/0.README.html">
+            
+                <a href="../Mongodb/0.README.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.5.1" data-path="../Mongodb/0.2.launching.html">
+            
+                <a href="../Mongodb/0.2.launching.html">
+            
+                    
+                        <b>6.5.1.</b>
+                    
+                    Launching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5.2" data-path="../Mongodb/1.0.operations.html">
+            
+                <a href="../Mongodb/1.0.operations.html">
+            
+                    
+                        <b>6.5.2.</b>
+                    
+                    Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../AWS/0.README.html">
+            
+                <a href="../AWS/0.README.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    AWS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part V Data Visualization (Web Development)</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../DV/0.README.html">
+            
+                <a href="../DV/0.README.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    Principle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.1" data-path="../DV/Terminology.html">
+            
+                <a href="../DV/Terminology.html">
+            
+                    
+                        <b>7.1.1.</b>
+                    
+                    Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.2" data-path="../DV/Perception.html">
+            
+                <a href="../DV/Perception.html">
+            
+                    
+                        <b>7.1.2.</b>
+                    
+                    Perception
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../HTML/0.README.html">
+            
+                <a href="../HTML/0.README.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../CSS/0.README.html">
+            
+                <a href="../CSS/0.README.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                        <b>7.4.</b>
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.1" >
+            
+                <span>
+            
+                    
+                        <b>7.4.1.</b>
+                    
+                    NodeJS
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2" >
+            
+                <span>
+            
+                    
+                        <b>7.4.2.</b>
+                    
+                    Framework
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.2.1" >
+            
+                <span>
+            
+                    
+                        <b>7.4.2.1.</b>
+                    
+                    Vuejs
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2.2" >
+            
+                <span>
+            
+                    
+                        <b>7.4.2.2.</b>
+                    
+                    ReactJS
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.</b>
+                    
+                    Library
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.3.1" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.1.</b>
+                    
+                    Echarts
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3.2" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.2.</b>
+                    
+                    Leaflet
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3.3" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.3.</b>
+                    
+                    MapBox GL
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3.4" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.4.</b>
+                    
+                    D3
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                        <b>7.5.</b>
+                    
+                    REST api
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.5.1" >
+            
+                <span>
+            
+                    
+                        <b>7.5.1.</b>
+                    
+                    PostgREST
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" >
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    Webpack
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" >
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Jekyll
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" >
+            
+                <span>
+            
+                    
+                        <b>7.8.</b>
+                    
+                    Morris
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part VI Algorithm Interview</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../Interview/">
+            
+                <a href="../Interview/">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    Data Structure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../Interview/array.html">
+            
+                <a href="../Interview/array.html">
+            
+                    
+                        <b>8.1.1.</b>
+                    
+                    Array&String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../Interview/hash.html">
+            
+                <a href="../Interview/hash.html">
+            
+                    
+                        <b>8.1.2.</b>
+                    
+                    Hash table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.3" data-path="../Interview/linkedlist.html">
+            
+                <a href="../Interview/linkedlist.html">
+            
+                    
+                        <b>8.1.3.</b>
+                    
+                    Linked list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.4" data-path="../Interview/stack.html">
+            
+                <a href="../Interview/stack.html">
+            
+                    
+                        <b>8.1.4.</b>
+                    
+                    Stack & Queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.5" data-path="../Interview/tree.html">
+            
+                <a href="../Interview/tree.html">
+            
+                    
+                        <b>8.1.5.</b>
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.6" data-path="../Interview/graph.html">
+            
+                <a href="../Interview/graph.html">
+            
+                    
+                        <b>8.1.6.</b>
+                    
+                    Graph
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" >
+            
+                <span>
+            
+                    
+                        <b>8.2.</b>
+                    
+                    Algorithm
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.2.1" >
+            
+                <span>
+            
+                    
+                        <b>8.2.1.</b>
+                    
+                    Bit Manipulation
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.2" >
+            
+                <span>
+            
+                    
+                        <b>8.2.2.</b>
+                    
+                    Memory (stack & heap)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.3" >
+            
+                <span>
+            
+                    
+                        <b>8.2.3.</b>
+                    
+                    Recursion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.4" >
+            
+                <span>
+            
+                    
+                        <b>8.2.4.</b>
+                    
+                    Dynamic Programming
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Pyspark</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>1.1. Pyspark</p>
+<p><a href="https://spark.apache.org/docs/2.1.0/quick-start.html" target="_blank">https://spark.apache.org/docs/2.1.0/quick-start.html</a></p>
+<h2 id="running-a-spark-application-using-the-spark-submit">Running a spark application using the spark-submit</h2>
+<pre><code>spark-submit yourscript
+</code></pre><h2 id="sparkcontext">SparkContext</h2>
+<h3 id="load-pyspark-package">Load pyspark package</h3>
+<pre><code>import pyspark
+</code></pre><h3 id="sparkcontext-object">SparkContext Object</h3>
+<ul>
+<li>A driver program can access spark.</li>
+<li>Application instance representing the connection to the spark cluster.</li>
+<li>Instantiated at the beginning of a Spark application and created by spark driver.</li>
+<li>Once we have a SparkContext, we can use it to build resilient distributed data set (RDDs).</li>
+</ul>
+<h3 id="create-a-sparkcontext-object">Create a SparkContext Object</h3>
+<pre><code>sc = pyspark.SparkContext(appName = &quot;MSDS694&quot;)
+
+sc = pyspark.SparkContext(appName=&apos;day2_ex01&apos;).getOrCreate()
+
+conf = SparkConf().setMaster(&quot;local[*]&quot;).setAppName(app_name)
+sc = SparkContext(conf = conf)
+</code></pre><p><code>appName</code> identify the application if you are connecting to a cluster.</p>
+<h3 id="stop-sparkcontext">Stop SparkContext</h3>
+<pre><code>sc.stop()
+</code></pre><h2 id="resilient-distributed-dataset-rdd">Resilient Distributed Dataset (RDD)</h2>
+<p>Distributed datasets that consists of records.</p>
+<h3 id="key-ideas">Key ideas</h3>
+<ul>
+<li>Distributed: The data in RDDs is divided into one or many partitions as in-memory collections of objects across worker nodes.</li>
+<li>Immutable: Read-only, once created, RDD never change.</li>
+<li>Resilient: Automatically rebuilt on failure, RDDs track lineage info to rebuild lost data (instead of replication).</li>
+</ul>
+<h3 id="create-distributed-data-sets">Create distributed data sets</h3>
+<pre><code># load external data
+lines = sc.textFile(&quot;README.md&quot;, Partition#)
+
+# take a collection or list of values
+lines = sc.parallelize([&quot;spark&quot;, &quot;spark is fun!&quot;], Partition#))
+</code></pre><h3 id="get-the-number-of-partitions">Get the number of partitions</h3>
+<pre><code>lines.getNumPartitions()
+</code></pre><h3 id="coalescing-data-within-each-partition-and-see-what-is-in-each-partition">Coalescing data within each partition and see what is in each partition</h3>
+<pre><code>lines.glom().collect()
+</code></pre><p><code>glom()</code>: return the RDD created by coalescing all elements within each partition into a list.</p>
+<p><code>collect()</code>: return a list that contains all of the elements in this RDD.</p>
+<p>Try to output the content of RDDs every-time after each operation.</p>
+<h3 id="save-distributed-data-sets-action-operation">Save distributed data sets (Action Operation)</h3>
+<p><code>saveAsTextFile(new_subdir_name)</code>: return multiple output files (write the elements of the dataset as a text file)(each partition in a separate file + success indicator: <code>_SUCCESS</code>) underneath the <code>new_subdir_name</code>  in the local filesystem, HDFS or any other Hadoop-supported file system, as spark writes the output from multiple nodes. Spark will call toString on each element to convert it to a line of text in the file.</p>
+<h1 id="rdd-operation">RDD Operation</h1>
+<p><a href="http://spark.apache.org/docs/latest/rdd-programming-guide.html" target="_blank">http://spark.apache.org/docs/latest/rdd-programming-guide.html</a></p>
+<h2 id="transformation-operation">Transformation Operation</h2>
+<p>Perform functions against each element in an RDD and return a new RDD. <strong>Doesn&apos;t change the original RDDs.</strong></p>
+<p>Lazy evaluation: operations are only evaluated when an action is requested. Doesn&apos;t return the output, return something like: <code>PythonRDD[10] at RDD at PythonRDD.scala:49</code>.</p>
+<h3 id="element-wise-transformation">Element wise transformation</h3>
+<p><code>map(func)</code>: apply a function to each element in the RDD, <strong>return same number of elements</strong>.</p>
+<p><code>flatmap(func)</code>: similar to <code>map()</code>, but concatenates multiple arrays into a collections that has <strong>one level structure</strong>, generate a list of words within one level structure.</p>
+<p><code>filter(func)</code>: return an RDD that passes the filtering requirement.</p>
+<h3 id="partition-wise-transformation">Partition wise transformation</h3>
+<p><code>mapPartitions(func)</code>:</p>
+<ul>
+<li>return a new RDD by applying a function to <strong>each partition</strong> of the RDD</li>
+<li>If using <code>lambda function</code> under <code>func</code>, the <code>x</code> will be all the values from from each partition.</li>
+<li><code>func</code> must be of type <code>Iterator&lt;T&gt; =&gt; Iterator&lt;U&gt;</code> when running on an RDD of type T.</li>
+</ul>
+<h3 id="set-operation">Set Operation</h3>
+<p>format: <code>rdd1.operation(rdd2)</code></p>
+<p><code>distinct()</code>: return only one of each element.</p>
+<p><code>union()</code>: return all duplicates.</p>
+<p><code>intersection()</code>: return common elements.</p>
+<p><code>substract()</code>: return elements that are in rdd1 only.</p>
+<p><code>cartesian()</code>: return cartesian product.</p>
+<h3 id="sample">Sample</h3>
+<p>Create a sampled subset RDD from an original RDD based on a percentage of the overall data set.</p>
+<p>Format: <code>rdd.sample(withReplacement, fraction, seed)</code></p>
+<p><code>withReplacement</code>: <code>True/False</code> Allow sample multiple times.</p>
+<p><code>fraction</code>:</p>
+<ul>
+<li>When replacement is used:<ul>
+<li>expected number of times each element is going to be sampled (positive double);</li>
+</ul>
+</li>
+<li>When replacement is not used:<ul>
+<li>expected probability that each element is going to be sampled ( between 0 and 1);</li>
+<li>if fraction is &gt; 1, it will default back to 1;</li>
+</ul>
+</li>
+</ul>
+<p><code>seed</code>: Random number generation to determine whether to include an element in the resulting RDD. <strong>When a seed is given, it will generate same output.</strong></p>
+<p>This is not guaranteed to provide exactly the fraction specified of the total count. It won&apos;t return the exactly number, but the roughly number.</p>
+<h2 id="action-operation">Action Operation</h2>
+<p>Trigger a computation based on an RDD and return a value to the Spark driver.</p>
+<p>Return <strong>non-RDDs</strong> like a single number, string, array, etc.</p>
+<p><code>collect()</code>: return a list that contains all of the elements of the dataset. <strong>This is usually useful after a filter or other operation that returns a sufficiently small subset of the data.</strong></p>
+<p><code>first()</code>: return a list that contain the first item of the dataset, similar to <code>take(1)</code>.</p>
+<p><code>take(n)</code>: return an array with the first n elements of the dataset.</p>
+<p><code>top(n)</code>: return the top (largest) n elements of the RDD.</p>
+<p><code>count()</code>: return the number of items in the dataset.</p>
+<p><code>countByValue()</code>: return a default dictionary of the number of times each element occurs in the RDD.</p>
+<p><code>reduce(func)</code>: </p>
+<ul>
+<li>take a function that operates on two elements of the type in RDD;</li>
+<li>returns a new element of the same type;</li>
+<li>when the partition or RDD is empty, <code>reduce()</code> don&apos;t do anything, return an <strong>error</strong>.</li>
+</ul>
+<p><code>fold(zero, func)</code>:</p>
+<ul>
+<li>same as <code>reduce()</code>;</li>
+<li>but with the provided <code>zero value</code>: deal with the situation when the partition or RDD is empty;</li>
+<li>add <code>zero value</code> into it at the first step (in each partition) and the last step (in the final shuffle step);</li>
+<li>sensitive to how many partition RDD has, the number of <code>zero value</code> it added (partition number + 1).</li>
+</ul>
+<p><code>aggregate(zero, SeqOp, combOp)</code>:</p>
+<ul>
+<li>Similar to <code>reduce()</code>;</li>
+<li>supply an <code>zero vale</code> of the type we want to return, only at the first step <strong>not</strong> the last step;</li>
+<li><code>SeqOp</code> works for each group: function to combine the elements from the RDD with the accumulator;</li>
+<li><code>combOp</code> merging outputs from different partitions;</li>
+<li>can used to return a different type from the original RDD.</li>
+</ul>
+<h3 id="sample">Sample</h3>
+<p><strong>format</strong>: <code>rdd.takeSample(withReplacement, num, [seed])</code></p>
+<ul>
+<li>Return a <strong>fixed-size</strong> sample subset of an RDD as an <strong>array</strong>;</li>
+<li><code>withReplacement</code>: with or without replacement;</li>
+<li><code>num</code>: the number of sampled elements (<strong>integer</strong> cannot be float number), <strong>exactly</strong> number;</li>
+<li>when <code>withReplacement</code> is <code>False</code> and <code>num</code> is greater than the original RDD size, it will return all the elements in RDD;</li>
+<li>when <code>withReplacement</code> is <code>True</code> and <code>num</code> is greater than the original RDD size, it will return the <code>num</code> elements;</li>
+<li><code>seed</code>: random number generation.</li>
+</ul>
+<h3 id="numeric-rdd-action">Numeric RDD Action</h3>
+<p><code>count()</code>: return the number of <strong>elements</strong> in the RDD.</p>
+<p><code>mean()</code>: return the mean of the RDD&apos;s <strong>elements</strong>.</p>
+<p><code>sum()</code>: add up the elements in the RDD.</p>
+<p><code>max()</code>: return the maximum item in the RDD.</p>
+<p><code>min()</code>: return the minimum item in the RDD.</p>
+<p><code>variance()</code>: return the variance of the RDD&apos;s elements.</p>
+<p><code>stdev()</code>: return the standard deviation of the RDD&apos;s elements.</p>
+<h2 id="pair-rdd">Pair Rdd</h2>
+<ul>
+<li><p>Key-value pairs:</p>
+<p>commonly used for many operations including aggregations, ETL (extract, transform, and load) in Spark.</p>
+</li>
+<li><p>Allow operations on each key in parallel or regroup data across the network such as reduceByKey(), join(), etc. </p>
+</li>
+</ul>
+<h3 id="creation">Creation</h3>
+<p>Apply a <code>map</code> function with a lambda or user-defined function to have a pair of <code>(Key, Value)</code>: </p>
+<p>&#x2022; <code>Key</code>: could be a simple object (integer, string, etc.) to complex objects (tuples, etc.). </p>
+<p>&#x2022; <code>Value</code>: could be a simple objects to data structures (lists, tuples, dictionaries, sets, etc.). </p>
+<h3 id="operations">Operations</h3>
+<p><a href="https://spark.apache.org/docs/0.6.2/api/core/spark/PairRDDFunctions.html" target="_blank">https://spark.apache.org/docs/0.6.2/api/core/spark/PairRDDFunctions.html</a></p>
+<p>Most Spark operations works for pair RDDs, but there are several operators only available on RDDs of key-value pairs. The most common ones are distributed &#x201C;shuffle&#x201D; operations, such as grouping or aggregating the elements by a key.</p>
+<h4 id="transformation-operations">Transformation Operations</h4>
+<p><code>keys()</code>: return an RDD of just the keys. </p>
+<p><code>values()</code>: return an RDD of just the values. </p>
+<p><code>sortByKey(ascending=True/False)</code>: Return an RDD sorted by the key (Default: <code>ascending=True</code>). </p>
+<p><code>groupByKey()</code>: </p>
+<ul>
+<li>Group data using the key. </li>
+<li>Return an RDD of <code>(Key, ResultIterable)</code> pairs. </li>
+<li><code>ResultIterable</code> is irritable, and didn&apos;t show the content; using <code>key_value.map(lambda x: (x[0], list(x[1])))</code> or <code>key_value.mapValues(lambda x : list(x))</code>to show the content of list in <code>value</code>.</li>
+</ul>
+<p><img src="../Users/crystal/gitbook/image/spark/pairRdd_groupByValue.png" alt="image-20181130103917909"></p>
+<p><code>mapValues(func)</code>:</p>
+<ul>
+<li>Pass each value in the key-value pair RDD through a <code>map</code> function without changing the keys.</li>
+<li>If using <code>lambda function</code> under <code>func</code>, the <code>x</code> will be only the <code>value</code> from key-value pair.</li>
+<li>Retain the original RDD&#x2019;s partitioning.</li>
+<li>Retain the original RDD&apos;s elements numbers.</li>
+</ul>
+<p><code>flatMapValues(func)</code>:</p>
+<ul>
+<li>Pass each value in the key-value pair RDD through a <code>flatMap</code> function without changing the keys.</li>
+<li>Separate key and &quot;multi-elements (complex objects)&quot; values pair into multi key-(simple object) value. </li>
+<li>If using <code>lambda function</code> under <code>func</code>, the <code>x</code> will be only the <code>value</code> from key-value pair.</li>
+<li>Retain the original RDD&#x2019;s partitioning. </li>
+<li><code>mapValues(func)</code> = <code>groupByKey().flatMapValues(func)</code></li>
+</ul>
+<p><code>reduceByKey(func)</code>:</p>
+<ul>
+<li>Similar to <code>reduce()</code></li>
+<li>Run several parallel reduce operations, one for each key in the data set. </li>
+<li>When called on a dataset of (Key, Val) pairs, returns a dataset of (Key, Val) pairs where the values for each key are aggregated using the given reduce function.</li>
+<li>Transformation (Not an action): Returns a new RDD consisting of each key and the reduced value for that key. </li>
+</ul>
+<h5 id="reducebykey-vs-groupbykeymapvalues"><code>reduceByKey()</code> vs <code>groupByKey().mapValues()</code></h5>
+<p>To group values for the purpose of aggregation (such as sum or count for each key), using <code>reduceByKey()</code>, <code>foldByKey()</code> will provide better performance. </p>
+<ul>
+<li>They combines the aggregation function before the shuffle. <ul>
+<li>Pairs on the same node/partition with the same key are combined before the data is shuffled. Then the function is called again to reduce all the values from each partition to produce one final result. </li>
+</ul>
+</li>
+<li>Result in a reduced amount of data shuffled.</li>
+</ul>
+<h5 id="set-related-operations">Set Related Operations</h5>
+<p><code>subtractByKey(otherDataset)</code>: return an RDD with the pairs whose <code>key</code>s are not in <code>otherDataset</code>.</p>
+<p><code>join(otherDataset)</code>: perform an inner join of <code>value</code> between two RDDs by <code>key</code>.</p>
+<p><code>rightOuterJoin(otherDataset)</code>: perform a join between two RDDs where the key must be present in the <code>otherDataset</code>, if the key doesn&apos;t in <code>first RDD</code> return <code>None</code>.</p>
+<p><code>leftOuterJoin(otherDataset)</code>: perform a join between two RDDs where the key must be present in the <code>first RDD</code>, if the key doesn&apos;t in <code>otherDataset</code> return <code>None</code>.</p>
+<h4 id="action-operations">Action Operations</h4>
+<p><code>countByKey()</code>: count the number of elements for each key.
+<code>lookup(key)</code>: return all <strong>values</strong> associated with the provided key.</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.0.loadingData.html" class="navigation navigation-prev " aria-label="Previous page: Loading data">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.2.persist.html" class="navigation navigation-next " aria-label="Next page: Efficiency">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Pyspark","level":"6.4.4","depth":2,"next":{"title":"Efficiency","level":"6.4.5","depth":2,"path":"Spark/1.2.persist.md","ref":"Spark/1.2.persist.md","articles":[]},"previous":{"title":"Loading data","level":"6.4.3","depth":2,"path":"Spark/1.0.loadingData.md","ref":"Spark/1.0.loadingData.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","mathjax","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"Modified","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/crystalxs/dataScientistNotes"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"sitemap-general":{"prefix":"http://gitbook.crystalxs.com"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"title":"GitBook 使用教程","description":"记录 GitBook 的配置和一些插件的使用","author":"Jikai Zhang","feed_url":"http://gitbook.zhangjikai.com/rss","site_url":"http://gitbook.zhangjikai.com/","managingEditor":"me@zhangjikai.com","webMaster":"me@zhangjikai.com","categories":["gitbook"]},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"crystalxs/dataScientistNotes","types":["star"],"size":"small"},"3-ba":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"versions":{"options":[{"value":"http://gitbook.zhangjikai.com","text":"v3.2.3"},{"value":"http://gitbook.zhangjikai.com/v2/","text":"v2.6.4"}]},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"edit-link":{"base":"https://github.com/crystalxs/dataScientistNotes/edit/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"crystalxs","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Study for Data Scientist","language":"en","output.name":"site","links":{"sidebar":{"Home":"http://crystalxs.github.io"}},"gitbook":"3.2.3"},"file":{"path":"Spark/1.1.pyspark.md","mtime":"2019-01-14T03:07:52.385Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-31T20:19:18.671Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

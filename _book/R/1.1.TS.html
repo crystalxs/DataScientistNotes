@@ -1,0 +1,2691 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Using R for time series · Study for Data Scientist</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="crystalxs">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="1.0.LR.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://crystalxs.github.io" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 0 Cheat Sheet</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../CheatSheet/git.html">
+            
+                <a href="../CheatSheet/git.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Git & GitHub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../CheatSheet/bash.html">
+            
+                <a href="../CheatSheet/bash.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    bash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../CheatSheet/gitbook.html">
+            
+                <a href="../CheatSheet/gitbook.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../CheatSheet/zsh.html">
+            
+                <a href="../CheatSheet/zsh.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../CheatSheet/iterm2.html">
+            
+                <a href="../CheatSheet/iterm2.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    iterm2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I Fundamental Mathematics</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Calculus
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Discrete Mathematics
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Linear Algebra
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Matrix Theory
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" >
+            
+                <span>
+            
+                    
+                        <b>3.5.</b>
+                    
+                    Numerical Algorithms
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part II Statistics</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Prob/0.README.html">
+            
+                <a href="../Prob/0.README.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    Probability
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../Prob/Distribution.html">
+            
+                <a href="../Prob/Distribution.html">
+            
+                    
+                        <b>4.1.1.</b>
+                    
+                    Distributions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                        <b>4.2.</b>
+                    
+                    Statistics
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                        <b>4.3.</b>
+                    
+                    Linear Regression
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../TS/0.README.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.</b>
+                    
+                    Time Series
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="../TS/0.1.interviewQ.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.1.</b>
+                    
+                    Interview Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="../TS/0.2.decomposition.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.2.</b>
+                    
+                    Classic Decomposition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="../TS/0.3.stationary.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.3.</b>
+                    
+                    Stationary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="../TS/0.4.serialCorrelation.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.4.</b>
+                    
+                    Serial Correlation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="../TS/1.1.ARMA.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.5.</b>
+                    
+                    Univariance - ARMA models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="../TS/1.2.non-stationary.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.6.</b>
+                    
+                    Univariance - Non-Stationary Time Series models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7" data-path="../TS/1.3.Holt-Winters.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.7.</b>
+                    
+                    Univariance - Holt-Winters Methodology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8" data-path="../TS/2.1.Multivariance.md">
+            
+                <span>
+            
+                    
+                        <b>4.4.8.</b>
+                    
+                    Multivariance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../Bayesian/0.README.html">
+            
+                <a href="../Bayesian/0.README.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    Computational Statistics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="../Bayesian/LossFunction.html">
+            
+                <a href="../Bayesian/LossFunction.html">
+            
+                    
+                        <b>4.5.1.</b>
+                    
+                    Loss Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part III Computer Science Fundamentals</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../DS/0.README.html">
+            
+                <a href="../DS/0.README.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    Data Structure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../DS/Elementary.html">
+            
+                <a href="../DS/Elementary.html">
+            
+                    
+                        <b>5.1.1.</b>
+                    
+                    Linear Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../DS/Tree.html">
+            
+                <a href="../DS/Tree.html">
+            
+                    
+                        <b>5.1.2.</b>
+                    
+                    Tree Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../DS/Graph.html">
+            
+                <a href="../DS/Graph.html">
+            
+                    
+                        <b>5.1.3.</b>
+                    
+                    Graph Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../Algorithm/0.README.html">
+            
+                <a href="../Algorithm/0.README.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    Algorithm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../Algorithm/Complexity.html">
+            
+                <a href="../Algorithm/Complexity.html">
+            
+                    
+                        <b>5.2.1.</b>
+                    
+                    Complexity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../Algorithm/Recursion.html">
+            
+                <a href="../Algorithm/Recursion.html">
+            
+                    
+                        <b>5.2.2.</b>
+                    
+                    Recursion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../Algorithm/Walk.html">
+            
+                <a href="../Algorithm/Walk.html">
+            
+                    
+                        <b>5.2.3.</b>
+                    
+                    Walking Data Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../Algorithm/Search.html">
+            
+                <a href="../Algorithm/Search.html">
+            
+                    
+                        <b>5.2.4.</b>
+                    
+                    Searching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.5" data-path="../Algorithm/Sort.html">
+            
+                <a href="../Algorithm/Sort.html">
+            
+                    
+                        <b>5.2.5.</b>
+                    
+                    Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                        <b>5.3.</b>
+                    
+                    Machine Architecture and Organization
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" >
+            
+                <span>
+            
+                    
+                        <b>5.4.</b>
+                    
+                    Operating System
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" >
+            
+                <span>
+            
+                    
+                        <b>5.5.</b>
+                    
+                    Formal Language and Automata
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../ML/0.README.html">
+            
+                <a href="../ML/0.README.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Machine Learning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.6.1" data-path="../ML/0.0.costFunction.html">
+            
+                <a href="../ML/0.0.costFunction.html">
+            
+                    
+                        <b>5.6.1.</b>
+                    
+                    Cost Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.2" data-path="../ML/0.1.bias&variance.html">
+            
+                <a href="../ML/0.1.bias&variance.html">
+            
+                    
+                        <b>5.6.2.</b>
+                    
+                    Bias vs Variance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.3" data-path="../ML/neuralNetwork.html">
+            
+                <a href="../ML/neuralNetwork.html">
+            
+                    
+                        <b>5.6.3.</b>
+                    
+                    Neural Network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.4" data-path="../ML/1.0.knn.html">
+            
+                <a href="../ML/1.0.knn.html">
+            
+                    
+                        <b>5.6.4.</b>
+                    
+                    knn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.5" data-path="../ML/1.1.naiveBayes.html">
+            
+                <a href="../ML/1.1.naiveBayes.html">
+            
+                    
+                        <b>5.6.5.</b>
+                    
+                    Naive Bayes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.6" data-path="../ML/1.2.SVM.html">
+            
+                <a href="../ML/1.2.SVM.html">
+            
+                    
+                        <b>5.6.6.</b>
+                    
+                    SVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.7" data-path="../ML/1.3.DT.html">
+            
+                <a href="../ML/1.3.DT.html">
+            
+                    
+                        <b>5.6.7.</b>
+                    
+                    Decision Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.8" data-path="../ML/1.4.RF.html">
+            
+                <a href="../ML/1.4.RF.html">
+            
+                    
+                        <b>5.6.8.</b>
+                    
+                    Random Forest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.9" data-path="../ML/distanceMetric.html">
+            
+                <a href="../ML/distanceMetric.html">
+            
+                    
+                        <b>5.6.9.</b>
+                    
+                    Distance Metric
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.10" data-path="../ML/regularization.html">
+            
+                <a href="../ML/regularization.html">
+            
+                    
+                        <b>5.6.10.</b>
+                    
+                    Regularization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.11" data-path="../ML/classificationMetrics.html">
+            
+                <a href="../ML/classificationMetrics.html">
+            
+                    
+                        <b>5.6.11.</b>
+                    
+                    Classification Metrics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.12" data-path="../ML/informationTheory.html">
+            
+                <a href="../ML/informationTheory.html">
+            
+                    
+                        <b>5.6.12.</b>
+                    
+                    Information Theory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.13" data-path="../ML/2.0.unbalancedData.html">
+            
+                <a href="../ML/2.0.unbalancedData.html">
+            
+                    
+                        <b>5.6.13.</b>
+                    
+                    Unbalanced Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.14" data-path="../ML/2.1.featureEngineering.html">
+            
+                <a href="../ML/2.1.featureEngineering.html">
+            
+                    
+                        <b>5.6.14.</b>
+                    
+                    Feature Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.15" data-path="../ML/2.2.crossValidation.html">
+            
+                <a href="../ML/2.2.crossValidation.html">
+            
+                    
+                        <b>5.6.15.</b>
+                    
+                    Cross Validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.16" data-path="../ML/2.3.pipeline.html">
+            
+                <a href="../ML/2.3.pipeline.html">
+            
+                    
+                        <b>5.6.16.</b>
+                    
+                    Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.17" data-path="../ML/2.4.ensembling.html">
+            
+                <a href="../ML/2.4.ensembling.html">
+            
+                    
+                        <b>5.6.17.</b>
+                    
+                    Ensembling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.18" data-path="../ML/2.5.gridSearch.html">
+            
+                <a href="../ML/2.5.gridSearch.html">
+            
+                    
+                        <b>5.6.18.</b>
+                    
+                    Grid Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../DL/0.README.html">
+            
+                <a href="../DL/0.README.html">
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Deep Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part IV Data Science Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="0.README.html">
+            
+                <a href="0.README.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    R
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="1.0.LR.html">
+            
+                <a href="1.0.LR.html">
+            
+                    
+                        <b>6.1.1.</b>
+                    
+                    Using R for Linear Regression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.1.2" data-path="1.1.TS.html">
+            
+                <a href="1.1.TS.html">
+            
+                    
+                        <b>6.1.2.</b>
+                    
+                    Using R for time series
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                        <b>6.2.</b>
+                    
+                    SQL
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../Python/0.README.html">
+            
+                <a href="../Python/0.README.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../Python/data.html">
+            
+                <a href="../Python/data.html">
+            
+                    
+                        <b>6.3.1.</b>
+                    
+                    Data Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.2" data-path="../Python/OO.html">
+            
+                <a href="../Python/OO.html">
+            
+                    
+                        <b>6.3.2.</b>
+                    
+                    Object-oriented programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.3" data-path="../Python/running_time.html">
+            
+                <a href="../Python/running_time.html">
+            
+                    
+                        <b>6.3.3.</b>
+                    
+                    Running Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.4" data-path="../Python/web.html">
+            
+                <a href="../Python/web.html">
+            
+                    
+                        <b>6.3.4.</b>
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.5" data-path="../Python/data_source_from_web.html">
+            
+                <a href="../Python/data_source_from_web.html">
+            
+                    
+                        <b>6.3.5.</b>
+                    
+                    Data Source from Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.6" data-path="../Python/green_unicorm.html">
+            
+                <a href="../Python/green_unicorm.html">
+            
+                    
+                        <b>6.3.6.</b>
+                    
+                    Green unicorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.7" data-path="../Python/lambda_expression.html">
+            
+                <a href="../Python/lambda_expression.html">
+            
+                    
+                        <b>6.3.7.</b>
+                    
+                    Lambda Expression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.8" data-path="../Python/environment.html">
+            
+                <a href="../Python/environment.html">
+            
+                    
+                        <b>6.3.8.</b>
+                    
+                    Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.9" data-path="../Python/code_conventions.html">
+            
+                <a href="../Python/code_conventions.html">
+            
+                    
+                        <b>6.3.9.</b>
+                    
+                    Code Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.10" data-path="../Python/jupyter.html">
+            
+                <a href="../Python/jupyter.html">
+            
+                    
+                        <b>6.3.10.</b>
+                    
+                    Jupyter Notebook Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../Spark/0.README.html">
+            
+                <a href="../Spark/0.README.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    Spark
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.4.1" data-path="../Spark/0.1.distributedComputing.html">
+            
+                <a href="../Spark/0.1.distributedComputing.html">
+            
+                    
+                        <b>6.4.1.</b>
+                    
+                    Distributed Computing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.2" data-path="../Spark/0.2.mapReduc.html">
+            
+                <a href="../Spark/0.2.mapReduc.html">
+            
+                    
+                        <b>6.4.2.</b>
+                    
+                    MapReduece
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.3" data-path="../Spark/1.0.loadingData.html">
+            
+                <a href="../Spark/1.0.loadingData.html">
+            
+                    
+                        <b>6.4.3.</b>
+                    
+                    Loading data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.4" data-path="../Spark/1.1.pyspark.html">
+            
+                <a href="../Spark/1.1.pyspark.html">
+            
+                    
+                        <b>6.4.4.</b>
+                    
+                    Pyspark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.5" data-path="../Spark/1.2.persist.html">
+            
+                <a href="../Spark/1.2.persist.html">
+            
+                    
+                        <b>6.4.5.</b>
+                    
+                    Efficiency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.6" data-path="../Spark/2.0.YARNcluster.html">
+            
+                <a href="../Spark/2.0.YARNcluster.html">
+            
+                    
+                        <b>6.4.6.</b>
+                    
+                    YARN Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.7" data-path="../Spark/3.0.sql.html">
+            
+                <a href="../Spark/3.0.sql.html">
+            
+                    
+                        <b>6.4.7.</b>
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.8" data-path="../Spark/3.1.MLlib.html">
+            
+                <a href="../Spark/3.1.MLlib.html">
+            
+                    
+                        <b>6.4.8.</b>
+                    
+                    MLlib
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../Mongodb/0.README.html">
+            
+                <a href="../Mongodb/0.README.html">
+            
+                    
+                        <b>6.5.</b>
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.5.1" data-path="../Mongodb/0.2.launching.html">
+            
+                <a href="../Mongodb/0.2.launching.html">
+            
+                    
+                        <b>6.5.1.</b>
+                    
+                    Launching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5.2" data-path="../Mongodb/1.0.operations.html">
+            
+                <a href="../Mongodb/1.0.operations.html">
+            
+                    
+                        <b>6.5.2.</b>
+                    
+                    Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../AWS/0.README.html">
+            
+                <a href="../AWS/0.README.html">
+            
+                    
+                        <b>6.6.</b>
+                    
+                    AWS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part V Data Visualization (Web Development)</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../DV/0.README.html">
+            
+                <a href="../DV/0.README.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    Principle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.1" data-path="../DV/Terminology.html">
+            
+                <a href="../DV/Terminology.html">
+            
+                    
+                        <b>7.1.1.</b>
+                    
+                    Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.2" data-path="../DV/Perception.html">
+            
+                <a href="../DV/Perception.html">
+            
+                    
+                        <b>7.1.2.</b>
+                    
+                    Perception
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../HTML/0.README.html">
+            
+                <a href="../HTML/0.README.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../CSS/0.README.html">
+            
+                <a href="../CSS/0.README.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                        <b>7.4.</b>
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.1" >
+            
+                <span>
+            
+                    
+                        <b>7.4.1.</b>
+                    
+                    NodeJS
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2" >
+            
+                <span>
+            
+                    
+                        <b>7.4.2.</b>
+                    
+                    Framework
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.2.1" >
+            
+                <span>
+            
+                    
+                        <b>7.4.2.1.</b>
+                    
+                    Vuejs
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2.2" >
+            
+                <span>
+            
+                    
+                        <b>7.4.2.2.</b>
+                    
+                    ReactJS
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.</b>
+                    
+                    Library
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.3.1" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.1.</b>
+                    
+                    Echarts
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3.2" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.2.</b>
+                    
+                    Leaflet
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3.3" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.3.</b>
+                    
+                    MapBox GL
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3.4" >
+            
+                <span>
+            
+                    
+                        <b>7.4.3.4.</b>
+                    
+                    D3
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                        <b>7.5.</b>
+                    
+                    REST api
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.5.1" >
+            
+                <span>
+            
+                    
+                        <b>7.5.1.</b>
+                    
+                    PostgREST
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" >
+            
+                <span>
+            
+                    
+                        <b>7.6.</b>
+                    
+                    Webpack
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" >
+            
+                <span>
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Jekyll
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" >
+            
+                <span>
+            
+                    
+                        <b>7.8.</b>
+                    
+                    Morris
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part VI Algorithm Interview</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../Interview/">
+            
+                <a href="../Interview/">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    Data Structure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../Interview/array.html">
+            
+                <a href="../Interview/array.html">
+            
+                    
+                        <b>8.1.1.</b>
+                    
+                    Array&String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../Interview/hash.html">
+            
+                <a href="../Interview/hash.html">
+            
+                    
+                        <b>8.1.2.</b>
+                    
+                    Hash table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.3" data-path="../Interview/linkedlist.html">
+            
+                <a href="../Interview/linkedlist.html">
+            
+                    
+                        <b>8.1.3.</b>
+                    
+                    Linked list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.4" data-path="../Interview/stack.html">
+            
+                <a href="../Interview/stack.html">
+            
+                    
+                        <b>8.1.4.</b>
+                    
+                    Stack & Queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.5" data-path="../Interview/tree.html">
+            
+                <a href="../Interview/tree.html">
+            
+                    
+                        <b>8.1.5.</b>
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.6" data-path="../Interview/graph.html">
+            
+                <a href="../Interview/graph.html">
+            
+                    
+                        <b>8.1.6.</b>
+                    
+                    Graph
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" >
+            
+                <span>
+            
+                    
+                        <b>8.2.</b>
+                    
+                    Algorithm
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.2.1" >
+            
+                <span>
+            
+                    
+                        <b>8.2.1.</b>
+                    
+                    Bit Manipulation
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.2" >
+            
+                <span>
+            
+                    
+                        <b>8.2.2.</b>
+                    
+                    Memory (stack & heap)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.3" >
+            
+                <span>
+            
+                    
+                        <b>8.2.3.</b>
+                    
+                    Recursion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.4" >
+            
+                <span>
+            
+                    
+                        <b>8.2.4.</b>
+                    
+                    Dynamic Programming
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Using R for time series</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="11-using-r-for-time-series">1.1. Using R for time series</h1>
+<h2 id="first-look-at-data">First look at data</h2>
+<h3 id="load-data-and-check-data">Load data and check data</h3>
+<p>Under R, there is a <code>Time-Series</code> object type.</p>
+<h4 id="load-built-in-time-series-data">Load built-in time-series data</h4>
+<pre><code class="lang-R">data(AirPassengers)
+AirPassengers
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-tsobject.png" alt="timeSeriesObjectType"></p>
+<p><code>AirPassenger</code> is a <code>Time-Series</code> data. </p>
+<h4 id="convert-data-into-time-series-data">Convert data into time series data</h4>
+<pre><code class="lang-R">elec &lt;- read.csv(&apos;/Users/crystal/xsun45/data/604/electronics.csv&apos;, header = F)
+elec &lt;- ts(elec, start = 1996, frequency = 12)
+</code></pre>
+<h3 id="time-series-plot">Time series plot</h3>
+<pre><code class="lang-R">plot(AirPassengers)
+# add some vertical line to check it seasonality
+abline(v = seq(1949, 1960, 1), col = &quot;red&quot;, lty = 2)
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-tsplot.png" alt="image-20181210164042998"></p>
+<h3 id="imputation">Imputation</h3>
+<h4 id="check-na-values">Check NA values</h4>
+<pre><code class="lang-R">statsNA(tsAirgap)
+# output
+[1] &quot;Length of time series:&quot;
+[1] 144
+[1] &quot;-------------------------&quot;
+[1] &quot;Number of Missing Values:&quot;
+[1] 13
+[1] &quot;-------------------------&quot;
+[1] &quot;Percentage of Missing Values:&quot;
+[1] &quot;9.03%&quot;
+[1] &quot;-------------------------&quot;
+[1] &quot;Stats for Bins&quot;
+[1] &quot;  Bin 1 (36 values from 1 to 36) :      4 NAs (11.1%)&quot;
+[1] &quot;  Bin 2 (36 values from 37 to 72) :      1 NAs (2.78%)&quot;
+[1] &quot;  Bin 3 (36 values from 73 to 108) :      5 NAs (13.9%)&quot;
+[1] &quot;  Bin 4 (36 values from 109 to 144) :      3 NAs (8.33%)&quot;
+[1] &quot;-------------------------&quot;
+[1] &quot;Longest NA gap (series of consecutive NAs)&quot;
+[1] &quot;3 in a row&quot;
+[1] &quot;-------------------------&quot;
+[1] &quot;Most frequent gap size (series of consecutive NA series)&quot;
+[1] &quot;1 NA in a row (occuring 10 times)&quot;
+[1] &quot;-------------------------&quot;
+[1] &quot;Gap size accounting for most NAs&quot;
+[1] &quot;1 NA in a row (occuring 10 times, making up for overall 10 NAs)&quot;
+[1] &quot;-------------------------&quot;
+[1] &quot;Overview NA series&quot;
+[1] &quot;  1 NA in a row: 10 times&quot;
+[1] &quot;  3 NA in a row: 1 times&quot;
+</code></pre>
+<h4 id="imputation">Imputation</h4>
+<pre><code class="lang-R"># Random Imputation
+na.random(tsAirgap)
+
+# Mean Imputation
+na.mean(tsAirgap, option = &quot;mean&quot;)
+
+# Median Imputation
+na.mean(tsAirgap, option = &quot;median&quot;)
+
+# Mode Imputation
+na.mean(tsAirgap, option = &quot;mode&quot;)
+
+# Last Observartion Carried Forward
+na.locf(tsAirgap, option = &quot;locf&quot;)
+
+# Next Observartion Carried Backward
+na.locf(tsAirgap, option = &quot;nocb&quot;)
+
+# Linear Interpolation
+na.interpolation(tsAirgap, option = &quot;linear&quot;)
+
+# Spline Interpolation
+na.interpolation(tsAirgap, option = &quot;spline&quot;)
+
+# Seasonal Adjustment then Random
+na.seadec(tsAirgap, algorithm = &quot;random&quot;)
+
+# Seasonal Adjustment then Mean
+na.seadec(tsAirgap, algorithm = &quot;mean&quot;)
+
+# Seasonal Adjustment then LOCF
+na.seadec(tsAirgap, algorithm = &quot;locf&quot;)
+
+# Seasonal Adjustment then Linear Interpolation
+na.seadec(tsAirgap, algorithm = &quot;interpolation&quot;)
+</code></pre>
+<h4 id="check-the-imputation">Check the imputation</h4>
+<pre><code class="lang-R">plot(na.seadec(tsAirgap, algorithm = &quot;interpolation&quot;) - AirPassengers, ylim = c(-mean(AirPassengers), mean(AirPassengers)), ylab = &quot;Difference&quot;, main = &quot;Seas-Adj -&gt; Linear&quot;)
+mean((na.seadec(tsAirgap, algorithm = &quot;interpolation&quot;) - AirPassengers)^2)
+# output
+[1] 3.701541
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-imputation.png" alt="image-20181203202915627"></p>
+<h2 id="modeling-data">Modeling Data</h2>
+<h3 id="check-data">Check data</h3>
+<h4 id="check-for-non-constant-variance-and-apply-a-transformation">Check for non-constant variance and apply a transformation</h4>
+<pre><code class="lang-R"># log-transformation
+log(AirPassengers)
+
+# Box-Cox transformation
+opt.lambda &lt;- BoxCox.lambda(br_train)
+BoxCox(br_train, lambda = opt.lambda)
+</code></pre>
+<h4 id="check-for-seasonality-and-trend">Check for seasonality and trend</h4>
+<h4 id="check-the-correlation-between-variables">Check the Correlation between variables</h4>
+<pre><code class="lang-R">ccf(Bev, Food)
+ccf(Bev, Indust)
+ccf(Food, Indust)
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-ccf.png" alt="image-20181203202915627"></p>
+<h3 id="classical-decomposition-modeling">Classical Decomposition Modeling</h3>
+<h4 id="prepare">Prepare</h4>
+<pre><code class="lang-R"># Extracting time as the explanatory variate from the time series framework of data
+t &lt;- time(AirPassengers)
+
+# Introducing month as the season
+cycle(AirPassengers)
+
+# Introducing month as the season
+month &lt;- as.factor(cycle(AirPassengers))
+</code></pre>
+<h4 id="model-the-trend-only">Model the trend-only</h4>
+<h5 id="linear-trend">Linear trend</h5>
+<pre><code class="lang-R">reg0 &lt;- lm(log(AirPassengers)~t)
+summary(reg0)
+plot(log(AirPassengers))
+points(t,predict.lm(reg0),type=&apos;l&apos;,col=&apos;red&apos;) # superimpose the fit of model reg0 on the plot of the data
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-linearTrend.png" alt="image-20181210164338515"></p>
+<h5 id="p-order-trend">p-order trend</h5>
+<pre><code class="lang-R">p &lt;- 14
+reg0 &lt;- lm(as.numeric(elec) ~ poly(as.numeric(t), degree = p))
+summary(reg0)
+
+plot(elec, main = &quot;Number of electronics orders in the Eurozone&quot;, ylab = &quot;Number of elecronics orders&quot;, xlab = &quot;Year&quot;)
+points(t,predict.lm(reg0),type=&apos;l&apos;,col=&apos;red&apos;)
+legend(&quot;topleft&quot;, 
+  legend = c(&quot;Observed&quot;, &quot;Trend&quot;), 
+  col = c(&quot;black&quot;, &quot;red&quot;),
+  lty = c(1, 1))
+</code></pre>
+<h4 id="model-the-seasonal-only">Model the seasonal-only</h4>
+<pre><code class="lang-R">reg1 &lt;- lm(log(AirPassengers)~month)          # Just model seasonal effect
+summary(reg1)
+plot(log(AirPassengers))
+points(t,predict.lm(reg1),type=&apos;l&apos;,col=&apos;red&apos;) # superimpose the fit of model reg0 on the plot of the data
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-seasonal.png" alt="image-20181210164426523"></p>
+<h4 id="model-with-trend-and-seasonal">Model with trend and seasonal</h4>
+<pre><code class="lang-R">reg2 &lt;- lm(log(AirPassengers)~t+month)        # Fitting the model reg2 with linear trend and seasonal effect
+summary(reg2)
+plot(log(AirPassengers))
+points(t,predict.lm(reg2),type=&apos;l&apos;,col=&apos;red&apos;) # superimpose the fit of model reg2 on the plot of the data
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-trend+seasonal.png" alt="image-20181210164455386"></p>
+<h3 id="univariate---armaarmaarimasarima">Univariate - AR/MA/ARMA/ARIMA/SARIMA</h3>
+<h4 id="ordinary-differencing">Ordinary Differencing</h4>
+<pre><code class="lang-R">dchem &lt;- diff(chem)
+
+# check
+acf(dchem, lag.max = 50)
+ndiffs(x = dchem, test = &quot;adf&quot;)
+# output
+[1] 1
+
+adf.test(x = dchem, alternative = &quot;stationary&quot;)
+# output
+
+    Augmented Dickey-Fuller Test
+
+data:  AP1
+Dickey-Fuller = -6.4313, Lag order = 5, p-value = 0.01
+alternative hypothesis: stationary
+</code></pre>
+<h4 id="seasonal-differencing">Seasonal Differencing</h4>
+<pre><code class="lang-R">AP1.12 &lt;- diff(AP1, lag = 12)
+plot(AP1.12)
+
+# check
+acf(AP1.12, lag.max = 144)
+
+nsdiffs(log(AirPassengers), m = 12)
+# output
+[1] 1
+Warning message:
+argument m is deprecated; please set the frequency in the ts object.
+</code></pre>
+<h4 id="order-selection">Order selection</h4>
+<pre><code>acf(BJ2)
+pacf(BJ2)
+</code></pre><p><img src="../Users/crystal/dataScientistNotes/image/R/TS-armaOrder.png" alt="image-20181210164802790"></p>
+<p>This figures suggest $p \leq 3, q \leq 1$.</p>
+<h4 id="fitting-models">Fitting models</h4>
+<h5 id="ar-models">AR models</h5>
+<pre><code class="lang-R"># Try fitting some of these models using ML
+fit.ar &lt;- arima(BJ2, order=c(3,0,0)) #AR(3)
+
+# Now try fitting some of these models using LS
+fitls.ar &lt;- arima(BJ2, order=c(3,0,0), method=&quot;CSS&quot;) #AR(3)
+</code></pre>
+<h5 id="ma-models">MA models</h5>
+<pre><code class="lang-R"># Try fitting some of these models using ML
+fit.ma &lt;- arima(BJ2, order=c(0,0,1)) #MA(1)
+
+# Now try fitting some of these models using LS
+fitls.ma &lt;- arima(BJ2, order=c(0,0,1), method=&quot;CSS&quot;) #MA(1)
+</code></pre>
+<h5 id="arma-models">ARMA models</h5>
+<pre><code class="lang-R"># Try fitting some of these models using ML
+fit.arma &lt;- arima(BJ2, order=c(3,0,1)) #ARMA(3,1)
+
+# Now try fitting some of these models using LS
+fitls.arma &lt;- arima(BJ2, order=c(3,0,1), method=&quot;CSS&quot;) #ARMA(3,1)
+</code></pre>
+<h5 id="arima-models">ARIMA models</h5>
+<pre><code class="lang-R"># Try fitting some of these models using ML
+fit.arima &lt;- arima(x = chem, order = c(2,1,3)) #ARIMA(2,1,3)
+</code></pre>
+<h5 id="sarima-models">SARIMA models</h5>
+<pre><code class="lang-R">fit.sarima &lt;- arima(log(AirPassengers), order = c(3,1,1), seasonal = list(order = c(1,1,1), period = 12), method = &quot;CSS-ML&quot;)
+# fit.sarima &lt;- Arima(AirPassengers, order = c(3,1,1), seasonal = list(order = c(1,1,1), period = 12), method = &quot;CSS-ML&quot;, lambda = 0)
+</code></pre>
+<h5 id="sarimax-models">SARIMAX models</h5>
+<pre><code class="lang-R"># fit model with one covariate information
+m2 &lt;- arima(Bev, order = c(1,1,1), xreg = data.frame(Indust))
+m3 &lt;- arima(Bev, order = c(1,1,1), xreg = data.frame(Food))
+
+# output
+Call:
+arima(x = Bev, order = c(1, 1, 1), xreg = data.frame(Indust))
+
+Coefficients:
+         ar1      ma1  Indust
+      0.2951  -0.0820  0.4042
+s.e.  0.1911   0.1932  0.0863
+
+sigma^2 estimated as 32.12:  log likelihood = -791.61,  aic = 1591.23
+
+# fit model with multi-covariate information
+m4 &lt;- arima(Bev, order = c(1,1,1), xreg = data.frame(Food, Indust))
+
+# output
+Call:
+arima(x = Bev, order = c(1, 1, 1), xreg = data.frame(Food, Indust))
+
+Coefficients:
+         ar1      ma1    Food  Indust
+      0.3113  -0.1069  0.4041  0.2493
+s.e.  0.1890   0.1917  0.1166  0.0950
+
+sigma^2 estimated as 30.66:  log likelihood = -785.75,  aic = 1581.5
+</code></pre>
+<h5 id="optimal-model-fitting">Optimal model fitting</h5>
+<h6 id="manual">Manual</h6>
+<pre><code class="lang-R">#We can fit any number of models of different orders and use the output information to select 
+#the model with the best fit. 
+m1&lt;-arima(BJ2,order=c(1,0,0))
+m2&lt;-arima(BJ2,order=c(2,0,0))
+m3&lt;-arima(BJ2,order=c(3,0,0))
+m4&lt;-arima(BJ2,order=c(4,0,0))
+m5&lt;-arima(BJ2,order=c(0,0,1))
+m6&lt;-arima(BJ2,order=c(0,0,2))
+m7&lt;-arima(BJ2,order=c(1,0,1))
+m8&lt;-arima(BJ2,order=c(2,0,1))
+m9&lt;-arima(BJ2,order=c(3,0,1))
+m10&lt;-arima(BJ2,order=c(4,0,1))
+m11&lt;-arima(BJ2,order=c(1,0,2))
+m12&lt;-arima(BJ2,order=c(2,0,2))
+m13&lt;-arima(BJ2,order=c(3,0,2))
+m14&lt;-arima(BJ2,order=c(4,0,2))
+
+sigma2&lt;-c(m1$sigma2,m2$sigma2,m3$sigma2,m4$sigma2,m5$sigma2,m6$sigma2,m7$sigma2,m8$sigma2,m9$sigma2,m10$sigma2,m11$sigma2,m12$sigma2,m13$sigma2,m14$sigma2)
+loglik&lt;-c(m1$loglik,m2$loglik,m3$loglik,m4$loglik,m5$loglik,m6$loglik,m7$loglik,m8$loglik,m9$loglik,m10$loglik,m11$loglik,m12$loglik,m13$loglik,m14$loglik)
+AIC&lt;-c(m1$aic,m2$aic,m3$aic,m4$aic,m5$aic,m6$aic,m7$aic,m8$aic,m9$aic,m10$aic,m11$aic,m12$aic,m13$aic,m14$aic)
+d &lt;- data.frame(pq = c(&quot;(1,0)&quot;,&quot;(2,0)&quot;,&quot;(3,0)&quot;,&quot;(4,0)&quot;,&quot;(0,1)&quot;,&quot;(0,2)&quot;,&quot;(1,1)&quot;,&quot;(2,1)&quot;,&quot;(3,1)&quot;,&quot;(4,1)&quot;,&quot;(1,2)&quot;,&quot;(2,2)&quot;,&quot;(3,2)&quot;,&quot;(4,2)&quot;),sigma2,loglik,AIC)
+d
+
+# Order this by sigma^2
+d[order(d$sigma2),]
+
+# Order this by loglik
+d[order(-d$loglik),]
+
+# Order this by AIC
+d[order(d$AIC),]
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-armaModels.png" alt="image-20181210173121758"></p>
+<h6 id="loop">Loop</h6>
+<pre><code class="lang-R">p &lt;- 0:5
+d &lt;- 0:1
+q &lt;- 0:4
+P &lt;- 0:2
+D &lt;- 0:1
+Q &lt;- 0:3
+para &lt;- as.matrix(expand.grid(p,d,q,P,D,Q))
+acc &lt;- matrix(1:nrow(para), ncol = 1) 
+
+for(k in 1:nrow(para)){
+  arimaFit = tryCatch(arima(log(beer), order=c(para[k,1], para[k,2], para[k,3]), 
+                            seasonal=list(order=c(para[k,4], para[k,5], para[k,6]), 
+                            period=12), method=&quot;ML&quot;),
+                      error=function( err ) FALSE,
+                      warning=function( err ) FALSE )
+  if(!is.logical(arimaFit)) {
+      # selected by likelihood ratio test
+      if (k==1) {
+      m.red &lt;- arimaFit
+      } else {
+        D &lt;- -2*(m.red$loglik - arimaFit$loglik)
+        pval &lt;- 1-pchisq(D,2)
+        if (pval &lt; 0.05) {
+          m.red &lt;- arimaFit
+        }
+      }
+
+      # selected by RMSE
+      pred &lt;- forecast(object = model, h = 72, level = 0.95, lambda = 0, biasadj = TRUE)
+        acc[k,1] &lt;- rmse(test, pred$mean)
+  } else {
+    next
+  }
+}
+
+# selected by likelihood ratio test
+summary(m.red)
+
+# selected by RMSE
+data.frame(cbind(para,acc)) %&gt;% 
+  arrange(V7) %&gt;% 
+  head(10) %&gt;% 
+  knitr::kable(col.names = c(&quot;p&quot;,&quot;d&quot;,&quot;q&quot;,&quot;P&quot;,&quot;D&quot;,&quot;Q&quot;,&quot;RMSE&quot;),
+               caption = &quot;\\label{tab:tab}Top 10 model&apos;s parameter and RMSE&quot;,
+               digits = 2)
+</code></pre>
+<h6 id="auto">Auto</h6>
+<pre><code class="lang-R"># use auto.arima to find optimal model
+auto.arima(chem)
+</code></pre>
+<h4 id="visualize-the-model">Visualize the model</h4>
+<pre><code class="lang-R">f &lt;- chem - m$residuals #fitted values
+plot(chem, type = &quot;l&quot;, main = &quot;Daily Chemical Concentrations&quot;, ylab = &quot;Concentrations&quot;, xlab = &quot;Days&quot;)
+points(f, type = &quot;l&quot;, col = &quot;red&quot;)
+# lines(exp(f), col = &quot;red&quot;) # for transformed data
+legend(&quot;bottomright&quot;, legend = c(&quot;Observed&quot;, &quot;Predicted&quot;), lty = 1, col = c(&quot;black&quot;, &quot;red&quot;), cex = 0.5)
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-arima.png" alt="image-20181203202915627"></p>
+<h3 id="univariate---smoothing-exponential">Univariate - Smoothing Exponential</h3>
+<pre><code class="lang-R"># Single (Simple) Exponential Smoothing
+hw.LH &lt;- HoltWinters(x = LakeHuron, beta = F, gamma = F)
+hw.LH &lt;- HoltWinters(x = LakeHuron, alpha = 0.2, beta = F, gamma = F)
+
+# Double Exponential Smoothing
+hw.CH &lt;- HoltWinters(x = chem, gamma = F) 
+hw.CH &lt;- HoltWinters(x = chem, alpha = 0.2, beta = 0.7, gamma = F) 
+
+# Triple Exponential Smoothing -- Additive
+hw.AD &lt;- HoltWinters(x = USAccDeaths,alpha = 0.2, beta =  0.2, gamma = 0.2, seasonal = &quot;add&quot;) 
+
+# Triple Exponential Smoothing -- Multiplicative
+hw.AP &lt;- HoltWinters(x = AirPassengers, seasonal = &quot;mult&quot;) 
+hw.AP &lt;- HoltWinters(x = AirPassengers, alpha = 0.2, beta = 0.1, seasonal = &quot;mult&quot;)
+</code></pre>
+<h3 id="multivariate---var-model">Multivariate - VAR model</h3>
+<h4 id="order-selection">Order Selection</h4>
+<pre><code class="lang-R"># select order p
+VARselect(y = data.frame(Bev, Food, Indust))
+
+# output
+$selection
+AIC(n)  HQ(n)  SC(n) FPE(n) 
+     9      2      2      9 
+
+$criteria
+                 1           2           3           4           5           6           7
+AIC(n)    8.837087    8.515259    8.543184    8.590641    8.629916    8.573736    8.564217
+HQ(n)     8.906780    8.637221    8.717416    8.817142    8.908686    8.904777    8.947527
+SC(n)     9.010092    8.818018    8.975697    9.152908    9.321936    9.395511    9.515746
+FPE(n) 6884.970839 4990.581293 5132.384156 5382.733150 5599.849950 5296.003321 5248.655238
+                 8           9          10
+AIC(n)    8.527629    8.490873    8.533647
+HQ(n)     8.963209    8.978722    9.073766
+SC(n)     9.608912    9.701910    9.874437
+FPE(n) 5063.678635 4885.350319 5104.578541
+</code></pre>
+<h4 id="fit-model">Fit model</h4>
+<pre><code class="lang-R"># fit model with selected order p
+VAR(y = data.frame(Bev, Food, Indust), p = 1)
+
+# output
+VAR Estimation Results:
+======================= 
+
+Estimated coefficients for equation Bev: 
+======================================== 
+Call:
+Bev = Bev.l1 + Food.l1 + Indust.l1 + const 
+
+     Bev.l1     Food.l1   Indust.l1       const 
+ 0.94733504  0.04823936  0.01897155 -0.91891633 
+
+
+Estimated coefficients for equation Food: 
+========================================= 
+Call:
+Food = Bev.l1 + Food.l1 + Indust.l1 + const 
+
+      Bev.l1      Food.l1    Indust.l1        const 
+-0.005942198  0.942819303  0.049593166  2.050464222 
+
+
+Estimated coefficients for equation Indust: 
+=========================================== 
+Call:
+Indust = Bev.l1 + Food.l1 + Indust.l1 + const 
+
+      Bev.l1      Food.l1    Indust.l1        const 
+ 0.003677795 -0.033880216  1.017185919  1.859971917
+</code></pre>
+<h2 id="choose-a-model">Choose a Model</h2>
+<h3 id="goodness-of-fit">Goodness-of-fit</h3>
+<h3 id="likelihood-ratio-test">Likelihood Ratio Test</h3>
+<pre><code class="lang-R"># D &lt;- -2*(null.mod$loglik - alt.mod$loglik)
+# pval &lt;- 1-pchisq(D,n.alt-n.null)
+# print(c(&quot;Test Statistic:&quot;,D,&quot;P-value:&quot;,pval))
+
+# Compare MA(1) with ARMA(1,2)
+D &lt;- -2*(m5$loglik - m11$loglik)
+pval &lt;- 1-pchisq(D,2)
+print(c(&quot;Test Statistic:&quot;, round(D, 4), &quot;P-value:&quot;, round(pval, 4)))
+
+# output
+[1] &quot;Test Statistic:&quot; &quot;5.587&quot;           &quot;P-value:&quot;        &quot;0.0612&quot;
+</code></pre>
+<h3 id="rmse">RMSE</h3>
+<pre><code class="lang-R">pred &lt;- forecast(object = model, h = 72, level = 0.95, lambda = 0, biasadj = TRUE)
+acc[k,1] &lt;- rmse(test, pred$mean)
+</code></pre>
+<h3 id="diagnostic-plots">Diagnostic plots</h3>
+<pre><code class="lang-R"># plot of fitted values vs residuals
+plot(reg2$fitted, reg2$residuals, main = &quot;Residuals vs. Fitted Values&quot;, ylab = &quot;Residuals&quot;, xlab = &quot;Fitted Values&quot;)
+abline(h = 0, col = &quot;red&quot;, lwd = 2)
+
+#qq-plot of residuals
+qqnorm(reg2$residuals)
+qqline(reg2$residuals, col = &quot;red&quot;)    # plotting the line, along which the dots in qq-plot should lie
+
+# plotting the residuals vs time
+plot(reg2$residuals, main = &quot;Residuals vs. Time&quot;, ylab = &quot;Residuals&quot;, xlab = &quot;Time&quot;)
+abline(h = c(-3,3), col = &quot;red&quot;, lty = 2)
+abline(h = 0, col = &quot;red&quot;, lwd = 2)    # plotting a horizontal line at 0
+
+# sample acf plot of residuals
+acf(reg2$residuals, main = &quot;ACF Plot of Residuals&quot;)
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-diagnostic.png" alt="image-20181210164604950"></p>
+<p>The <strong>residuals vs. fitted values</strong> plot indicates a fairly <strong>random</strong> scattering of points; there are no obvious &quot;<strong>funnel-shaped</strong>&quot; trends suggesting that the <strong>error variance is indeed constant</strong>.</p>
+<p>The <strong>QQ-plot</strong> indicates that the residual quantiles match fairly closely with the theoretical Normal quantiles (<strong>straight line</strong>), suggesting that the <strong>Normality assumption</strong> is reasonable.</p>
+<p>The <strong>residuals vs. time</strong> oder also suggests that the error varianes ( <script type="math/tex; ">\sigma^2</script>) does not depend much on time, suggesting that the <strong>constant variance assumption</strong> is reasonable.</p>
+<p>The <strong>ACF plot</strong> indicates significant autocorrelation at lags 1 to 14, suggesting that residuals separated in time by 1 to 12 time points are significantly correlated, which contradicts the assumption that the <strong>errors are independent</strong>.</p>
+<h3 id="hypothesis-test">Hypothesis test</h3>
+<pre><code class="lang-R"># test norality
+shapiro.test(m$residuals)
+# output
+
+    Shapiro-Wilk normality test
+
+data:  m$residuals
+W = 0.98578, p-value = 0.1444
+</code></pre>
+<h2 id="prediction">Prediction</h2>
+<h3 id="predict-with-class-model">Predict with class model</h3>
+<pre><code class="lang-R">t.new &lt;- seq(1961,1963,length=25)[1:24]  # Intoducing new time for forecatsting 2 years 1961 and 1962 (notice that it is 1:24 because 1963 should not be included)
+t2.new &lt;- t.new^2
+month.new &lt;- factor(rep(1:12,2))         # Introducing the seasonal value for forecasting
+
+new &lt;- data.frame(t=t.new, t2=t2.new, month=month.new) # Putting the values for forecasting into a dataframe
+pred &lt;- predict.lm(reg4,new,interval=&apos;prediction&apos;)     # Computing the prediction as well as prediction interval
+
+par(mfrow=c(1,1))
+plot(AirPassengers,xlim=c(1949,1963),ylim=c(0,900))    #plotting the data
+
+abline(v=1961,col=&apos;blue&apos;,lty=2)          # adding a vertical line at the point where prediction starts
+lines(exp(pred[,1])~t.new,type=&apos;l&apos;,col=&apos;red&apos;)          # plotting the predict
+lines(exp(pred[,2])~t.new,col=&apos;green&apos;)   # plotting lower limit of the prediction interval
+lines(exp(pred[,3])~t.new,col=&apos;green&apos;)   # plotting upper limit of the  prediction interval
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-predict.png" alt="image-20181210164802790"></p>
+<h3 id="predict-with-armaarmaarimasarima-model">Predict with AR/MA/ARMA/ARIMA/SARIMA model</h3>
+<pre><code class="lang-R">plot(forecast(object = m, h = 14, level = 0.95))
+# transformed data
+pred &lt;- forecast(object = model.optimal, h = 72, level = 95, lambda = 0, biasadj = TRUE)
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-arimaForecast.png" alt="image-20181210164802790"></p>
+<h3 id="predict-with-holt-winters">Predict with Holt-Winters</h3>
+<pre><code class="lang-R">plot(forecast(hw.LH, h = 5)) #Forecast is a constant. SES not appropriate for a time series with trend.
+plot(forecast(HoltWinters(x = AirPassengers, beta = F, gamma = F), h = 60)) #Single
+plot(forecast(HoltWinters(x = AirPassengers, gamma = F), h = 60))           #Double
+plot(forecast(HoltWinters(x = AirPassengers, seasonal = &quot;add&quot;), h = 60))    #Triple -- Additiive
+plot(forecast(HoltWinters(x = AirPassengers, seasonal = &quot;mult&quot;), h = 60))   #Triple -- Multiplicative
+</code></pre>
+<h3 id="prediction-with-sarimax">Prediction with SARIMAX</h3>
+<pre><code class="lang-R">f.arimax &lt;- forecast(m4, h = 3, xreg = data.frame(Food = test$FoodInd, Indust = test$IndustInd))
+plot(f.arimax)
+(rmse.arimax &lt;- sqrt(mean((f.arimax$mean - test$BevInd)^2)))
+
+# output
+[1] 7.537393
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-sarimaxPredict.png" alt="image-20181203202915627"></p>
+<h3 id="predict-with-var">Predict with VAR</h3>
+<pre><code class="lang-R">pred &lt;- predict(m.var, n.ahead = 3, ci = 0.95)
+plot(pred)
+rmse.var &lt;- sqrt(mean((pred$fcst$Bev[,1] - test$BevInd)^2))
+
+# output
+[1] 2.778531
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-var.png" alt="image-20181203202915627"></p>
+<h2 id="sample-acfpacf-plots">Sample ACF/PACF plots</h2>
+<h4 id="sample-acf-for-iid-noise-n01">Sample ACF for IID noise N(0,1)</h4>
+<pre><code class="lang-text">X &lt;- rnorm(100)                   # generating (independently) 100 realizations of N(0,1)
+par(mfrow=c(2,1))                 #dividing the page into 2 rows and one column
+plot(X,type=&apos;l&apos;,main=&apos;iid noise&apos;) #plotting the data
+acf(X,main=&apos;Sample ACF for iid noise&apos;, lag.max = 100) # plotting the acf
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-iidNoise.png" alt="image-20181210164802790"></p>
+<h4 id="sample-acf-for-ma1-process">Sample ACF for MA(1) process</h4>
+<pre><code class="lang-R"># simulating data from an MA(1) process
+data.sim &lt;- arima.sim(n = 200, list(ma = c(0.7)), sd = sqrt(1))
+plot(data.sim, main=&quot;Simulated Data from an MA(1) Process&quot;) # plotting the data
+acf(data.sim, main = &quot;&quot;) # plotting the acf
+pacf(data.sim, main = &quot;&quot;) # plotting the pacf
+# acf(data.sim, type=&quot;partial&quot;)
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-ma1.png" alt="image-20181210164802790"></p>
+<h4 id="sample-acf-for-ar1-process">Sample ACF for AR(1) process</h4>
+<pre><code class="lang-R"># simulating data from an AR(1) process
+data.sim &lt;- arima.sim(n = 200, list(ar = c(0.7)), sd = sqrt(1))
+plot(data.sim, main=&quot;Simulated Data from an AR(1) Process&quot;) #plotting the data
+acf(data.sim, main = &quot;&quot;) # plotting the acf
+pacf(data.sim, main = &quot;&quot;) # plotting the pacf
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-ar1.png" alt="image-20181210164802790"></p>
+<h4 id="sample-acf-for-arma11-process">Sample ACF for ARMA(1,1) process</h4>
+<pre><code>data.sim &lt;- arima.sim(n =10000, list(ar=c(0.5) , ma = c(1)), sd = sqrt(1))
+plot(data.sim, main=&quot;Simulated Data from an ARMA(1,1) Process&quot;)
+acf(data.sim, main = &quot;&quot;)
+pacf(data.sim, main = &quot;&quot;)
+</code></pre><p><img src="../Users/crystal/dataScientistNotes/image/R/TS-arma11.png" alt="image-20181210164802790"></p>
+<h4 id="sample-acf-for-data-with-trend">Sample ACF for data with trend</h4>
+<pre><code class="lang-text">a &lt;- seq(1,100,length=200)
+X &lt;- 22-15*a+0.3*a^2+rnorm(200,500,50)
+par(mfrow=c(2,1)) #dividing the page into 2 rows and one column
+ts.plot(X, main = &quot;Time Series With Significant Trend&quot;)
+acf(X, main = &quot;ACF Exhibits Seasonality + Slow Decay&quot;, lag.max = 60)
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-acfTrend.png" alt="image-20181210164802790"></p>
+<h4 id="sample-acf-for-data-with-seasonality">Sample ACF for data with seasonality</h4>
+<pre><code class="lang-text">X &lt;- 100*sin(1:200)+rnorm(200, 0, 0.5) 
+par(mfrow=c(2,1))
+ts.plot(X, main = &quot;Time Series With Significant Seasonality&quot;)
+acf(X, main = &quot;ACF Also Exhibits Seasonality&quot;, lag.max=60)
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-acfSeasonal.png" alt="image-20181210164802790"></p>
+<h4 id="sample-acf-for-data-with-trend-and-seasonal-component">Sample ACF for data with trend and seasonal component</h4>
+<pre><code class="lang-text">a &lt;- seq(1,10,length=200)
+X &lt;- 22-15*a+a^2+5*sin(20*a)+rnorm(200,20,2)
+par(mfrow=c(2,1)) #dividing the page into 2 rows and one column
+ts.plot(X, main = &quot;Time Series With Significant Trend and Seasonality&quot;)
+acf(X, main = &quot;ACF Exhibits Seasonality + Slow Decay&quot;, lag.max = 60)
+</code></pre>
+<p><img src="../Users/crystal/dataScientistNotes/image/R/TS-acfTrendSeasonal.png" alt="image-20181210164802790"></p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.0.LR.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Using R for Linear Regression">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Using R for time series","level":"6.1.2","depth":2,"next":{"title":"SQL","level":"6.2","depth":1,"ref":"","articles":[]},"previous":{"title":"Using R for Linear Regression","level":"6.1.1","depth":2,"path":"R/1.0.LR.md","ref":"R/1.0.LR.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","mathjax","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"Modified","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/crystalxs/dataScientistNotes"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"sitemap-general":{"prefix":"http://gitbook.crystalxs.com"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"title":"GitBook 使用教程","description":"记录 GitBook 的配置和一些插件的使用","author":"Jikai Zhang","feed_url":"http://gitbook.zhangjikai.com/rss","site_url":"http://gitbook.zhangjikai.com/","managingEditor":"me@zhangjikai.com","webMaster":"me@zhangjikai.com","categories":["gitbook"]},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"crystalxs/dataScientistNotes","types":["star"],"size":"small"},"3-ba":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"versions":{"options":[{"value":"http://gitbook.zhangjikai.com","text":"v3.2.3"},{"value":"http://gitbook.zhangjikai.com/v2/","text":"v2.6.4"}]},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"edit-link":{"base":"https://github.com/crystalxs/dataScientistNotes/edit/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"crystalxs","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Study for Data Scientist","language":"en","output.name":"site","links":{"sidebar":{"Home":"http://crystalxs.github.io"}},"gitbook":"3.2.3"},"file":{"path":"R/1.1.TS.md","mtime":"2018-12-11T09:00:40.227Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-31T20:19:18.671Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

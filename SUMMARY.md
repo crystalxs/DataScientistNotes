@@ -1,7 +1,8 @@
 # Summary
 
-## Part 0 Cheat Sheet
 * [Introduction](README.md)
+
+## Part 0 Cheat Sheet
 * [Git & GitHub](CheatSheet/git.md)
 * [bash](CheatSheet/bash.md)
 * [Gitbook](CheatSheet/gitbook.md)
@@ -9,17 +10,17 @@
 * [iterm2](CheatSheet/iterm2.md)
 
 ## Part I Fundamental Mathematics
-* [Calculus](Calc/0.README.md)
-* [Discrete Mathematics](DM/0.README.md)
-* [Linear Algebra](LA/0.README.md)
-* [Matrix Theory](MT/0.README.md)
-* [Numerical Algorithms](NA/0.README.md)
+* Calculus
+* Discrete Mathematics
+* Linear Algebra
+* Matrix Theory
+* Numerical Algorithms
 
 ## Part II Statistics
 * [Probability](Prob/0.README.md)
     * [Distributions](Prob/Distribution.md)
-* [Statistics](Stat/0.README.md)
-* [Linear Regression](LR/0.README.md)
+* Statistics
+* Linear Regression
 * [Time Series](TS/0.README.md)
     * [Interview Questions](TS/0.1.interviewQ.md)
     * [Classic Decomposition](TS/0.2.decomposition.md)
@@ -33,20 +34,19 @@
     * [Loss Function](Bayesian/LossFunction.md)
 
 ## Part III Computer Science Fundamentals
-* [Data Structure](DS/README.md)
-    * [Elementary Data Structure](DS/Elementary.md)
-    * [Hash Table](DS/HashTable.md)
-    * [Tree](DS/Tree.md)
-    * [Graph](DS/Graph.md)
+* [Data Structure](DS/0.README.md)
+    * [Linear Structure](DS/Elementary.md)
+    * [Tree Structure](DS/Tree.md)
+    * [Graph Structure](DS/Graph.md)
 * [Algorithm](Algorithm/0.README.md)
     * [Complexity](Algorithm/Complexity.md)
     * [Recursion](Algorithm/Recursion.md)
     * [Walking Data Structure](Algorithm/Walk.md)
     * [Searching](Algorithm/Search.md)
     * [Sort](Algorithm/Sort.md)
-* [Machine Architecture and Organization](MAO/0.README.md)
-* [Operating System](OS/0.README.md)
-* [Formal Language and Automata](FL/0.README.md)
+* Machine Architecture and Organization
+* Operating System
+* Formal Language and Automata
 * [Machine Learning](ML/0.README.md)
     * [Cost Function](ML/0.0.costFunction.md)
     * [Bias vs Variance](ML/0.1.bias&variance.md)
@@ -72,11 +72,11 @@
 * [R](R/0.README.md)
     * [Using R for Linear Regression](R/1.0.LR.md)
     * [Using R for time series](R/1.1.TS.md)
-* [SQL](Sql/0.README.md)
+* SQL
 * [Python](Python/0.README.md)
+    * [Data Type](Python/data.md)
     * [Object-oriented programming](Python/OO.md)
     * [Running Time](Python/running_time.md)
-    * [AWS](Python/AWS.md)
     * [Web](Python/web.md)
     * [Data Source from Web](Python/data_source_from_web.md)
     * [Green unicorn](Python/green_unicorm.md)
@@ -96,28 +96,41 @@
 * [MongoDB](Mongodb/0.README.md)
     * [Launching](Mongodb/0.2.launching.md)
     * [Operations](Mongodb/1.0.operations.md)
+* [AWS](AWS/0.README.md)
 
 ## Part V Data Visualization (Web Development)
 * [Principle](DV/0.README.md)
     * [Terminology](DV/Terminology.md)
     * [Perception](DV/Perception.md)
 * [HTML](HTML/0.README.md)
-    * 
 * [CSS](CSS/0.README.md)
-* [JavaScript](JS/0.README.md)
+* JavaScript
     * NodeJS
-    * Webpack
-    * [Jekyll](Jekyll/0.README.md)
-    * [Vuejs](Vue/0.README.md)
-    * ReactJS
-    * Morris
+    * Framework
+        * Vuejs
+        * ReactJS
+    * Library
+        * Echarts
+        * Leaflet
+        * MapBox GL
+        * D3
+* REST api
     * PostgREST
-    * Echarts
-    * Leaflet
-    * MapBox GL
-    * D3.js
+* Webpack
+* Jekyll
+* Morris
 
-## Part VI Leetcode
-* [leetcode](leetcode/README.md)
-    * [Array](leetcode/array.md)
+## Part VI Algorithm Interview
+* [Data Structure](Interview/README.md)
+    * [Array&String](Interview/array.md)
+    * [Hash table](Interview/hash.md)
+    * [Linked list](Interview/linkedlist.md)
+    * [Stack & Queue](Interview/stack.md)
+    * [Tree](Interview/tree.md)
+    * [Graph](Interview/graph.md)
+* Algorithm
+    * Bit Manipulation
+    * Memory (stack & heap)
+    * Recursion
+    * Dynamic Programming
 
