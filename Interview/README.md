@@ -12,7 +12,7 @@
 
 ## Interview Approach
 
-Ref: Brain career workshop slides
+> Reference: Brain career workshop slides
 
 1. Ask - ALWAYS ask follow-up questions. Almost all technical questions are underspecified. It shows you are curious and do not make assumptions.
 2. Suppose - State the givens. For example, "I'm going to code in Python with its Standard Library"
@@ -30,4 +30,5 @@ Ref: Brain career workshop slides
 * `len//2 = int(len/2)`;
 * When two integers are divided, the result is a floating point;
 * continue assign: the right hand side variable is not the variable itself, it only a pointer
+* the variable will hold a **reference** to a piece of data and **not the data itself**.
 

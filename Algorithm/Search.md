@@ -1,4 +1,4 @@
-# 1.2. Searching
+# Searching
 
 ## Binary Search
 

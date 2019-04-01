@@ -1,10 +1,6 @@
 # Environment
 
----
-description: "Keep dependencies required by different projects\_in\_separate\_places;  Easily switch to a environment that requires different dependencies."
----
-
-# Environment
+> Keep dependencies required by different projects\_in\_separate\_places;  Easily switch to a environment that requires different dependencies.
 
 ### Create an environment
 

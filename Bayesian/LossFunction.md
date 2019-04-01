@@ -1,6 +1,6 @@
 # Loss Function
 
-Function of the true parameters and the estimated values.
+> Function of the true parameters and the estimated values.
 
 $L(\theta, \hat{\theta})=f(\theta, \hat{\theta})$
 

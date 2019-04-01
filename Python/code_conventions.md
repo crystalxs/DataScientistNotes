@@ -1,18 +1,12 @@
 # Code Conventions
 
----
-description: >-
-  Using a consistent style provides better code management, readability,
-  understandability, and maintenance. Here we mostly talk about PEP8.
----
-
-# Code Conventions
+> Using a consistent style provides better code management, readability, understandability, and maintenance. Here we mostly talk about PEP8.
 
 ## PEP8
 
 ### Check PEP8 programmatically
 
-```text
+```bash
 pip install pycodestyle
 pycodestyle your_code.py
 ```
@@ -33,9 +27,9 @@ conda install -c conda-forge autopep8       # Install autopep8 which comes with 
 * **Indentation:** Use a tab \(4 spaces\) per indentation level
 * **Blanklines:**
 
-  Surround top-level function and class definitions with two blank lines;
+  * Surround top-level function and class definitions with **two** blank lines;
 
-  Method definitions inside a class are surrounded by a single blank line;
+  * Method definitions inside a class are surrounded by a **single** blank line;
 
 * **Importing libraries/packages:**
 

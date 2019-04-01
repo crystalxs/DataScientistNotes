@@ -10,7 +10,6 @@ An *object* is called an **instance** of the class.
 | --------------------------- | ----------------- |
 | methods                     | functions         |
 | fields / instance variables | variables         |
-|                             |                   |
 
 Fields are the *state* of the object.
 
@@ -22,7 +21,7 @@ The class *encapsulates* the state and behavior of an object.
 
 *Inheritance* behaves like an `import` or include operation from another class into a new class.
 
-## Definition
+###Definition (Encapsulation)
 
 By convention, class names should be **capitalized** like `Point`.
 
@@ -54,7 +53,9 @@ class Book:
 
 * All methods defined within an object, must have an explicit first argument called `self`.
 
-## Inheritance
+###Inheritance
+
+**Inheritance** is the ability for one class to be related to another class in much the same way that people can be related to one another. Children inherit characteristics from their parents. These classes are often referred to as **subclasses**and **superclasses**.
 
 ```python
 class Account:
@@ -80,4 +81,8 @@ class InterestingAccount(Account): # derive from super class to get subclass
     def profit(self):
         return self.balance * self.rate
 ```
+
+### Abstraction
+
+### Polymorphism
 

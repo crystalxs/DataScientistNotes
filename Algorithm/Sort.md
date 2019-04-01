@@ -1,4 +1,4 @@
-# 1.3. Sort
+# Sort
 
 at least $O(n)$
 

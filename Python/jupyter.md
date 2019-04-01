@@ -1,2 +1,2 @@
-# 1.0. Jupyter Notebook Extensions
+# Jupyter Notebook Extensions
 

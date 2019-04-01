@@ -75,15 +75,25 @@
 * SQL
 * [Python](Python/0.README.md)
     * [Data Type](Python/data.md)
-    * [Object-oriented programming](Python/OO.md)
-    * [Running Time](Python/running_time.md)
-    * [Web](Python/web.md)
-    * [Data Source from Web](Python/data_source_from_web.md)
-    * [Green unicorn](Python/green_unicorm.md)
-    * [Lambda Expression](Python/lambda_expression.md)
-    * [Environment](Python/environment.md)
-    * [Code Conventions](Python/code_conventions.md)
-    * [Jupyter Notebook Extensions](Python/jupyter.md)
+    * [Control Structures](Python/control.md)
+    * [Expression](Python/expression.md)
+    * [Function](Python/function.md)
+    * [Class](Python/OO.md)
+    * [Input&Output](Python/OS.md)
+    * TBD
+        * [Data Source from Web](Python/data_source_from_web.md)
+    * Package
+        * [Running Time](Python/running_time.md)
+        * [Green unicorn](Python/green_unicorm.md)
+    * Code Style
+        * [Code Conventions](Python/code_conventions.md)
+        * [Exception Handling](Python/bug_free.md)
+    * Anaconda
+        * [Environment](Python/environment.md)
+        * [Jupyter Notebook Extensions](Python/jupyter.md)
+    * TBD
+        * [Regular Expression](Python/RE.md)
+        * [Web](Python/web.md)
 * [Spark](Spark/0.README.md)
     * [Distributed Computing](Spark/0.1.distributedComputing.md)
     * [MapReduece](Spark/0.2.mapReduc.md)

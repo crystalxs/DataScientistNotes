@@ -1,6 +1,5 @@
 # Gitbook
 
-<<<<<<< HEAD
 ## Install
 
 ```shell
