@@ -2,6 +2,8 @@
 
 ##Binary tree
 
+A tree with exactly two sub-trees for each node, called the `left` and `right` sub-trees.
+
 ```python
 class TreeNode:
     def __init__(self, value, left, right):
@@ -14,37 +16,36 @@ class TreeNode:
 
 **Preorder**: Compute before visiting nodes
 
-```python
-def walk_tree(p:TreeNode):
-    if p is None: return
-    print(p.value)
-    walk_tree(p.left)
-    walk_tree(p.right)
-```
+**Inorder:** Compute between visiting left node and right node
 
 **Postorder**: Compute after visiting nodes
 
-```python
-def walk_tree(p:TreeNode):
-	if p is None: return
-    walk_tree(p.left)
-    walk_tree(p.right)
-    print(p.value)
-```
-
-### Recursion Tree
+#### Recursion
 
 ```python
-def walk(p:TreeNode):
-		if p is None: return
+def dfs(p:TreeNode):
+    if p is None: return
     print(p.value)
-    walk(p.left)
-    walk(p.right)
+    dfs(p.left)
+    dfs(p.right)
 ```
 
+#### Iteration
 
+```python
+def dfs(p:TreeNode):
+  	stack = []
+    while p or len(stack)!=0:
+      	while p:
+          	stack.append(p)
+            p = p.left
+        p = stack.pop()
+        p = p.right
+```
 
 ##Binary Search Tree
+
+A binary tree where, for each node `m`, the left sub-tree only has nodes with keys smaller than (according to some total order) the key of `m`, while the right sub-tree only has nodes with keys larger than the key of `m`.
 
 ```python
 def search_tree(p:TreeNode, value) -> None:
@@ -69,4 +70,8 @@ def walk_search_tree(p:TreeNode, x:object):
         return walk_search_tree(p.right, x)
     return p
 ```
+
+## Balanced Binary Tree
+
+A binary tree in which the depth of the two subtrees of *every* node never differ by more than 1.
 

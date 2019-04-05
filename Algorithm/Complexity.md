@@ -20,15 +20,15 @@ $T(n)$ = total operations required to operate on size n
 
 $O(n)$ = ignore constants and only keep most important terms
 
-| **f(n)**   | **Name**    |
-| :--------- | :---------- |
-| 11         | Constant    |
-| lognlog⁡n   | Logarithmic |
-| nn         | Linear      |
-| nlognnlog⁡n | Log Linear  |
-| n2n2       | Quadratic   |
-| n3n3       | Cubic       |
-| 2n2n       | Exponential |
+| **f(n)** | **Name**    |
+| :------- | :---------- |
+| 1        | Constant    |
+| logn     | Logarithmic |
+| n        | Linear      |
+| nlogn    | Log Linear  |
+| n2       | Quadratic   |
+| n3       | Cubic       |
+| 2n       | Exponential |
 
 ## Process
 

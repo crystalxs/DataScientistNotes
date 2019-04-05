@@ -40,10 +40,14 @@
     * [Graph Structure](DS/Graph.md)
 * [Algorithm](Algorithm/0.README.md)
     * [Complexity](Algorithm/Complexity.md)
-    * [Recursion](Algorithm/Recursion.md)
-    * [Walking Data Structure](Algorithm/Walk.md)
     * [Searching](Algorithm/Search.md)
     * [Sort](Algorithm/Sort.md)
+    * [DivideConquer](Algorithm/DivideConquer.md)
+    * [Recursion](Algorithm/Recursion.md)
+    * [Dynamic Programming](Algorithm/dynamic_programming.md)
+    * [Greedy](Algorithm/greedy.md)
+    * Bit Manipulation
+    * Memory (stack & heap)
 * Machine Architecture and Organization
 * Operating System
 * Formal Language and Automata
@@ -72,25 +76,27 @@
 * [R](R/0.README.md)
     * [Using R for Linear Regression](R/1.0.LR.md)
     * [Using R for time series](R/1.1.TS.md)
-* SQL
+* [SQL](sql/0.README.md)
+    * [PostgreSQL](sql/postresql.md)
 * [Python](Python/0.README.md)
-    * [Data Type](Python/data.md)
-    * [Control Structures](Python/control.md)
-    * [Expression](Python/expression.md)
-    * [Function](Python/function.md)
-    * [Class](Python/OO.md)
-    * [Input&Output](Python/OS.md)
+    * CheatSheets
+        * [Data Type](Python/cs-data.md)
+        * [Control Structures](Python/cs-control.md)
+        * [Expression](Python/cs-expression.md)
+        * [Function](Python/cs-function.md)
+        * [Class](Python/cs-OO.md)
+        * [Input&Output](Python/cs-OS.md)
     * TBD
         * [Data Source from Web](Python/data_source_from_web.md)
     * Package
-        * [Running Time](Python/running_time.md)
-        * [Green unicorn](Python/green_unicorm.md)
+        * [Running Time](Python/package-running_time.md)
+        * [Green unicorn](Python/package-green_unicorm.md)
     * Code Style
-        * [Code Conventions](Python/code_conventions.md)
-        * [Exception Handling](Python/bug_free.md)
+        * [Code Conventions](Python/style-code_conventions.md)
+        * [Exception Handling](Python/style-bug_free.md)
     * Anaconda
-        * [Environment](Python/environment.md)
-        * [Jupyter Notebook Extensions](Python/jupyter.md)
+        * [Environment](Python/anaconda-environment.md)
+        * [Jupyter Notebook Extensions](Python/anaconda-jupyter.md)
     * TBD
         * [Regular Expression](Python/RE.md)
         * [Web](Python/web.md)
@@ -112,8 +118,8 @@
 * [Principle](DV/0.README.md)
     * [Terminology](DV/Terminology.md)
     * [Perception](DV/Perception.md)
-* [HTML](HTML/0.README.md)
-* [CSS](CSS/0.README.md)
+* [HTML](web/html.md)
+* [CSS](web/css.md)
 * JavaScript
     * NodeJS
     * Framework
@@ -129,18 +135,4 @@
 * Webpack
 * Jekyll
 * Morris
-
-## Part VI Algorithm Interview
-* [Data Structure](Interview/README.md)
-    * [Array&String](Interview/array.md)
-    * [Hash table](Interview/hash.md)
-    * [Linked list](Interview/linkedlist.md)
-    * [Stack & Queue](Interview/stack.md)
-    * [Tree](Interview/tree.md)
-    * [Graph](Interview/graph.md)
-* Algorithm
-    * Bit Manipulation
-    * Memory (stack & heap)
-    * Recursion
-    * Dynamic Programming
 

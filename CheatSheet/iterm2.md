@@ -1,5 +1,7 @@
 # iterm2
 
+> https://www.iterm2.com/documentation.html
+
 ## Tab
 
 新建标签：command + t
