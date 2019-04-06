@@ -6,6 +6,7 @@
 * [Git & GitHub](CheatSheet/git.md)
 * [bash](CheatSheet/bash.md)
 * [Gitbook](CheatSheet/gitbook.md)
+* [markdown](CheatSheet/markdown.md)
 * [zsh](CheatSheet/zsh.md)
 * [iterm2](CheatSheet/iterm2.md)
 
