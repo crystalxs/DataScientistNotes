@@ -12,7 +12,7 @@ class TreeNode:
         self.right = right
 ```
 
-###Depth-first Search Walk 
+###Depth-first Walk 
 
 **Preorder**: Compute before visiting nodes
 
@@ -41,6 +41,14 @@ def dfs(p:TreeNode):
             p = p.left
         p = stack.pop()
         p = p.right
+```
+
+###Breadth-first Walk
+
+```python
+def walk(t:TreeNode) -> int:
+    if t is None: return 0
+    return t.value + walk(t.left) + walk(t.right)
 ```
 
 ##Binary Search Tree

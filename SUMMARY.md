@@ -45,8 +45,8 @@
     * [Sort](Algorithm/Sort.md)
     * [DivideConquer](Algorithm/DivideConquer.md)
     * [Recursion](Algorithm/Recursion.md)
-    * [Dynamic Programming](Algorithm/dynamic_programming.md)
-    * [Greedy](Algorithm/greedy.md)
+    * [Dynamic Programming](Algorithm/DynamicProgramming.md)
+    * [Greedy](Algorithm/Greedy.md)
     * Bit Manipulation
     * Memory (stack & heap)
 * Machine Architecture and Organization

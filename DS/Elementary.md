@@ -12,7 +12,7 @@
 - Lists are ordered but items aren't necessarily sortable;
 - Arrays use contiguous memory locations to associate items.
 
-#### Complexity
+#### Complexity for python built-in `list`
 
 | Operation        | Big-O Efficiency |
 | :--------------- | :--------------- |
@@ -97,7 +97,7 @@ Pop (Delete from begin): `O(1)`
 
 Access: End - `O(1)`; Other - `O(n)`
 
-#### Implementation
+#### Implementation in Python
 
 ```python
 class Queue:
@@ -146,7 +146,7 @@ Pop (Delete from end): `O(1)`
 
 Access: End - `O(1)`; Other - `O(n)`
 
-#### Implementation
+#### Implementation in Python
 
 ```python
 class Stack:
@@ -189,7 +189,7 @@ class Stack:
 
 known as a double-ended queue, is an ordered collection of items similar to the queue. It has two ends, a front and a rear, and the items remain positioned in the collection. 
 
-#### Implementation
+#### Implementation in Python
 
 ```python
 class Deque:
@@ -237,7 +237,7 @@ class Deque:
 - Linked list doesn't have random-access to `i`th element.
 - From linked list we can look forward or backward.
 
-#### Time Complexity
+###Time Complexity
 
 Access: begin - `O(1)`; end - `O(n)`
 
@@ -245,24 +245,43 @@ Insert: `O(1)`
 
 Delete: `O(1)`
 
-#### Implementation
+###Implementation in Python
 
 ```python
 class LLNode:
 	def __init__(self, value, next=None):
 		self.value = value
 		self.next = next
+  def __str__(self):
+    return "(%s,%s)" % (self.value, str(self.next))
+  def __repr__(self):
+    return str(self)
 ```
 
 - `head = LLNode('')`, `head` is a pointer
 
-#### Walk while Loop with Pointer
+###Operations
+
+#### Walk
+
+#####while Loop with Pointer
 
 ```python
 p = head		# cursor
 while p is not None:
     print(p.value)
     p = p.next
+```
+
+##### Recursive
+
+```python
+def walk(p):
+  	if p is None: return
+    print(p.value)
+  	walk(p.next)
+    
+walk(head)
 ```
 
 #### Insertion at head
@@ -284,7 +303,7 @@ before_delete.next = delete.next
 
 Arrange two lists side-by-side and kind of glue them together, map one value to another.
 
-####Time Complexity
+###Time Complexity for python built-in `dict`
 
 | operation     | Big-O Efficiency |
 | :------------ | :--------------- |
@@ -295,7 +314,7 @@ Arrange two lists side-by-side and kind of glue them together, map one value to 
 | contains (in) | O(1)             |
 | iteration     | O(n)             |
 
-#### Python
+###Python
 
 `dict` in python.
 
@@ -306,7 +325,7 @@ Array of linked lists / buckets and a hash code function.
 1. Compute hash code by **hash function**
 2. Map the hash code to an index in the array, which bucket.
 
-#### Time Complexity
+###Time Complexity
 
 Access: cannot access by index
 
@@ -319,7 +338,7 @@ Insert: `O(1)` vs `O(n)`
 
 Delete: `O(1)` vs `O(n)`
 
-#### Hash Function
+###Hash Function
 
 Magic Number: 31
 
