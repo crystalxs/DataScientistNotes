@@ -6,9 +6,15 @@
 
 ```python
 while condition:
-    operation 1
-    operation 2
-    ...
+    operations
+```
+
+#### do-while
+
+```python
+while True:
+  	operations
+    if condition: break
 ```
 
 ### For
@@ -53,20 +59,19 @@ for i,row in enumerate(A):
 
 ## Selections - ifelse
 
+The condition after the  `if` statement is a [boolean expression](cs-data.md/#Python built-in atomic data type).
+
 ```python
-f condition:
-    operation 1
-    operation 2
-    ...
+if condition:
+    operations
 else:
-    operation 1
-    operation 2
-    ...
+    operations
 ```
 
 ## List comprehension
 
 ```python
-[ expression for item in list if conditional ]
+[expression for item in list]
+[expression for item in list if conditional]
 ```
 

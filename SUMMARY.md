@@ -86,20 +86,19 @@
         * [Function](Python/cs-function.md)
         * [Class](Python/cs-OO.md)
         * [Input&Output](Python/cs-OS.md)
-    * TBD
-        * [Data Source from Web](Python/data_source_from_web.md)
-    * Package
-        * [Running Time](Python/package-running_time.md)
-        * [Green unicorn](Python/package-green_unicorm.md)
     * Code Style
         * [Code Conventions](Python/style-code_conventions.md)
         * [Exception Handling](Python/style-bug_free.md)
+    * Package
+        * [Running Time](Python/package-running_time.md)
+        * [Green unicorn](Python/package-green_unicorm.md)
+        * [Regular Expression](Python/package-RE.md)
+    * TBD
+        * [Data Source from Web](Python/data_source_from_web.md)
+        * [Web](Python/web.md)
     * Anaconda
         * [Environment](Python/anaconda-environment.md)
         * [Jupyter Notebook Extensions](Python/anaconda-jupyter.md)
-    * TBD
-        * [Regular Expression](Python/RE.md)
-        * [Web](Python/web.md)
 * [Spark](Spark/0.README.md)
     * [Distributed Computing](Spark/0.1.distributedComputing.md)
     * [MapReduece](Spark/0.2.mapReduc.md)
@@ -131,7 +130,7 @@
         * MapBox GL
         * D3
 * REST api
-    * PostgREST
+    * [PostgREST](web/postgrest.md)
 * Webpack
 * Jekyll
 * Morris

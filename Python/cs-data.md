@@ -10,9 +10,31 @@
 
 In Python the variable are always hold a **reference** to a piece of data and **not the data itself**.
 
+That means we can have two variable names that refer to the same memory location and hence the variables are aliased. Changing one variable's elements appears to change the other variables elements.
+
 ### Shallow Copy
 
+```python
+X = [[1,2],[3,4]]
+Y = X.copy() # shallow copy
 
+X[0][1] = 99
+callviz(varnames=['X','Y'])
+print(Y)
+# [[1,99],[3,4]]
+```
+
+### Reserved words
+
+```python
+and       del       global      not       with
+as        elif      if          or        yield
+assert    else      import      pass
+break     except    in          raise
+class     finally   is          return
+continue  for       lambda      try
+def       from      nonlocal    while
+```
 
 ##Python built-in atomic data type
 
@@ -40,7 +62,7 @@ In Python the variable are always hold a **reference** to a piece of data and **
 | Data Type Name | Ordered or not | Mutability |               |
 | -------------- | -------------- | ---------- | ------------- |
 | List           | Ordered        | Mutable    | heterogeneous |
-| String         | Ordered        | Immutable  |               |
+| String         | Ordered        | Immutable  | homogeneous   |
 | Tuple          | Ordered        | Immutable  | heterogeneous |
 | Set            | Unordered      | Mutable    | heterogeneous |
 | Dictionary     | Unordered      | Mutable    |               |
@@ -68,16 +90,16 @@ myList = []
 
 | **Method Name** | **Use**                | **Explanation**                                       |
 | :-------------- | :--------------------- | :---------------------------------------------------- |
-| `append`        | `alist.append(item)`   | Adds a new item to the end of a list                  |
-| `insert`        | `alist.insert(i,item)` | Inserts an item at the ith position in a list         |
-| `pop`           | `alist.pop()`          | Removes and returns the last item in a list           |
-| `pop`           | `alist.pop(i)`         | Removes and returns the ith item in a list            |
-| `sort`          | `alist.sort()`         | Modifies a list to be sorted                          |
-| `reverse`       | `alist.reverse()`      | Modifies a list to be in reverse order, **no return** |
-| `del`           | `del alist[i]`         | Deletes the item in the ith position                  |
-| `index`         | `alist.index(item)`    | Returns the index of the first occurrence of `item`   |
-| `count`         | `alist.count(item)`    | Returns the number of occurrences of `item`           |
-| `remove`        | `alist.remove(item)`   | Removes the first occurrence of `item`                |
+| append          | `alist.append(item)`   | Adds a new item to the end of a list                  |
+| insert          | `alist.insert(i,item)` | Inserts an item at the ith position in a list         |
+| pop             | `alist.pop()`          | Removes and returns the last item in a list           |
+| pop             | `alist.pop(i)`         | Removes and returns the ith item in a list            |
+| sort            | `alist.sort()`         | Modifies a list to be sorted                          |
+| reverse         | `alist.reverse()`      | Modifies a list to be in reverse order, **no return** |
+| del             | `del alist[i]`         | Deletes the item in the ith position                  |
+| index           | `alist.index(item)`    | Returns the index of the first occurrence of `item`   |
+| count           | `alist.count(item)`    | Returns the number of occurrences of `item`           |
+| remove          | `alist.remove(item)`   | Removes the first occurrence of `item`                |
 
 ### String
 
@@ -104,6 +126,16 @@ Support all [`list` operations](#List).
 ### Tuple
 
 Tuples are very similar to lists in that they are heterogeneous sequences of data. The difference is that a tuple is immutable, like a string. A tuple cannot be changed. Tuples are written as comma-delimited values enclosed in parentheses.
+
+```python
+t = 'a', 'b', 'c', 'd', 'e'
+t = ('a', 'b', 'c', 'd', 'e')
+t1 = ('a',)
+t = tuple()
+```
+
+* To create a tuple with a single element, you have to include the final comma.
+* You can't modify the elements of a tuple, but you can replace one tuple with another
 
 #### Operation
 
@@ -144,7 +176,9 @@ mySet = {3,6,"cat",4.5,False}
 
 ###Dictionary
 
-A collections of associated pairs of items where each pair consists of a key and a value. This key-value pair is typically written as key:value. Dictionaries are written as comma-delimited key:value pairs enclosed in curly braces. 
+A collections of associated pairs of items where each pair consists of a key and a value. This key-value pair is typically written as `key`:`value`.
+
+Dictionaries are written as comma-delimited key:value pairs enclosed in curly braces. 
 
 ```python
 myDict = {}

@@ -1,5 +1,16 @@
 # Expression
 
+An *expression* is a combination of values, variables, and operators. A value all by itself is considered an expression, and so is a variable.
+
+##Order of operation
+
+Python follows mathematical convention. The acronym *PEMDAS* is a useful way to remember the rules:
+
+- **Parentheses** have the highest precedence and can be used to force an expression to evaluate in the order you want.
+- **Exponentiation** has the next highest precedence.
+- **Multiplication** and **Division** have the same precedence, which is higher than **Addition** and **Subtraction**, which also have the same precedence.
+- Operators with the same precedence are evaluated from left to right.
+
 ## Conditional Expression
 
 ```python
