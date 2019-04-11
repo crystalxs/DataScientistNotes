@@ -19,7 +19,7 @@
 
 ## Part II Statistics
 * [Probability](Prob/0.README.md)
-    * [Distributions](Prob/Distribution.md)
+    * [Distributions](Prob/distribution.md)
 * Statistics
 * Linear Regression
 * [Time Series](TS/0.README.md)
@@ -32,21 +32,20 @@
     * [Univariance - Holt-Winters Methodology](TS/1.3.Holt-Winters.md)
     * [Multivariance](TS/2.1.Multivariance.md)
 * [Computational Statistics](Bayesian/0.README.md)
-    * [Loss Function](Bayesian/LossFunction.md)
+    * [Loss Function](Bayesian/loss_function.md)
 
 ## Part III Computer Science Fundamentals
 * [Data Structure](DS/0.README.md)
-    * [Linear Structure](DS/Elementary.md)
-    * [Tree Structure](DS/Tree.md)
-    * [Graph Structure](DS/Graph.md)
+    * [Linear Structure](DS/linear.md)
+    * [Tree Structure](DS/tree.md)
+    * [Graph Structure](DS/graph.md)
 * [Algorithm](Algorithm/0.README.md)
-    * [Complexity](Algorithm/Complexity.md)
-    * [Searching](Algorithm/Search.md)
-    * [Sort](Algorithm/Sort.md)
-    * [DivideConquer](Algorithm/DivideConquer.md)
-    * [Recursion](Algorithm/Recursion.md)
-    * [Dynamic Programming](Algorithm/DynamicProgramming.md)
-    * [Greedy](Algorithm/Greedy.md)
+    * [Complexity](Algorithm/complexity.md)
+    * [Searching](Algorithm/search.md)
+    * [Sort](Algorithm/sort.md)
+    * [Recursion](Algorithm/recursion.md)
+    * [Dynamic Programming](Algorithm/dynamic_programming.md)
+    * [Greedy](Algorithm/greedy.md)
     * Bit Manipulation
     * Memory (stack & heap)
 * Machine Architecture and Organization
@@ -93,7 +92,7 @@
     * Package
         * [Running Time](Python/package-running_time.md)
         * [Green unicorn](Python/package-green_unicorm.md)
-        * [Regular Expression](Python/package-RE.md)
+        * [Regular Expression](Python/package-regular_expression.md)
     * TBD
         * [Data Source from Web](Python/data_source_from_web.md)
         * [Web](Python/web.md)
@@ -113,11 +112,12 @@
     * [Launching](Mongodb/0.2.launching.md)
     * [Operations](Mongodb/1.0.operations.md)
 * [AWS](AWS/0.README.md)
+    * [RDS](AWS/rds.md)
 
 ## Part V Data Visualization (Web Development)
 * [Principle](DV/0.README.md)
-    * [Terminology](DV/Terminology.md)
-    * [Perception](DV/Perception.md)
+    * [Terminology](DV/terminology.md)
+    * [Perception](DV/perception.md)
 * [HTML](web/html.md)
 * [CSS](web/css.md)
 * JavaScript
