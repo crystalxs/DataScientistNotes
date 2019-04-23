@@ -37,6 +37,10 @@
 ## Part III Computer Science Fundamentals
 * [Data Structure](DS/0.README.md)
     * [Linear Structure](DS/linear.md)
+        * [Sequential List](DS/array.md)
+        * [Queue & Stack](DS/queue_stack.md)
+        * [Linked List](DS/linked_list.md)
+        * [Hash Table](DS/hash_table.md)
     * [Tree Structure](DS/tree.md)
     * [Graph Structure](DS/graph.md)
 * [Algorithm](Algorithm/0.README.md)
@@ -77,6 +81,7 @@
     * [Using R for Linear Regression](R/1.0.LR.md)
     * [Using R for time series](R/1.1.TS.md)
 * [SQL](sql/0.README.md)
+    * [Query](sql/query.md)
     * [PostgreSQL](sql/postresql.md)
 * [Python](Python/0.README.md)
     * CheatSheets
@@ -93,6 +98,7 @@
         * [Running Time](Python/package-running_time.md)
         * [Green unicorn](Python/package-green_unicorm.md)
         * [Regular Expression](Python/package-regular_expression.md)
+        * [Flask](Python/package-flask.md)
     * TBD
         * [Data Source from Web](Python/data_source_from_web.md)
         * [Web](Python/web.md)

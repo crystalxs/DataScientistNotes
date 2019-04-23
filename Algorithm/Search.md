@@ -1,8 +1,18 @@
 # Searching
 
+At least $O(n)$ (linear search).
+
 ## Binary Search
 
+### Idea
+
 If we know data is sorted, split recursively in half.
+
+### Time Complex
+
+$O(logn)$
+
+###Implementation
 
 ```python
 def binsearch(a, x):
@@ -19,7 +29,7 @@ def binsearch(a, x):
     return -1
 ```
 
-##### Recursive Version
+####Recursive Version
 
 ```python
 def binsearch(a, x, left, right):
@@ -64,6 +74,10 @@ def search_tree(p:TreeNode, x:object) -> TreeNode:
 
 ## Hash Search
 
+### Idea
+
+Avoid comparing unless the hash code is same.
+
 ### Rabin-Karp
 
 ```python
@@ -102,11 +116,25 @@ def search(doc, s) -> int:
     return -1
 ```
 
-### Revisit Recursive Bucket sort
+##Revisit Recursive Bucket sort (string)
+
+### Idea
+
+1. Make nested bucket structure based on words;
+2. Use `s[i]` to navigate and find final "leaf" with list of words with same prefix;
+3. Linearly search leaf
+
+###Time Complex
 
 For $n=len(doc), m=len(s)$: $T(n,m)=m$
 
-### TRIE or Prefix Trees
+##TRIE or Prefix Trees
+
+### Idea
+
+Convert buckets to nodes and rotate.
+
+###Implementation
 
 ```python
 class TrieNode:
