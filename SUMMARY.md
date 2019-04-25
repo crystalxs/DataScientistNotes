@@ -82,6 +82,8 @@
     * [Using R for time series](R/1.1.TS.md)
 * [SQL](sql/0.README.md)
     * [Query](sql/query.md)
+    * [Nested Query](sql/nested_query.md)
+    * [Query Notes](sql/query_notes.md)
     * [PostgreSQL](sql/postresql.md)
 * [Python](Python/0.README.md)
     * CheatSheets
