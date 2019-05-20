@@ -93,7 +93,6 @@
             * [With](sql/with.md)
         * [Reshape Data](sql/reshape.md)
         * [View](sql/view.md)
-            * 
         * [Information Schema](sql/information.md)
     * SQL Variants
         * [PostgreSQL](sql/postresql.md)
