@@ -4,9 +4,9 @@
 
 $L(\theta, \hat{\theta})=f(\theta, \hat{\theta})$
 
-###Squared
+### Squared
 
-$L(\theta, \hat{\theta})=(\theta-\hat{\theta})^2​$
+$L(\theta, \hat{\theta})=(\theta-\hat{\theta})^2$
 
 ### Asymmetric Squared
 
@@ -14,7 +14,7 @@ $L(\theta, \hat{\theta}) = \begin{cases} (\theta-\hat{\theta})^2 & \hat{\theta} 
 
 ### Absolute
 
-$L(\theta, \hat{\theta}) = \mid \theta - \hat{\theta} \mid​$
+$L(\theta, \hat{\theta}) = \mid \theta - \hat{\theta} \mid$
 
 More robust to outlier in data.
 
@@ -34,10 +34,10 @@ $$
 E_{\theta}[L(\theta, \hat{\theta})]
 $$
 
-* Bayesian inference takes into account the variability of the loss function over $\theta$.
-* Frequentist analysis only looks at one value of the loss.
+- Bayesian inference takes into account the variability of the loss function over $\theta$.
+- Frequentist analysis only looks at one value of the loss.
 
-#####Pseudo-Code:
+##### Pseudo-Code:
 
 For i = 1:N
 	sample $\theta_i \sim p(\theta \mid y)$

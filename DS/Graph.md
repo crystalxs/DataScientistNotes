@@ -73,6 +73,8 @@ def walk_graph_no_cycle(p:Node):
     print(p.value)
     for q in p.edges:
         walk_graph_no_cycle(q)
+        
+walk(cat, set())
 ```
 
 ##Search

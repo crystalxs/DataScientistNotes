@@ -6,6 +6,7 @@
 * [Git & GitHub](CheatSheet/git.md)
 * [Bash](CheatSheet/bash.md)
 * [Gitbook](CheatSheet/gitbook.md)
+* [markdown](CheatSheet/markdown.md)
 * [zsh](CheatSheet/zsh.md)
 * [iterm2](CheatSheet/iterm2.md)
 
@@ -18,7 +19,7 @@
 
 ## Part II Statistics
 * [Probability](Prob/0.README.md)
-    * [Distributions](Prob/Distribution.md)
+    * [Distributions](Prob/distribution.md)
 * Statistics
 * Linear Regression
 * [Time Series](TS/0.README.md)
@@ -31,19 +32,22 @@
     * [Univariance - Holt-Winters Methodology](TS/1.3.Holt-Winters.md)
     * [Multivariance](TS/2.1.Multivariance.md)
 * [Computational Statistics](Bayesian/0.README.md)
-    * [Loss Function](Bayesian/LossFunction.md)
+    * [Loss Function](Bayesian/loss_function.md)
 
 ## Part III Computer Science Fundamentals
 * [Data Structure](DS/0.README.md)
-    * [Linear Structure](DS/Elementary.md)
-    * [Tree Structure](DS/Tree.md)
-    * [Graph Structure](DS/Graph.md)
+    * [Linear Structure](DS/linear.md)
+        * [Sequential List](DS/array.md)
+        * [Linked List](DS/linked_list.md)
+        * [Queue & Stack](DS/queue_stack.md)
+        * [Map](DS/map.md)
+    * [Tree Structure](DS/tree.md)
+    * [Graph Structure](DS/graph.md)
 * [Algorithm](Algorithm/0.README.md)
-    * [Complexity](Algorithm/Complexity.md)
-    * [Searching](Algorithm/Search.md)
-    * [Sort](Algorithm/Sort.md)
-    * [DivideConquer](Algorithm/DivideConquer.md)
-    * [Recursion](Algorithm/Recursion.md)
+    * [Complexity](Algorithm/complexity.md)
+    * [Searching](Algorithm/search.md)
+    * [Sort](Algorithm/sort.md)
+    * [Recursion](Algorithm/recursion.md)
     * [Dynamic Programming](Algorithm/dynamic_programming.md)
     * [Greedy](Algorithm/greedy.md)
     * Bit Manipulation
@@ -77,7 +81,22 @@
     * [Using R for Linear Regression](R/1.0.LR.md)
     * [Using R for time series](R/1.1.TS.md)
 * [SQL](sql/0.README.md)
-    * [PostgreSQL](sql/postresql.md)
+    * SQL Language
+        * [Data Types](sql/types.md)
+        * [Operations](sql/operations.md)
+        * Query
+            * [Query Notes](sql/query_notes.md)
+            * [Basic Queries](sql/query.md)
+            * [Group By](sql/query_group.md)
+            * [Functions](sql/query_functions.md)
+            * [Nested Query](sql/query_nested.md)
+            * [With](sql/with.md)
+        * [Reshape Data](sql/reshape.md)
+        * [View](sql/view.md)
+            * 
+        * [Information Schema](sql/information.md)
+    * SQL Variants
+        * [PostgreSQL](sql/postresql.md)
 * [Python](Python/0.README.md)
     * CheatSheets
         * [Data Type](Python/cs-data.md)
@@ -92,7 +111,8 @@
     * Package
         * [Running Time](Python/package-running_time.md)
         * [Green unicorn](Python/package-green_unicorm.md)
-        * [Regular Expression](Python/package-RE.md)
+        * [Regular Expression](Python/package-regular_expression.md)
+        * [Flask](Python/package-flask.md)
     * TBD
         * [Data Source from Web](Python/data_source_from_web.md)
         * [Web](Python/web.md)
@@ -112,11 +132,12 @@
     * [Launching](Mongodb/0.2.launching.md)
     * [Operations](Mongodb/1.0.operations.md)
 * [AWS](AWS/0.README.md)
+    * [RDS](AWS/rds.md)
 
 ## Part V Data Visualization (Web Development)
 * [Principle](DV/0.README.md)
-    * [Terminology](DV/Terminology.md)
-    * [Perception](DV/Perception.md)
+    * [Terminology](DV/terminology.md)
+    * [Perception](DV/perception.md)
 * [HTML](web/html.md)
 * [CSS](web/css.md)
 * JavaScript
@@ -132,6 +153,7 @@
 * REST api
     * [PostgREST](web/postgrest.md)
 * Webpack
+* [Surge](web/surge.md)
 * Jekyll
 * Morris
 

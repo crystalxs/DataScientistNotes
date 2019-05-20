@@ -12,7 +12,7 @@ class TreeNode:
         self.right = right
 ```
 
-###Depth-first Search Walk 
+###Depth-first Walk 
 
 **Preorder**: Compute before visiting nodes
 
@@ -41,6 +41,14 @@ def dfs(p:TreeNode):
             p = p.left
         p = stack.pop()
         p = p.right
+```
+
+###Breadth-first Walk
+
+```python
+def walk(t:TreeNode) -> int:
+    if t is None: return 0
+    return t.value + walk(t.left) + walk(t.right)
 ```
 
 ##Binary Search Tree
@@ -75,3 +83,32 @@ def walk_search_tree(p:TreeNode, x:object):
 
 A binary tree in which the depth of the two subtrees of *every* node never differ by more than 1.
 
+## Complete Binary Tree
+
+> Each level has all of its nodes;
+>
+> The exception to this is the bottom level of the tree, which we fill in from left to right.
+
+
+
+## Binary Heap
+
+> When we diagram the heap it looks a lot like a tree, but when we implement it we use only a single list as an internal representation.
+
+### Operations
+
+- `BinaryHeap()` creates a new, empty, binary heap.
+- `insert(k)` adds a new item to the heap.
+- `findMin()` returns the item with the minimum key value, leaving item in the heap.
+- `delMin()` returns the item with the minimum key value, removing the item from the heap.
+- `isEmpty()` returns true if the heap is empty, false otherwise.
+- `size()` returns the number of items in the heap.
+- `buildHeap(list)` builds a new heap from a list of keys.
+
+## Min Heap
+
+> The smallest key is always at the front.
+
+## Max Heap
+
+> The largest key value is always at the front.

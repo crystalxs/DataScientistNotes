@@ -4,8 +4,6 @@ My study notes for learning data science.
 
 
 
-
-
 ## Doing
 
 - [ ] Tools - Python
@@ -29,10 +27,10 @@ My study notes for learning data science.
   - [ ] AWS review
 - [ ] Web structure
 - [ ] Move python/web.md to outside python
-- [ ] Move notes in
-  - [ ] Stats - probability
-  - [ ] Stats - stats
-  - [ ] Stats - bayesian
-  - [ ] CS - DL
+- [ ] Add notes (from ipad)
+  - [ ] Stats - probability [when review]
+  - [ ] Stats - stats [when review]
+  - [ ] Stats - bayesian [when review]
+  - [ ] Stats - A/B testing
+  - [ ] CS - DL [when learning]
   - [ ] Tools - R [when review]
-  - [x] Tools -SQL [when review]
