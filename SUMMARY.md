@@ -4,7 +4,7 @@
 
 ## Part 0 Cheat Sheet
 * [Git & GitHub](CheatSheet/git.md)
-* [bash](CheatSheet/bash.md)
+* [Bash](CheatSheet/bash.md)
 * [Gitbook](CheatSheet/gitbook.md)
 * [zsh](CheatSheet/zsh.md)
 * [iterm2](CheatSheet/iterm2.md)

@@ -1,3 +1,11 @@
+# Introduction
+
+My study notes for learning data science.
+
+
+
+
+
 ## Doing
 
 - [ ] Tools - Python
@@ -5,7 +13,7 @@
 - [ ] CS - Algorithm
 - [ ] Web/visual
 
-##Todo
+## Todo
 
 - [ ] Cheat Sheet
   - [ ] iterm2
@@ -27,4 +35,4 @@
   - [ ] Stats - bayesian
   - [ ] CS - DL
   - [ ] Tools - R [when review]
-  - [ ] Tools -SQL [when review]
+  - [x] Tools -SQL [when review]
