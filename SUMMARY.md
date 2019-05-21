@@ -108,6 +108,7 @@
         * [Code Conventions](Python/style-code_conventions.md)
         * [Exception Handling](Python/style-bug_free.md)
     * Package
+        * [Pandas](Python/package-pandas.md)
         * [Running Time](Python/package-running_time.md)
         * [Green unicorn](Python/package-green_unicorm.md)
         * [Regular Expression](Python/package-regular_expression.md)

@@ -1,124 +1,200 @@
 # Graph
 
-* A collection of connected element pairs
-* The aggregate of nodes
+> * A collection of connected element pairs
+> * The aggregate of nodes
+
+## Definition
+
+> <http://interactivepython.org/courselib/static/pythonds/Graphs/VocabularyandDefinitions.html>
 
 **Nodes / vertices** connected with **edges**, which can have **labels**.
 
 Directed graph have arrows as edges; undirected graph use lines as edges.
 
-$n$ nodes: $0 \leq$ direct edges $\leq \frac{n(n-1)}{2}$
+For $n$ nodes: $0 \leq$ direct edges $\leq \frac{n(n-1)}{2}$
+
+## Operations
+
+- `Graph()` creates a new, empty graph.
+- `addVertex(vert)` adds an instance of `Vertex` to the graph.
+- `addEdge(fromVert, toVert)` Adds a new, directed edge to the graph that connects two vertices.
+- `addEdge(fromVert, toVert, weight)` Adds a new, weighted, directed edge to the graph that connects two vertices.
+- `getVertex(vertKey)` finds the vertex in the graph named `vertKey`.
+- `getVertices()` returns the list of all vertices in the graph.
+- `in` returns `True` for a statement of the form `vertex in graph`, if the given vertex is in the graph, `False` otherwise.
 
 ##Implementation
 
 ###Adjacency matrix implementations
 
-$n \times n$ matrix of {0,1} if unlabeled or {labels} if edges are labeled; undirected matrices are symmetric.
+> $n \times n$ matrix, each of the rows and columns represent a vertex in the graph; {0,1} if unlabeled or {labels} if edges are labeled; undirected matrices are symmetric.
 
+- Simple;
 - Wastes space for sparse edges -> using sparse matrix.
 - Fast to access arbitrary node's edges.
 
 ###Adjacency list implementations
 
-List of edge lists for nodes.
+> Keep a master list of all the vertices in the Graph object and then each vertex object in the graph maintains a list of the other vertices that it is connected to.
 
-- Fast arbitrary node access for numbered nodes, space efficient.
+- Fast arbitrary node access for numbered nodes;
+- Space efficient.
+
+#### Implementation in Python
+
+`Graph`: holds the master list of vertices;
+
+`Vertex`: represent each vertex in the graph.
+
+```python
+class Vertex:
+    def __init__(self,key):
+        self.id = key
+        self.connectedTo = {}
+
+    def addNeighbor(self,nbr,weight=0):
+        self.connectedTo[nbr] = weight
+
+    def __str__(self):
+        return str(self.id) + ' connectedTo: ' + str([x.id for x in self.connectedTo])
+
+    def getConnections(self):
+        return self.connectedTo.keys()
+
+    def getId(self):
+        return self.id
+
+    def getWeight(self,nbr):
+        return self.connectedTo[nbr]
+
+
+class Graph:
+    def __init__(self):
+        self.vertList = {}
+        self.numVertices = 0
+
+    def addVertex(self,key):
+        self.numVertices = self.numVertices + 1
+        newVertex = Vertex(key)
+        self.vertList[key] = newVertex
+        return newVertex
+
+    def getVertex(self,n):
+        if n in self.vertList:
+            return self.vertList[n]
+        else:
+            return None
+
+    def __contains__(self,n):
+        return n in self.vertList
+
+    def addEdge(self,f,t,cost=0):
+        if f not in self.vertList:
+            nv = self.addVertex(f)
+        if t not in self.vertList:
+            nv = self.addVertex(t)
+        self.vertList[f].addNeighbor(self.vertList[t], cost)
+
+    def getVertices(self):
+        return self.vertList.keys()
+
+    def __iter__(self):
+        return iter(self.vertList.values())
+```
 
 ###Connected nodes implementation
 
 - Most common implementation due to nice mapping to objects.
 - Each node has info about node and edge list.
-- Use list or dictionary index if you need to access nodes directly.
+
+#### Implementation in Python
 
 ```python
 class Node:
   def __init__(self, value):
     self.value = value
     self.edges = [] # outgoing edges
+    # Use list or dictionary index if you need to access nodes directly.
   def add(self, target:Node):
     self.edges.append(target)
   def __repr__(self):
     return str(self.value)
 ```
 
-##### Implementation with labels
+##### With labels
 
 ```python
 class LNode:
     def __init__(self, value):
         self.value = value
         self.edges = {}
-	def add(self, label, target):
+		def add(self, label, target):
         self.edges[label] = target
 ```
 
-## Walk (DFS)
-
-```python
-def walk_graph(p:Node):
-    if p is None: return
-    print(p.value)
-    for q in p.edges:
-        walk_graph(q)
-```
-
-### Avoiding cycle
-
-```python
-seen = set()
-def walk_graph_no_cycle(p:Node):
-    if p is None: return
-    if p in seen: return
-    seen.add(p)
-    print(p.value)
-    for q in p.edges:
-        walk_graph_no_cycle(q)
-        
-walk(cat, set())
-```
-
-##Search
+## Walk
 
 ###Depth-first Search
 
-Visits all reachable nodes from p, avoiding cycles, and go deep first.
+> Visits all reachable nodes from p, avoiding cycles, and go deep first.
 
 ```python
 def DFS(p:Node, visited=set()):
     if p in vistited: return
     visited.add(p)
-    for q in p.edges:
+    for q in p.edges:		# use for to track the worklist
         DFS(q, visited)
 ```
 
-For $n$ nodes, $m$ edges, $m$ can be $n^2$:
+####Performance
 
-$O(n,m) = n+m$
+For $n$ nodes, $m$ edges: $O(n,m) = n+m$ ($m$ can be $n^2$).
 
 ### Breath-first Search
 
-Visit all children then grandchildren.
+> Proceeds by exploring edges in the graph to find all the vertices in G for which there is a path from s;
+>
+> Visit all children then grandchildren.
+
+To keep track of its progress, BFS colors each of the vertices white, gray, or black:
+
+* All the vertices are initialized to white when they are constructed.
+* When a vertex is initially discovered it is colored gray;
+* When BFS has completely explored a vertex it is colored black;
+* A white vertex is an undiscovered vertex;
+* This means that once a vertex is colored black, it has no white vertices adjacent to it;
+* A gray node, on the other hand, may have some white vertices adjacent to it, indicating that there are still additional vertices to explore.
+
+Use `append` + `pop[0]` make the `wordlist` works as queue:
 
 ```python
 def BFS(root:Node):
-    visited = {root}
-    worklist = [root]
+    visited = {root}				# black
+    worklist = [root]				# gray
     while len(worklist)>0:
         p = worklist.pop(0)	# remove and return the index 0 value
         print(f"Visit {p}")
         for q in p.edges:
             if q not in visited:
                 worklist.append(q)
-                viisted.add(q)
+                visited.add(q)
 ```
 
-`append` + `pop[0]` make the `wordlist` works as queue.
+#### Performance
 
 ## Sort
 
 ### Topological Sort
 
-postorder traversal via DFS
+> To help us decide the precise order in which we should do each of the steps required to make our pancakes we turn to a graph algorithm called the **topological sort**.
+>
+> A topological sort takes a directed acyclic graph and produces a linear ordering of all its vertices such that if the graph G contains an edge (v,w) then the vertex vv comes before the vertex w in the ordering. 
+
+Post-order traversal via DFS:
+
+* `sorted`: black vertices
+* `visited`: gray vertices
+* `todo`: white vertices
 
 ```python
 def postorder(p:Node, sorted:set, visited:set):
@@ -127,9 +203,8 @@ def postorder(p:Node, sorted:set, visited:set):
     for q in p.edges:
         postorder(q, sorted, visited)
     sorted.append(p)
-```
 
-```python
+
 def toposort(nodes):
     sorted = []
     visited = set()
@@ -140,98 +215,9 @@ def toposort(nodes):
     return reverse(sorted)
 ```
 
+### Dijkstra's Algorithm
 
-
-## Common Questions
-
-### Is `q` reachable from `p`?
-
-####Find set of nodes $p$ can reach.
-
-```python
-def reachable(p:Node) -> set:
-    reaches = set();
-    DFS_reach(p, reaches, set())
-    return reaches
-
-def DFS_reach(p:Node, reaches:set, visited:set):
-    if p in visited: return
-    visited.add(p)
-    for q in p.edges:
-        reaches.add(q)
-        DFS_reach(q, reaches, visited)
-```
-
-#### Find set of nodes $p$ can reach, track depth.
-
-```python
-def reachable(p:Node) -> dict:
-    reaches = dict();
-    DFS_reach_track(p, reaches, set(), depth=0)
-    return reaches
-
-def DFS_reach_track(p:Node, reaches:dict, visited:set, depth:int):
-    if p in visited: return
-    visited.add(p)
-    reaches[p] = depth
-    for q in p.edges:
-        DFS_reach_track(q, reaches, visited, depth+1)
-```
-
-#### Find path from $p$ to $q$.
-
-```python
-def path(p:Node, q:Node) -> list:
-    return DFS_path(p, q, [p], set())
-
-def DFS_path(p:Node, q:Node, path:list, visited:set):
-    if p is q: return path
-    if p in visited return None
-	visited.add(p)
-    for t in p.edges:
-        pa = DFS_path(t, q, path+[t], visited)
-        if pa is not None: return pa
-    return None
-```
-
-### Which nodes are within `k` edges of node `p` (neighborhood)?
-
-```python
-def neighbors(p:Node, k:int) -> dict:
-    reaches = dict();
-    DFS_neighbors(p, k, reaches, set(), depth=0)
-    return reaches
-
-def DFS_neighbors(p:Node, k:int, reaches:dict, visited:set, depth:int):
-    if p in visited or depth>k: return
-    visited.add(p)
-    reaches[p] = depth
-    for q in p.edges:
-        DFS_neighbors(q, k, reaches, visited, depth+1)
-```
-
-### How many edges are on paths between `q` and `p`?
-
-### Is graph connected (reach any `p` from any `q`)?
-
-### Is graph cyclic (`p` reaches `p` traversing at least one edge)?
-
-```python
-def DFS_cyclic(start:Node, p:Node, visited) -> bool:
-    if p in visited:
-        if p is start: return True
-        return False
-    visited.add(p)
-    for q in p.edges:
-        c = DFS_cyclic(start, q, visited)
-        if c: return True
-       return False
-
-def iscyclic(p:Node) -> bool:
-    return DFS_cyclic(p,p,set())
-```
-
-### What is shortest path (num edges) from `p` to `q`?
+> Determine the shortest path.
 
 ```python
 def BFS_shortest(root:Node, target:Node):
@@ -247,3 +233,17 @@ def BFS_shortest(root:Node, target:Node):
                 visited.add(q)
 ```
 
+#### Performance
+
+### Prim’s Spanning Tree Algorithm
+
+> <http://interactivepython.org/courselib/static/pythonds/Graphs/PrimsSpanningTreeAlgorithm.html>
+
+### Strongly Connect Component
+
+> We formally define a **strongly connected component**, C, of a graph G, as the largest subset of vertices C⊂V such that for every pair of vertices v,w∈C we have a path from v to w and a path from w to v.
+
+1. Call `dfs` for the graph G to compute the finish times for each vertex.
+2. Compute $G^T$.
+3. Call `dfs` for the graph $G^T$ but in the main loop of DFS explore each vertex in decreasing order of finish time.
+4. Each tree in the forest computed in step 3 is a strongly connected component. Output the vertex ids for each vertex in each tree in the forest to identify the component.
