@@ -45,8 +45,9 @@
     * [Graph Structure](DS/graph.md)
 * [Algorithm](Algorithm/0.README.md)
     * [Complexity](Algorithm/complexity.md)
-    * [Searching](Algorithm/search.md)
     * [Sort](Algorithm/sort.md)
+    * [Searching](Algorithm/search.md)
+    * [Breadth First Search & Depth First Search](Algorithm/bfs_bfs.md)
     * [Recursion](Algorithm/recursion.md)
     * [Dynamic Programming](Algorithm/dynamic_programming.md)
     * [Greedy](Algorithm/greedy.md)
@@ -75,6 +76,7 @@
     * [Ensembling](ML/2.4.ensembling.md)
     * [Grid Search](ML/2.5.gridSearch.md)
 * [Deep Learning](DL/0.README.md)
+* [Neuro Linguistic Programming](NLP/0.README.md)
 
 ## Part IV Data Science Tools
 * [R](R/0.README.md)

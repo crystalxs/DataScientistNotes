@@ -17,10 +17,10 @@ Algorithms that use a single recursive are easy to convert to loops, and loops a
 
 ```python
 def f(input):
-  # check termination condition
-  # process the active input region
-  # invoke f on subregions
-  # combine and return result
+  # 1. check termination condition
+  # 2. process the active input region
+  # 3. invoke f on subregions
+  # 4. combine and return result
 ```
 
 ## Complexity

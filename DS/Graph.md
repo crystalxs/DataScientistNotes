@@ -182,9 +182,7 @@ def BFS(root:Node):
 
 #### Performance
 
-## Sort
-
-### Topological Sort
+##Topological Sort
 
 > To help us decide the precise order in which we should do each of the steps required to make our pancakes we turn to a graph algorithm called the **topological sort**.
 >

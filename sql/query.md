@@ -30,7 +30,7 @@ WHERE <comparison operation>;
 
 > used in `WHERE`
 
-Common comparison operations: `=`, `>`, `<`, `<=`, `>=`, `!= / <>`.
+Common comparison operations: `=`, `>`, `<`, `<=`, `>=`, `!= or <>`.
 
 `BETWEEN()`
 
