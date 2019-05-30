@@ -33,6 +33,7 @@
     * [Multivariance](TS/2.1.Multivariance.md)
 * [Computational Statistics](Bayesian/0.README.md)
     * [Loss Function](Bayesian/loss_function.md)
+* Experiments Design
 
 ## Part III Computer Science Fundamentals
 * [Data Structure](DS/0.README.md)
@@ -57,24 +58,25 @@
 * Operating System
 * Formal Language and Automata
 * [Machine Learning](ML/0.README.md)
-    * [Cost Function](ML/0.0.costFunction.md)
-    * [Bias vs Variance](ML/0.1.bias&variance.md)
-    * [Neural Network](ML/neuralNetwork.md)
-    * [knn](ML/1.0.knn.md)
-    * [Naive Bayes](ML/1.1.naiveBayes.md)
-    * [SVM](ML/1.2.SVM.md)
-    * [Decision Tree](ML/1.3.DT.md)
-    * [Random Forest](ML/1.4.RF.md)
-    * [Distance Metric](ML/distanceMetric.md)
-    * [Regularization](ML/regularization.md)
-    * [Classification Metrics](ML/classificationMetrics.md)
-    * [Information Theory](ML/informationTheory.md)
-    * [Unbalanced Data](ML/2.0.unbalancedData.md)
-    * [Feature Engineering](ML/2.1.featureEngineering.md)
-    * [Cross Validation](ML/2.2.crossValidation.md)
-    * [Pipeline](ML/2.3.pipeline.md)
-    * [Ensembling](ML/2.4.ensembling.md)
-    * [Grid Search](ML/2.5.gridSearch.md)
+    * Model Evaluation
+        * [Evalutaion Metrics](ML/evaluation_metrics.md)
+        * [Bias v.s. Variance](ML/bias_variance.md)
+        * [Cross Validation](ML/cross_validation.md)
+    * Cost Function
+    * Neural Network
+    * KNN
+    * Naive Bayes
+    * SVM
+    * Decision Tree
+    * Random Forest
+    * Distance Metric
+    * Regularization
+    * Information Theory
+    * [Imbalanced Data](ML/imbalanced_data.md)
+    * Feature Engineering
+    * Pipeline
+    * Ensembling
+    * Grid Search
 * [Deep Learning](DL/0.README.md)
 * [Neuro Linguistic Programming](NLP/0.README.md)
 
@@ -82,22 +84,22 @@
 * [R](R/0.README.md)
     * [Using R for Linear Regression](R/1.0.LR.md)
     * [Using R for time series](R/1.1.TS.md)
-* [SQL](sql/0.README.md)
+* [SQL](SQL/0.README.md)
     * SQL Language
-        * [Data Types](sql/types.md)
-        * [Operations](sql/operations.md)
+        * [Data Types](SQL/types.md)
+        * [Operations](SQL/operations.md)
         * Query
-            * [Query Notes](sql/query_notes.md)
-            * [Basic Queries](sql/query.md)
-            * [Group By](sql/query_group.md)
-            * [Functions](sql/query_functions.md)
-            * [Nested Query](sql/query_nested.md)
-            * [With](sql/with.md)
-        * [Reshape Data](sql/reshape.md)
-        * [View](sql/view.md)
-        * [Information Schema](sql/information.md)
+            * [Query Notes](SQL/query_notes.md)
+            * [Basic Queries](SQL/query.md)
+            * [Group By](SQL/query_group.md)
+            * [Functions](SQL/query_functions.md)
+            * [Nested Query](SQL/query_nested.md)
+            * [With](SQL/with.md)
+        * [Reshape Data](SQL/reshape.md)
+        * [View](SQL/view.md)
+        * [Information Schema](SQL/information.md)
     * SQL Variants
-        * [PostgreSQL](sql/postresql.md)
+        * [PostgreSQL](SQL/postresql.md)
 * [Python](Python/0.README.md)
     * CheatSheets
         * [Data Type](Python/cs-data.md)
@@ -122,19 +124,22 @@
         * [Environment](Python/anaconda-environment.md)
         * [Jupyter Notebook Extensions](Python/anaconda-jupyter.md)
 * [Spark](Spark/0.README.md)
-    * [Distributed Computing](Spark/0.1.distributedComputing.md)
-    * [MapReduece](Spark/0.2.mapReduc.md)
-    * [Loading data](Spark/1.0.loadingData.md)
-    * [Pyspark](Spark/1.1.pyspark.md)
-    * [Efficiency](Spark/1.2.persist.md)
-    * [YARN Cluster](Spark/2.0.YARNcluster.md)
-    * [Spark SQL](Spark/3.0.sql.md)
-    * [MLlib](Spark/3.1.MLlib.md)
+    * [MapReduce](Spark/mapReduce.md)
+    * [Spark Cluster](Spark/spark_cluster.md)
+      * Spark Standalone Cluster
+      * YARN Cluster([AWS EMR (Elastic MapReduce)](../AWS/EMR))
+    * [Pyspark](Spark/pyspark.md)
+    * [Loading data](Spark/loading_data.md)
+    * [Efficiency](Spark/persist.md)
+    * [Spark SQL](Spark/sql.md)
+    * [MLlib](Spark/MLlib.md)
 * [MongoDB](Mongodb/0.README.md)
     * [Launching](Mongodb/0.2.launching.md)
     * [Operations](Mongodb/1.0.operations.md)
 * [AWS](AWS/0.README.md)
-    * [RDS](AWS/rds.md)
+    * [EMR](AWS/EMR.md)
+    * [S3](AWS/S3.md)
+    * [RDS](AWS/RDS.md)
 
 ## Part V Data Visualization (Web Development)
 * [Principle](DV/0.README.md)

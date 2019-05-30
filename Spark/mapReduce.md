@@ -1,15 +1,20 @@
-# 0.2. MapReduece
+# MapReduce
+
+> Allow computations to be parallelized over a cluster.
+
+**Map**: apply a function to each data over a portion of data in parallel;
+
+**Reduce**: return one value from multiple values.
 
 Hadoop MapReduce solved issues of:
 
-* Distribution : Distribute the data.
-* Parallelism : Perform subsets of the computation simultaneously.
-* Fault Tolerance : Handle component failure.
+* **Distribution**: Distribute the data.
+* **Parallelism**: Perform subsets of the computation simultaneously.
+* **Fault Tolerance**: Handle component failure.
 
 Limitations:
 
-* Hadoop MapReduce is powerful, but can be slow. 
-* MapReduce job results need to be stored in HDFS (disk) before they can be used by another job. ➔ Slow with iterative algorithms. 
+* **Slow**: MapReduce job results need to be stored in HDFS (disk) before they can be used by another job. ➔ Slow with iterative algorithms. 
 * Many kinds of problems don’t easily fit MapReduce’s two-step paradigm. 
 * Hadoop is a low-level framework, so myriad tools have sprung up around it and brings additional complexity and requirements. 
 

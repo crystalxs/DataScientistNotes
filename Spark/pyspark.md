@@ -1,20 +1,22 @@
 # 1.0. Pyspark
 
-https://spark.apache.org/docs/2.1.0/quick-start.html
+> https://spark.apache.org/docs/2.1.0/quick-start.html
 
-## Running a spark application using the spark-submit
+### Running a spark application using the spark-submit
 
 ```
 spark-submit yourscript
 ```
-
-## SparkContext
 
 ### Load pyspark package
 
 ```
 import pyspark
 ```
+
+## SparkContext
+
+> Driver program access Spark by `SparkContext`(sc) object.
 
 ### SparkContext Object
 
@@ -27,6 +29,7 @@ import pyspark
 
 ```
 sc = pyspark.Sparkcontext(appName = "MSDS694")
+# appName to identify the application if connecting to a cluster
 
 sc = pyspark.SparkContext(appName='day2_ex01').getOrCreate()
 
@@ -44,13 +47,13 @@ sc.stop()
 
 ## Resilient Distributed Dataset (RDD)
 
-Distributed datasets that consists of records.
+> Distributed datasets that consists of records.
 
 ### Key ideas
 
-- Distributed: The data in RDDs is divided into one or many partitions as in-memory collections of objects across worker nodes.
-- Immutable: Read-only, once created, RDD never change.
-- Resilient: Automatically rebuilt on failure, RDDs track lineage info to rebuild lost data (instead of replication).
+- **Distributed**: The data in RDDs is divided into one or many partitions as in-memory collections of objects across worker nodes.
+- **Immutable**: Read-only, once created, RDD never change.
+- **Resilient**: Automatically rebuilt on failure, RDDs track lineage info to rebuild lost data (instead of replication).
 
 ### Create distributed data sets
 
@@ -68,47 +71,44 @@ lines = sc.parallelize(["spark", "spark is fun!"], Partition#))
 lines.getNumPartitions()
 ```
 
-### Coalescing data within each partition and see what is in each partition
-
-```
-lines.glom().collect()
-```
-
-`glom()`: return the RDD created by coalescing all elements within each partition into a list.
-
-`collect()`: return a list that contains all of the elements in this RDD.
-
-Try to output the content of RDDs every-time after each operation.
-
 ### Save distributed data sets (Action Operation)
 
 `saveAsTextFile(new_subdir_name)`: return multiple output files (write the elements of the dataset as a text file)(each partition in a separate file + success indicator: `_SUCCESS`) underneath the `new_subdir_name`  in the local filesystem, HDFS or any other Hadoop-supported file system, as spark writes the output from multiple nodes. Spark will call toString on each element to convert it to a line of text in the file.
 
-# RDD Operation
+### Save the middle RDD data
 
-<http://spark.apache.org/docs/latest/rdd-programming-guide.html>
+```
+rdd.saveAsPickleFile(filename)
+pickleRdd = spark.pickleFile(filename).collect()
+```
 
-## Transformation Operation
+##RDD Operation
+
+> <http://spark.apache.org/docs/latest/rdd-programming-guide.html>
+
+### Transformation Operation
 
 Perform functions against each element in an RDD and return a new RDD. **Doesn't change the original RDDs.**
 
-Lazy evaluation: operations are only evaluated when an action is requested. Doesn't return the output, return something like: `PythonRDD[10] at RDD at PythonRDD.scala:49`.
+**Lazy evaluation**: operations are only evaluated when an action is requested.
 
-### Element wise transformation
+Doesn't return the output, return something like: `PythonRDD[10] at RDD at PythonRDD.scala:49`.
+
+#### Element wise transformation
 
 `map(func)`: apply a function to each element in the RDD.
 
-`flatmap(func)`: similar to `map()`, but concatenates multiple arrays into a collections that has one level structure, generate a list of words within one level structure.
+`flatmap(func)`: similar to `map()`, but concatenates multiple arrays into a collection that has one level structure, generate a list of words within one level structure.
 
 `filter(func)`: return an RDD that passes the filtering requirement.
 
-### Partition wise transformation
+#### Partition wise transformation
 
-`mapPartitions(func)`: return a new RDD by applying a function to each partition of the RDD, so func must be of type `Iterator<T> => Iterator<U>` when running on an RDD of type T.
+`mapPartitions(func)`: return a new RDD by applying a function to each partition of the RDD, so <func> must be of type `Iterator<T> => Iterator<U>` when running on an RDD of type T.
 
-### Set Operation
+#### Set Operation
 
-format: `rdd1.operation(rdd2)`
+**Format**: `rdd1.operation(rdd2)`
 
 `distinct()`: return only one of each element.
 
@@ -120,13 +120,13 @@ format: `rdd1.operation(rdd2)`
 
 `cartesian()`: return cartesian product.
 
-### Sample
+#### Sample
 
-Create a sampled subset RDD from an original RDD based on a percentage of the overall data set.
+> Create a sampled subset RDD from an original RDD based on a percentage of the overall data set.
 
 Format: `rdd.sample(withReplacement, fraction, seed)`
 
-`withReplacement`: `True/False` Allow sample multiple times.
+`withReplacement`( `True/False`): Allow sample multiple times.
 
 `fraction`:
 
@@ -138,15 +138,21 @@ Format: `rdd.sample(withReplacement, fraction, seed)`
 
 `seed`: Random number generation to determine whether to include an element in the resulting RDD. **When a seed is given, it will generate same output.**
 
-This is not guaranteed to provide exactly the fraction specified of the total count. It won't return the exactly number, but the roughly number.
+This is not guaranteed to provide exactly the fraction specified of the total count. It won't return the exactly number, but the **roughly** number.
 
-## Action Operation
+### Action Operation
 
 Trigger a computation based on an RDD and return a value to the Spark driver.
 
 Return **non-RDDs** like a single number, string, array, etc.
 
+#### General Operation
+
 `collect()`: return a list that contains all of the elements of the dataset. **This is usually useful after a filter or other operation that returns a sufficiently small subset of the data.**
+
+`glom()`: return the RDD created by coalescing all elements within each partition into a list.
+
+**Try to output the content of RDDs (`lines.glom().collect()`) every-time after each operation.**
 
 `first()`: return a list that contain the first item of the dataset, similar to `take(1)`.
 
@@ -158,8 +164,11 @@ Return **non-RDDs** like a single number, string, array, etc.
 
 `countByValue()`: return a default dictionary of the number of times each element occurs in the RDD.
 
+#### Combine Operation
+
 `reduce(func)`: 
 
+- combine the elements of the RDDs together in parallel;
 - take a function that operates on two elements of the type in RDD;
 - returns a new element of the same type;
 - when the partition or RDD is empty, `reduce()` don't do anything, return an error.
@@ -167,9 +176,9 @@ Return **non-RDDs** like a single number, string, array, etc.
 `fold(zero, func)`:
 
 - same as `reduce()`;
-- but with the provided `zero value`: deal with the situation when the partition or RDD is empty;
-- add `zero value` into it at the first step (in each partition) and the last step (in the final shuffle step);
-- sensitive to how many partition RDD has, the number of `zero value` it added (partition number + 1).
+- but with the provided <zero value>: deal with the situation when the partition or RDD is empty;
+- add <zero value> into it at the **first** step (in each partition) and the **last** step (in the final shuffle step);
+- sensitive to how many partition RDD has, the number of <zero value> it added (partition number + 1).
 
 `aggregate(zero, SeqOp, combOp)`:
 
@@ -179,7 +188,7 @@ Return **non-RDDs** like a single number, string, array, etc.
 - `combOp` merging outputs from different partitions;
 - can used to return a different type from the original RDD.
 
-### Sample
+#### Sample
 
 **format**: `rdd.takeSample(withReplacement, num, [seed])`
 
@@ -190,7 +199,7 @@ Return **non-RDDs** like a single number, string, array, etc.
 - when `withReplacement` is `True` and `num` is greater than the original RDD size, it will return the `num` elements;
 - `seed`: random number generation.
 
-### Numeric RDD Action
+#### Numeric RDD Action
 
 `count()`: return the number of elements in the RDD.
 
@@ -206,15 +215,13 @@ Return **non-RDDs** like a single number, string, array, etc.
 
 `stdev()`: return the standard deviation of the RDD's elements.
 
-## Pair Rdd
+### Pair RDD
 
-- Key-value pairs:
-
-  commonly used for many operations including aggregations, ETL (extract, transform, and load) in Spark.
+- **Key-value pairs**: commonly used for many operations including aggregations, ETL (extract, transform, and load) in Spark.
 
 - Allow operations on each key in parallel or regroup data across the network such as reduceByKey(), join(), etc. 
 
-### Creation
+#### Creation
 
 Apply a `map` function with a lambda or user-defined function to have a pair of `(Key, Value)`: 
 
@@ -222,13 +229,13 @@ Apply a `map` function with a lambda or user-defined function to have a pair of 
 
 • `Value`: could be a simple objects to data structures (lists, tuples, dictionaries, sets, etc.). 
 
-### Operations
+#### Operations
 
-https://spark.apache.org/docs/0.6.2/api/core/spark/PairRDDFunctions.html
+> https://spark.apache.org/docs/0.6.2/api/core/spark/PairRDDFunctions.html
 
-Most Spark operations works for pair RDDs, but there are several operators only available on RDDs of key-value pairs. The most common ones are distributed “shuffle” operations, such as grouping or aggregating the elements by a key.
+Most Spark operations works for pair RDDs, but there are several operators only available on RDDs of key-value pairs.
 
-####Transformation Operations
+##### Transformation Operations
 
 `keys()`: return an RDD of just the keys. 
 
@@ -247,7 +254,7 @@ Most Spark operations works for pair RDDs, but there are several operators only 
 `mapValues(func)`:
 
 - Pass each value in the key-value pair RDD through a `map` function without changing the keys.
-- If using `lambda function` under `func`, the `x` will be only the `value` from key-value pair.
+- If using `lambda function` under <func>, the `x` will be only the `value` from key-value pair.
 - Retain the original RDD’s partitioning. 
 
 `flatMapValues(func)`:
@@ -257,27 +264,26 @@ Most Spark operations works for pair RDDs, but there are several operators only 
 
 `reduceByKey(func)`:
 
-- Similar to reduce(). 
+- Similar to `reduce()`. 
 
-- Run several parallel reduce operations, one for each key in the 
-
-  data set. 
+- Run several parallel reduce operations, one for each key in the data set. 
 
 - When called on a dataset of (Key, Val) pairs, returns a dataset of (Key, Val) pairs where the values for each key are aggregated using the given reduce function. 
 
-- Transformation (Not an action): Returns a new RDD consisting of each key and the reduced value for that key. 
+- **Transformation** (Not an action): Returns a new RDD consisting of each key and the reduced value for that key. 
 
-##### `reduceByKey()` vs `groupByKey().mapValues()`
+**`reduceByKey()` vs `groupByKey().mapValues()`**
 
-To group values for the purpose of aggregation (such as sum or count for each key), using `reduceByKey()`, `foldByKey()` will provide better performance. 
+To group values for the purpose of aggregation (such as sum or count for each key), using `reduceByKey()`, `foldByKey()` will provide better performance:
 
-* They combines the aggregation function before the shuffle. 
-  * Pairs on the same node/partition with the same key are combined before the data is shuffled. Then the function is called again to reduce all the values from each partition to produce one final result. 
-* Result in a reduced amount of data shuffled.
+They combines the aggregation function before the shuffle: pairs on the same node/partition with the same key are combined before the data is shuffled. Then the function is called again to reduce all the values from each partition to produce one final result. 
 
-####Action Operations
+**Result in a reduced amount of data shuffled.**
+
+##### Action Operations
 
 `countByKey( )`: count the number of elements for each key.
+
 `lookup(key)`: return all values associated with the provided key.
 
 `subtractByKey(otherDataset)`: return an RDD with the pairs whose `key`s are not in `otherDataset`.

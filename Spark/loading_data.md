@@ -1,4 +1,4 @@
-# 1.0. Loading data
+# Loading data
 
 # Load text format data from local
 

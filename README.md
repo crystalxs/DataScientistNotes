@@ -21,16 +21,15 @@ My study notes for learning data science.
 - [ ] CS
   - [ ] ML conflict [when review]
 - [ ] Tools
-  - [ ] Spark conflict & review
   - [ ] R conflict
   - [ ] Mongodb review
   - [ ] AWS review
-- [ ] Web structure
+- [ ] Web structure ？？？
 - [ ] Move python/web.md to outside python
 - [ ] Add notes (from ipad)
-  - [ ] Stats - probability [when review]
-  - [ ] Stats - stats [when review]
-  - [ ] Stats - bayesian [when review]
+  - [ ] Stats - probability
+  - [ ] Stats - stats
+  - [ ] Stats - bayesian
   - [ ] Stats - A/B testing
-  - [ ] CS - DL [when learning]
-  - [ ] Tools - R [when review]
+  - [ ] CS - DL
+  - [ ] Tools - R

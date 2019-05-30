@@ -20,6 +20,8 @@ jupyter nbextensions_configurator enable    # Enable nbextension on Jupyter
 conda install -c conda-forge autopep8       # Install autopep8 which comes with pycodestyle
 ```
 
+go to <base_url/nbextensions>
+
 ### Code layout
 
 * **Max line length:** 79 characters;
