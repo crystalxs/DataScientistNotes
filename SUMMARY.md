@@ -58,25 +58,26 @@
 * Operating System
 * Formal Language and Automata
 * [Machine Learning](ML/0.README.md)
+    * [Feature Engineering](ML/feature_engineer.md)
+    * [Dimension Reduce](ML/dimension_reduce.md)
+    * [Model](ML/model.md)
+        * [KNN](ML/kNN.md)
+        * [Naive Bayes](ML/bayes.md)
+        * [SVM](ML/SVM.md)
+        * [Decision Tree](ML/DT.md)
+        * [Ensembling](ML/ensembling.md)
+            * [Random Forest](ML/RF.md)
+            * Gradient Boosting
+        * Neural Network
     * Model Evaluation
-        * [Evalutaion Metrics](ML/evaluation_metrics.md)
+        * [Model Evaluation Procedures](ML/cross_validation.md)
+        * [Evaluation Metrics](ML/evaluation_metrics.md)
         * [Bias v.s. Variance](ML/bias_variance.md)
-        * [Cross Validation](ML/cross_validation.md)
-    * Cost Function
-    * Neural Network
-    * KNN
-    * Naive Bayes
-    * SVM
-    * Decision Tree
-    * Random Forest
-    * Distance Metric
-    * Regularization
-    * Information Theory
+        * [Model Tunning](ML/tunning.md)
+    * Cases
+        * Recommendation System
+        * [Anomaly Detection](ML/anomaly_detection.md)
     * [Imbalanced Data](ML/imbalanced_data.md)
-    * Feature Engineering
-    * Pipeline
-    * Ensembling
-    * Grid Search
 * [Deep Learning](DL/0.README.md)
 * [Neuro Linguistic Programming](NLP/0.README.md)
 
@@ -126,8 +127,8 @@
 * [Spark](Spark/0.README.md)
     * [MapReduce](Spark/mapReduce.md)
     * [Spark Cluster](Spark/spark_cluster.md)
-      * Spark Standalone Cluster
-      * YARN Cluster([AWS EMR (Elastic MapReduce)](../AWS/EMR))
+        * Spark Standalone Cluster
+        * [AWS EMR (Elastic MapReduce)](../AWS/EMR)
     * [Pyspark](Spark/pyspark.md)
     * [Loading data](Spark/loading_data.md)
     * [Efficiency](Spark/persist.md)

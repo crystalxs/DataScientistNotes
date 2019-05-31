@@ -1,8 +1,8 @@
-# 2.4. Ensembling
+# Ensembling
 
-Combine multiple ML models to obtain better predictive performance than any of single models could do alone.
-
-Techniques for combining several weak learners to produce a single strong learner.
+> Combine multiple ML models to obtain better predictive performance than any of single models could do alone.
+>
+> Techniques for combining several weak learners to produce a single strong learner.
 
 ## Averaging (Blending)
 
@@ -20,7 +20,7 @@ Prediction of model 1 if condition else prediction of model 2
 
 ## Stacking
 
-An ensemble learning technique that uses predictions from previous models to build a new model.
+> An ensemble learning technique that uses predictions from previous models to build a new model.
 
 ### Pipeline
 
@@ -39,13 +39,11 @@ However, creating a meta-learner that is able to choose among heterogeneous mode
 
 ## Bagging, aka Bootstrap Aggregating
 
-Fit multiple models in parallel and independently.
-
-Each model gets a vote on the final prediction.
+> Fit multiple models in parallel and independently. Each model gets a vote on the final prediction.
 
 ### Parameters that control Bagging
 
-* changing the seed
+* Changing the seed
 * Row (Sub)sampling
 * Column (Sub)sampling
 * Bootstraping
@@ -91,7 +89,7 @@ If you have time and enough data, bagging is a good choice because it only impro
 
 ## Boosting
 
-A sequential process, where each subsequent model attempts to correct the errors of the previous models.
+> A sequential process, where each subsequent model attempts to correct the errors of the previous models.
 
 ### Subsetted data
 
@@ -111,11 +109,4 @@ However, it is more complex than Bagging (harder to implement and harder to debu
 
 ## StackNet
 
-
-
-ref:
-
-https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-for-ensemble-models/
-
-https://medium.com/@rrfd/boosting-bagging-and-stacking-ensemble-methods-with-sklearn-and-mlens-a455c0c982de
 

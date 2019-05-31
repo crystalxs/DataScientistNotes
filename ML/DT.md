@@ -1,109 +1,137 @@
 # Decision Tree
 
-supervised, non-parametric
+> A supervised, non-parametric model.
 
-##terminology
+The **root** of a decision tree is located on the top, it is the first split.
 
-The root of a decision tree is located on the top, it is the first split.
+The **node** do a binary split based a specific value of a specific attribute to minimize entropy.
 
-The node do a binary split based a specific value of a specific attribute to minimize entropy.
+The **leaf** classifies **all** members in the defined feature space as belonging to a **single** class (decision boundary).
 
-The leaf classifies **all** members in the defined feature space as belonging to a **single** class (decision boundary).
+## Type
 
-###Divide-and-conquer 
+### Classification Trees
 
-Split the data into subsets, which are then split repeatedly into even smaller subsets, …
+- Predict: class label
+- Training: minimize impurity
+- Inference: assign majority class label of leaf node
 
-The process stops when the algorithm determines the data within the subsets are sufficiently homogeneous (or another stopping criterion has been met).
+### Regression Trees
 
-## Advantages
+- Predict: value
+- Training: minimize error (typically mean squared)
+- Inference: mean of the leaf node
 
-- Simple to use (explain and visualize)
-- DT requires little data preparation
-- Handle numerical and categorical data
-- Handle many types of outputs (regression and multi-class classification)
+## Steps
 
-## Disadvantage
+> Decision Trees learn **top-down, greedily, recursively**.
+>
+> The **goal** of DT is divide the dataset into pure regions.
 
-**Easily overfit**
+1. Divide-and-conquer : split the data into subsets;
+2. Top-down: from a single split
+3. Greedily: choose the split that has results in the most pure feature space
+   1. Calculate the entropy of the dataset
+   2. For every feature, calculate the entropy for all values
+   3. Pick feature and value that has the highest Information Gain
 
-# Handle build a Decision Tree
+The process stops:
 
-Decision Trees learn **top-down, greedily, recursively**.
-
-The goal of DT is divide the dataset into pure regions.
-
-## Data Preparation
-
-- data normalization
-- dummy variables need to be created
-- blank values to be removed
-
-##Feature Selection
-
-Aka: measure purity of a feature space
-
-- Classification Error
-- Information Gain
-- Gini Index
-
-Other splitting methods
-
-- Gain ratio
-- Twoing criteria
-- Distance Measure
-- Likelihood-Ratio Chi–Squared Statistics
-- DKM Criterion
-- Normalized Impurity Based Criteria
-- Binary Criteria
-- Orthogonal (ORT) Criterion
-- Kolmogorov–Smirnov Criterion
-- AUC–Splitting Criteria
-
-###Classification Error 
-
-$\text{𝐶𝑙𝑎𝑠𝑠𝑖𝑓𝑖𝑐𝑎𝑡𝑖𝑜𝑛 𝐸𝑟𝑟𝑜𝑟}=1−𝑚𝑎𝑥𝑝_𝑘$
-
-where $𝑝_𝑘$ denotes the proportion of instances belonging to class $𝑘$.
-
-###Information Gain
-
-aka, KL Divergence or Relative Gain or Relative Entropy.
-
-**Choose one split over another**: find the attribute that returns the highest information gain (i.e., the most homogeneous branches).
-
-$Information Gain = \text{entropy}(parent) - \text{weighted average of entropy}(children)$
+* All instances are in same class (simplest and most often used)
+* The number of instances is less than a specified minimum
+* The tree is deeper than some minimum
+* The improvement of class impurity is less than a specified minimum
 
 DT are **greedy**: find and choose the current best value.
 
 Greedy algorithms can have local minimums. There could be complex / future choice dependent rules that could perform better.
 
-### Gini Index
+### Information Theory
 
-A measure of how often a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset.
+> How decision tree actually decide.
 
-Computed by summing the probability $𝑝_𝑖$ of an item with label $𝑖$ being chosen times the probability $\sum_{𝑖 \neq 𝑖}𝑝_𝑘=1−𝑝_𝑖$ of a mistake in categorizing that item.
+#### Entropy
 
-$Gini = 1 - \sum_{i=1}^K p_k^2$
+> The measure of the uncertainty in a random variable.
+
+##### Shannon Entropy
+
+$$
+H=−\sum p(x)log_2 p(x)
+$$
+
+##### Binary Entropy
+
+$$
+H=−\sum plog_2 p - (1-p)log_2(1-p)
+$$
+
+#### Information Gain
+
+> aka, KL Divergence or Relative Gain or Relative Entropy.
+>
+> **Choose one split over another**: find the attribute that returns the highest information gain (i.e., the most homogeneous branches).
+
+Information Gain = Entropy(parent) - Weighted average of entropy(children)​
+$$
+Gain(S,A) = Entropy(S) - \sum_{v \in values(A)} \frac{|S_v|}{|S|} Entropy(S_v)
+$$
+
+#### Gini Index
+
+> A measure of how often a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset.
+
+$$
+Gini = 1 - \sum_{i=1}^K p_k^2
+$$
 
 Properties:
 
 - Maximized when elements are heterogeneous (impure).
 - Minimized when elements are homogenous (pure).
 
-## How would we split for multi-nominal features?
+#### Classification Error 
+
+$\text{𝐶𝑙𝑎𝑠𝑠𝑖𝑓𝑖𝑐𝑎𝑡𝑖𝑜𝑛 𝐸𝑟𝑟𝑜𝑟}=1−𝑚𝑎𝑥𝑝_𝑘$
+
+where $𝑝_𝑘$ denotes the proportion of instances belonging to class $𝑘$.
+
+![compare](/Users/crystal/Library/Mobile Documents/com~apple~CloudDocs/dataScientistNotes/ML/img/dt-information-thoery.png)
+
+#### How would we split for multi-nominal features?
 
 1. Consider all possible pairs of splits. For k classes there are 2k-1-1 splits, which is computationally prohibitive if k is a large number.
 2. If there are ordered classes, then we do version of binary search. This reduces the search to k-1 possible splits for k classes.
 3. If there are have many ks, a One-Versus-All-The-Rest reduces the search to linear for number of k.
 
-## How would we split for continuous features?
+#### How would we split for continuous features?
 
 We need a threshold split (i.e., x ≤ 42)
 
-One option is too sort the data and perform binary search for optional split value.
+One option is to sort the data and perform binary search for optional split value.
 
-This could be computational intractable because it requires sorting O(nlogn) then binary search O(logn).
+This could be computational intractable because it requires sorting $O(nlogn)$ then binary search $O(logn)$.
+
+### Avoid overfitting
+
+* Acquire more training data
+* Pruning
+* Setting the maximum depth of the tree
+* Setting the minimum number of samples required at each leaf node
+* Setting how much IG required to make another split
+
+## Pro v.s. Con
+
+### Advantages
+
+- Simple to use (explain and visualize)
+- DT requires little data preparation
+- Handle numerical and categorical data
+- Handle many types of outputs (regression and multi-class classification)
+
+### Disadvantage
+
+- **Easily overfit**
 
 ## Sklearn
 
@@ -162,8 +190,3 @@ feature = dt.tree_.feature
 # threshold value at the node
 threshold = dt.tree_.threshold
 ```
-
-
-
-
-
