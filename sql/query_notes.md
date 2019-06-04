@@ -4,15 +4,13 @@
 
 ## Evaluation Order
 
-`FROM`
-
-`WHERE`
-
-`ORDER BY`
-
-`LIMIT`
-
-`SELECT`
+1. `FROM`
+2. `WHERE`
+3. `GROUP BY` + `HAVING`
+4. `SELECT` + Window Function
+5. `ORDER BY`
+6. `LIMIT`
+7. 
 
 ## Case Sensitive v.s. Case Insensitive
 
@@ -31,7 +29,7 @@
 
 ## Column Numbering
 
-Use number to refer the column position in `SELECT`.
+> Use number to refer the column position in `SELECT`.
 
 **ALLOWANCE**
 

@@ -92,15 +92,16 @@
         * Query
             * [Query Notes](SQL/query_notes.md)
             * [Basic Queries](SQL/query.md)
-            * [Group By](SQL/query_group.md)
             * [Functions](SQL/query_functions.md)
             * [Nested Query](SQL/query_nested.md)
-            * [With](SQL/with.md)
-        * [Reshape Data](SQL/reshape.md)
+            * [Common Table Expressions](SQL/with.md)
         * [View](SQL/view.md)
         * [Information Schema](SQL/information.md)
     * SQL Variants
         * [PostgreSQL](SQL/postresql.md)
+    * Database Design
+        * [Constraints](SQL/constraint.md)
+        * [Key](SQL/key.md)
 * [Python](Python/0.README.md)
     * CheatSheets
         * [Data Type](Python/cs-data.md)
@@ -164,4 +165,29 @@
 * [Surge](web/surge.md)
 * Jekyll
 * Morris
+
+## Part VI Interview Preparation (Leetcode)
+* [Introduction](Interview/0.README.md)
+* Data Structure
+    * [Array](Interview/DS-array.md)
+    * [String](Interview/DS-string.md)
+    * [Matrix](Interview/DS-matrix.md)
+    * [Hash table](Interview/DS-hash.md)
+    * [Linked list](Interview/DS-linkedlist.md)
+    * [Stack & Queue](Interview/DS-stack.md)
+    * [Tree](Interview/DS-tree.md)
+    * [Graph](Interview/DS-graph.md)
+    * Heap
+* Algorithm
+    * [Sort](Interview/alg-sort.md)
+    * [Search](Interview/alg-search.md)
+    * [DFS& BFS](Interview/alg-dfs&bfs.md)
+* Concepts
+    * Complexity
+    * Recursion
+    * [Dynamic Programming](Interview/con-dp.md)
+    * Memory (stack & heap)
+    * [Bit Manipulation](Interview/con-bit_manipulation.md)
+    * [Math](Interview/con-math.md)
+* [SQL](Interview/sql.md)
 

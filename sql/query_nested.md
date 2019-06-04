@@ -23,6 +23,14 @@ WHERE <column> IN / NOT IN (<subquery>)
 WHERE <column> <OPERATOR> ANY / ALL (<subquery>)
 ```
 
+`EXISTS`
+
+```sql
+WHERE <column> <OPERATOR> EXISTS (<subquery>)
+```
+
+
+
 ## Joins
 
 > Combining tables side-by-side.
@@ -90,6 +98,6 @@ SELECT <> FROM <>
 
 - Work on statements rather than tables;
 - If the data from each column in the second table cannot be converted to the type in the upper table, the query will generate an error;
-- `UNION` automatically deduplicate records;
+- `UNION` automatically de-duplicate records;
 - `UNION` is very expensive;
 

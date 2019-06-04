@@ -39,6 +39,8 @@
 
 ## Analytic Functions (Window Functions)
 
+> A *window function* performs a calculation across a set of table rows that are somehow related to the current row.
+
 ```sql
 <function> () over (
   (PARTITION BY ***)
@@ -54,6 +56,9 @@
   * `LAG()` and `LEAD()`: return the value of a column from a preceding or following row;
   * `FIRST_VALUE()` and `LAST_VALUE()`: return the first and last value within a partition;
   * `NTILE()`: handles percentiles;
+  * `RANK()` and `DENSE_RANK()` and `PERCENT_RANK()`: (relative) rank of the current row, with/without gaps for duplicate rows;
+  * `CUME_DIST()`: cumulative distribution: (number of partition rows preceding or peer with current row) / total partition rows;
+  * `NTH_VALUE()`: returns *value* evaluated at the row that is the *nth* row of the window frame (counting from 1); null if no such row.
 
 * `OVER()`: tells database to expect a window function over entire table;
 
