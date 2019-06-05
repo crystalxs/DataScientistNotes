@@ -10,3 +10,5 @@
 
 **Posterior Probability**: predict probability of a label given a new observation. **Goal** of machine learning classi
 
+## Assumption
+

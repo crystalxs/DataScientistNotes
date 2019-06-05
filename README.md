@@ -18,8 +18,6 @@ My study notes for learning data science.
   - [ ] git
 - [ ] Stats
   - [ ] TS functions display
-- [ ] CS
-  - [ ] ML conflict [when review]
 - [ ] Tools
   - [ ] R conflict
   - [ ] Mongodb review

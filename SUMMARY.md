@@ -58,28 +58,36 @@
 * Operating System
 * Formal Language and Automata
 * [Machine Learning](ML/0.README.md)
+    * Data Clean
+        * [Check Data](ML/data-check.md)
+        * [Missing Value](ML/data-missing_value.md)
+        * [Outlier](ML/data-outlier.md)
+        * [Imbalanced Data](ML/data-imbalanced.md)
     * [Feature Engineering](ML/feature_engineer.md)
-    * [Dimension Reduce](ML/dimension_reduce.md)
+        * [Dimension Reduce](ML/dimension_reduce.md)
     * [Model](ML/model.md)
-        * [KNN](ML/kNN.md)
-        * [Naive Bayes](ML/bayes.md)
-        * [SVM](ML/SVM.md)
-        * [Decision Tree](ML/DT.md)
+        * [k-Nearest Neighbors](ML/model-kNN.md)
+        * [Naive Bayes](ML/model-bayes.md)
+        * [Support Vector Machine](ML/model-SVM.md)
+        * [Decision Tree](ML/model-DT.md)
         * [Ensembling](ML/ensembling.md)
-            * [Random Forest](ML/RF.md)
+            * [Random Forest](ML/model-RF.md)
             * Gradient Boosting
         * Neural Network
+        * [K-means](ML/model-kmeans.md)
     * Model Evaluation
         * [Model Evaluation Procedures](ML/cross_validation.md)
         * [Evaluation Metrics](ML/evaluation_metrics.md)
         * [Bias v.s. Variance](ML/bias_variance.md)
-        * [Model Tunning](ML/tunning.md)
+        * Overfitting v.s. Underfitting
+    * [Model Tunning](ML/model-tunning.md)
     * Cases
+        * Info Retrieval & Search Engine
         * Recommendation System
         * [Anomaly Detection](ML/anomaly_detection.md)
-    * [Imbalanced Data](ML/imbalanced_data.md)
 * [Deep Learning](DL/0.README.md)
 * [Neuro Linguistic Programming](NLP/0.README.md)
+* Reinforcement Learning
 
 ## Part IV Data Science Tools
 * [R](R/0.README.md)
@@ -188,6 +196,10 @@
     * [Dynamic Programming](Interview/con-dp.md)
     * Memory (stack & heap)
     * [Bit Manipulation](Interview/con-bit_manipulation.md)
+* Pattern
+    * Sliding Window
+    * Two Pointers
+    * Fast and Slow Pointers
     * [Math](Interview/con-math.md)
 * [SQL](Interview/sql.md)
 

@@ -2,6 +2,15 @@
 
 > A supervised machine learning algorithm that learns how to separate groups.
 
+2. 7 SVM
+   •        请解释SVM,（似乎任何模型都可能“解释该模型”）
+   •        什么是Support vector
+   •        请解释kernel trick, 为什么它kernel matrix是正定的
+   •        要知道SVM的复杂度依赖于什么，样本量还是变量数
+   •        解释SVM模型的几个重要参数
+
+
+
 **Find the optimal hyperplane that maximums the margin between support vectors**.
 
 * A **point \(or a scalar\)** in 1 dimension.

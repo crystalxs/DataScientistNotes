@@ -1,8 +1,29 @@
-# KNN
+# k-Nearest Neighbors
 
 > A supervised, classification, nonparametric, instance-based model.
 
-## Steps
+## What is k-NN
+
+## Assumption
+
+**Nearest neighbors**: assume that most of the cases in a small neighborhood in feature space belong to the same class. Given a case for which the class is unknown, guess that it belongs to the same class as the majority in its immediate neighborhood. This is the bias used in the k-NN. The assumption is that cases that are near each other tend to belong to the same class.
+
+## Pro v.s. Con
+
+### Advantage
+
+- Simple - easy to apply and interpret
+- No assumptions about distribution of data - useful for ill-tempered data
+- No training
+- Relatively high accuracy
+
+### Disadvantage
+
+- High memory requirement - stores all of the data
+- Computationally expensive - must compute all distances
+- Sensitive to irrelevant features and the feature scaling
+
+## Algorithm
 
 1. Have labeled data
 2. Pick k (positive integer)
@@ -56,26 +77,18 @@ $$
 ||p-q||_{\infty}=max(|p_i-q_i|)
 $$
 
+## Evaluation Metrics & Loss Function
 
+## Regularization & Under fitting
 
+## Train Model
 
+### how to train hyper-parameter
 
-#### Inductive bias
+#### k
 
-The set of assumptions that the learner uses to predict outputs given inputs that it has not encountered.
+#### Distance Metric
 
-## Pro v.s. Con
+### scikit-learn
 
-### Advantage
-
-- Simple - easy to apply and interpret
-- No assumptions about distribution of data - useful for ill-tempered data
-- No training
-- Relatively high accuracy
-
-### Disadvantage
-
-- High memory requirement - stores all of the data
-- Computationally expensive - must compute all distances
-- Sensitive to irrelevant features and the feature scaling
-
+## Metrics

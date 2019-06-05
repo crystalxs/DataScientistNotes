@@ -53,6 +53,12 @@ $$
 >
 > Regularization discourages unnecessary complexity, reduce variance.
 
+3 REGULARIZATION
+•        对比Lasso 和Ridge
+• 不同的编程语言Lasso的结果一样吗？不一样，因为grid不一样。我也不知道考这个干嘛。
+•        L1 norm 和L2 norm
+•        Regularization的估计系数是无偏的吗？
+
 ##### Ways
 
 1. More data

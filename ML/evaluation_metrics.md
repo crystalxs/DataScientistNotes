@@ -1,5 +1,9 @@
 # Evaluation Metrics
 
+ a.        Cross-Validation、stratified cross-validation
+ b. MSE，MAE，impurity function，cross-entrop，precision, recall, AUC, ROC, F1 … 
+•        false positive 和 false negative：给出false positive比false negative更重要的例子 
+
 ## Regression
 
 - Mean Absolute Error (MAE)

@@ -23,7 +23,7 @@ In supervised learning, we are given a data set and already know what our correc
 - General Linear Model
 - Regression Decision Trees
 - Regression Support Vector Machines
-- etc
+- [k-NN Regression](https://stats.stackexchange.com/questions/104255/why-would-anyone-use-knn-for-regression)
 
 ### Classification 
 
@@ -40,11 +40,11 @@ In supervised learning, we are given a data set and already know what our correc
 
 #### Algorithms
 
+- Logistic Regression
 - k-NN
 - Naive Bayes
 - Decision Trees
 - Support Vector Machines (SVM)
-- Logistic Regression
 
 ## Unsupervised Learning
 
@@ -62,7 +62,9 @@ With unsupervised learning there is **no feedback** based on the prediction resu
 
 **Example**:
 
-- **Clustering** (k-means or Latent Dirichlet allocation (LDA))
+- **Clustering**
+  - k-means
+  - Latent Dirichlet allocation (LDA))
 - Dimension Reduction (PCA)
 - Density estimation (kernel density estimation)
 - Matrix Completion (Collaborative Filtering)
@@ -73,60 +75,44 @@ With unsupervised learning there is **no feedback** based on the prediction resu
 
 ### Parametric
 
-> Make an assumption about form of the function of the data
+> Make an assumption about form of the function of the data, such as normal distribution
 
 * Linear Regression
+* Logistic Regression
+* Naive Bayes
 
 ### Nonparametric
 
 > Do **not** make an assumption about the functional form.
 
+* k-NN
+* SVM
+* Decision Tree
+
 ## Steps to fit a model
 
-1. Collect a lot of data
-2. Engineer good features
-3. Pick a complex algorithm
-4. Train the specific model until validation scores starts to go down (smart early stopping).
-5. Stop if model meets service level agreement (SLA). Otherwise go back to 1.
+1. Collect data: minimum 30-100 examples <instance / sample> per target to make robust estimates.
+2. Check data
+   * Type (memory, category)
+   * Duplicate
+   * Distribution
+   * Imbalance
+   * Correlation (perfect multicol 90% -> remove)
+   * Missing Value
+   * Outlier
+3. Train & Test split
+4. Feature Engineering
+5. Train model
+   * Pick model and evaluation metric
+   * Tune Hyper-parameter
 
-### Data <data set>
+### Inductive bias
 
-Lots of data: minimum 30-100 examples <instance / sample> per target to make robust estimates.
+> The set of assumptions that the learner uses to predict outputs given inputs that it has not encountered.
 
-#### Clean data
-
-Because ML just learns patterns <attribute / feature>, noisy data makes it hard to learn signal, models might learn the noise.
-
-#### Label data
-
-Most algorithms assumes labels
-
-Most labeling is done by humans
-
-### Training
-
-1. Start with a random guess
-2. See how wrong you are (loss function)
-3. Change the model to be less wrong
-4. Repeat 2-3 until "done"
-
-### Predictions
-
-The **goal** of ML is prediction / inference.
-
-Test your predictions on **test data**, data that you already have put to the side during training (Train / Test split). The simplest kind of generalization.
-
-### Performance Metrics
-
-A number that measures how good your model performs.
-
-You want this to be a single number.
-
-Example:
-
-- Accuracy
-- Logarithmic Loss
-- True Positive / False Positive / True Negative / False Negative
-- Precision / Recall / F Score
-- Mean Absolute Error (MAE) / Mean Squared Error (MSE)
-- etc
+- **Maximum conditional independence**
+- **Minimum cross-validation error**
+- **Maximum margin**
+- **Minimum description length**
+- **Minimum features**
+- **Nearest neighbors**

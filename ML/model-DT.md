@@ -2,6 +2,14 @@
 
 > A supervised, non-parametric model.
 
+4 TREE & ENSEMBLE
+•        解释tree模型
+•        解释random forest模型，并且对比着解释boosting 模型（GBT比较常考）
+•        Random forest 和GBT 模型在编程语言中的可调参数
+•        要知道random forest的每棵树最好造深一些，因为random forest更适用于low bias high variance; boosting model的每棵树不要太深 
+•        最欢什么模型？为什么？
+• 总之建议了解下各个模型的优缺点，适用于什么情况，什么data，复杂度和计算量与什么有关。 
+
 The **root** of a decision tree is located on the top, it is the first split.
 
 The **node** do a binary split based a specific value of a specific attribute to minimize entropy.
