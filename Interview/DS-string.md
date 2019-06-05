@@ -1,11 +1,31 @@
 # String
 
-## Noun
+## Methods
 
-- palindrome: 回文
-- alphanumeric: alphabet + numeric
+### Sliding Windows
+
+> https://medium.com/leetcode-patterns/leetcode-pattern-2-sliding-windows-for-strings-e19af105316b
+
+#### Fixed Window Sizes
+
+#### Vary Window Size
+
+## Questions Classify
+
+- ## Noun
+
+  - Anagrams: hash table
+  - palindrome(回文): sliding windows
+  - alphanumeric: alphabet + numeric
+  - Substring:
+
+## Attention
+
+- 
 
 ## Leetcode
+
+### Anagrams
 
 #### 49. Group Anagrams
 
@@ -31,74 +51,7 @@ class Solution(object):
         return tuple(key)
 ```
 
-## 67. Add Binary
-
-```python
-class Solution(object):
-    def addBinary(self, a, b):
-        """
-        :type a: str
-        :type b: str
-        :rtype: str
-        """
-        carry = 0
-        ap = len(a)-1
-        bp = len(b)-1
-        binarysum = ""
-        while ap >= 0 or bp >= 0 or carry != 0:
-            if ap < 0 and bp < 0:
-                binarysum = bin(carry)[2:] + binarysum
-                return binarysum
-            elif ap < 0:
-                carry = int(b[bp])+carry
-                bp -= 1
-            elif bp < 0:
-                carry = int(a[ap])+carry
-                ap -= 1
-            else:
-                carry = int(a[ap])+int(b[bp])+carry
-                bp -= 1
-                ap -= 1
-            if carry%2 == 1:
-                binarysum = "1" + binarysum
-                carry -= 1
-            else:
-                binarysum = "0" + binarysum
-            if carry > 1: carry -= 1
-        return binarysum
-```
-
-## 125. Valid Palindrome
-
-Tag: Two pointer (front and back)
-
-```python
-class Solution(object):
-    def isPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
-        first = 0
-        last = len(s)-1
-        while first < last:     # could handle len(s) < 2
-            if not s[first].isalnum():
-                first += 1
-                continue
-            if not s[last].isalnum():
-                last -= 1
-                continue
-            if s[first].lower() != s[last].lower():
-                return False
-            else:
-                first += 1
-                last -= 1
-        return True
-```
-
 #### 242. Valid Anagram
-
-Tag: string, hash table
 
 ```python
 class Solution(object):
@@ -129,7 +82,39 @@ class Solution(object):
         return True
 ```
 
-## 5. Longest Palindromic Substring
+### Palindrome
+
+#### 125. Valid Palindrome
+
+Tag: Two pointer (front and back)
+
+```python
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        first = 0
+        last = len(s)-1
+        while first < last:     # could handle len(s) < 2
+            if not s[first].isalnum():
+                first += 1
+                continue
+            if not s[last].isalnum():
+                last -= 1
+                continue
+            if s[first].lower() != s[last].lower():
+                return False
+            else:
+                first += 1
+                last -= 1
+        return True
+```
+
+### Substrings
+
+#### 5. Longest Palindromic Substring
 
 ```python
 class Solution:
@@ -161,7 +146,103 @@ class Solution:
         return ans
 ```
 
-## 20. Valid Parentheses
+#### 3. Longest Substring Without Repeating Characters
+
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s) == 0: return 0
+        ans = 1
+        for left in range(len(s)-1):
+            right = left+1
+            uniq = {}
+            uniq[s[left]] = left 
+            while right < len(s):
+                # print(s[left:right+1])
+                if s[right] in uniq:
+                    if right-left > ans: ans = right-left
+                    break
+                else:
+                    uniq[s[right]] = right
+                    right += 1
+            if right-left > ans: ans = right-left
+        return ans
+```
+
+#### 28. Implement strStr()
+
+```python
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        if not needle: return 0
+        if not haystack: return -1
+
+        size = len(needle)
+        for i in range(len(haystack)-size+1):
+            # print(i)
+            if haystack[i:i+size] == needle:
+                return i
+        return -1
+```
+
+### Prefix
+
+#### 14. Longest Common Prefix
+
+```python
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs: return ""
+        prefix = strs[0]
+        for string in strs[1:]:
+            i = 0
+            while i<len(prefix) and i<len(string):
+                if prefix[i] != string[i]: break
+                i += 1
+            prefix = prefix[:i]
+        return prefix
+```
+
+### Reverse
+
+#### 344. Reverse String
+
+```python
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        if len(s)>1:
+            first = 0
+            last = len(s)-1
+            while first < last:
+                # print(first, last)
+                s[first], s[last] = s[last], s[first]
+                first += 1
+                last -= 1
+```
+
+#### 151. Reverse Words in a String
+
+```python
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        slist = s.split()
+        if len(slist) < 2: return ' '.join(slist)
+
+        first = 0
+        last = len(slist)-1
+        while first<last:
+            slist[first], slist[last] = slist[last], slist[first]
+            first += 1
+            last -= 1
+        return ' '.join(slist)
+```
+
+### idk
+
+#### 20. Valid Parentheses
 
 ```python
 class Solution:
@@ -187,7 +268,7 @@ class Solution:
         return True
 ```
 
-## 387. First Unique Character in a String
+#### 387. First Unique Character in a String
 
 ```python
 class Solution:
@@ -205,7 +286,7 @@ class Solution:
         return min(uniq.values())
 ```
 
-## 937. Reorder Log Files
+#### 937. Reorder Log Files
 
 ```python
 class Solution:
@@ -220,28 +301,81 @@ class Solution:
         return [' '.join([log.split(' ')[-1]]+log.split(' ')[:-1]) for log in letterLogs]+digitLogs
 ```
 
-## 3. Longest Substring Without Repeating Characters
+#### 38. Count and Say
 
 ```python
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        if len(s) == 0: return 0
-        ans = 1
-        for left in range(len(s)-1):
-            right = left+1
-            uniq = {}
-            uniq[s[left]] = left 
-            while right < len(s):
-                # print(s[left:right+1])
-                if s[right] in uniq:
-                    if right-left > ans: ans = right-left
-                    break
-                else:
-                    uniq[s[right]] = right
-                    right += 1
-            if right-left > ans: ans = right-left
+    def countAndSay(self, n: int) -> str:
+        if n < 1: return ""
+        ans = "1"
+        while n>1:
+            n -= 1
+            new_ans = ""
+            while ans:
+                count = 1
+                current = ans[0]
+                while count<len(ans) and ans[count] == current:
+                    count += 1
+                ans = ans[count:]
+                new_ans += str(count)+current
+            ans = new_ans
         return ans
 ```
 
-## 8. String to Integer (atoi)
+#### 165. Compare Version Numbers
+
+```python
+class Solution:
+    def compareVersion(self, version1: str, version2: str) -> int:
+        version1list = version1.split('.')
+        version2list = version2.split('.')
+        
+        idx = 0
+        while idx < len(version1list) or idx < len(version2list):
+            if idx >= len(version1list):
+                if int(version2list[idx]) == 0:
+                    idx += 1
+                    continue
+                else: return -1
+            if idx >= len(version2list):
+                if int(version1list[idx]) == 0:
+                    idx += 1
+                    continue
+                else: return 1
+            if int(version1list[idx]) > int(version2list[idx]): return 1
+            if int(version1list[idx]) < int(version2list[idx]): return -1
+            idx += 1
+        return 0
+```
+
+#### 6. ZigZag Conversion
+
+```python
+from collections import defaultdict
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        if numRows<2: return s 
+        matrix = defaultdict(list)
+        row = 0
+        col = 0
+        while s:
+            # print(row, col, s[0])
+            matrix[row].append(s[0])
+            s = s[1:]
+            if col%(numRows-1) == 0:
+                if row < numRows-1: row += 1
+                else:
+                    row = numRows-2
+                    col += 1
+            else:
+                col += 1
+                if col%(numRows-1) == 0: row = 0
+                else: row = numRows-col%(numRows-1)-1
+        # print(matrix)
+
+        ans = ""
+        for i in range(numRows):
+            ans += "".join(matrix[i])
+        return ans
+```
 

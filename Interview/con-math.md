@@ -154,3 +154,41 @@ class Solution:
 
 
 
+#### 67. Add Binary
+
+```python
+class Solution(object):
+    def addBinary(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """
+        carry = 0
+        ap = len(a)-1
+        bp = len(b)-1
+        binarysum = ""
+        while ap >= 0 or bp >= 0 or carry != 0:
+            if ap < 0 and bp < 0:
+                binarysum = bin(carry)[2:] + binarysum
+                return binarysum
+            elif ap < 0:
+                carry = int(b[bp])+carry
+                bp -= 1
+            elif bp < 0:
+                carry = int(a[ap])+carry
+                ap -= 1
+            else:
+                carry = int(a[ap])+int(b[bp])+carry
+                bp -= 1
+                ap -= 1
+            if carry%2 == 1:
+                binarysum = "1" + binarysum
+                carry -= 1
+            else:
+                binarysum = "0" + binarysum
+            if carry > 1: carry -= 1
+        return binarysum
+```
+
+#### 

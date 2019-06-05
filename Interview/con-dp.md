@@ -47,6 +47,8 @@
 
 ## Leetcode
 
+### Min & Max (Bottom-Up)
+
 #### 322. Coin Change
 
 1. Create a list to store the current min coins for each amount;
@@ -135,6 +137,8 @@ class Solution:
         return min_cost[-1]
 ```
 
+### Count the feasible solutions number
+
 #### 276. Paint Fence
 
 Use math logic to calculate ways.
@@ -155,6 +159,25 @@ class Solution:
         # print(paint_ways)
                 
         return paint_ways[-1]
+```
+
+#### 91. Decode Ways
+
+```python
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        if not s: return 0
+        if s[0] == '0': return 0
+        
+        n = len(s)
+        ways = [0]*(n+1)
+        ways[0] = 1
+        ways[1] = 1
+        for i in range (1, n):
+            if s[i] != '0': ways[i+1] = ways[i]
+            if int(s[i-1:i+1])<=26 and s[i-1]!='0':
+                ways[i+1] += ways[i-1]
+        return ways[-1]
 ```
 
 

@@ -1,5 +1,10 @@
 # Tree
 
+## Methods
+
+- Recursive
+- Iteration with stack/queue
+
 ## Questions Classify
 
 ### Traverse
@@ -108,11 +113,6 @@ class Solution:
 > Transfer object to string.
 
 Use breadth first search. See [297. Serialize and Deserialize Binary Tree](../DS/Btree.md/#297)
-
-## Methods
-
-- Recursive
-- Iteration with stack/queue
 
 ##Attention
 

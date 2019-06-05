@@ -124,6 +124,21 @@ WHERE month <> (SELECT MAX(month) FROM employee inside WHERE outside.id = inside
 ORDER BY id ASC, month DESC;
 ```
 
+### Join
+
+#### 614. Second Degree Follower
+
+**Attention:** different in `LEFT JOIN` v.s. `INNER JOIN`.
+
+```sql
+SELECT lhs.follower, COUNT(DISTINCT rhs.follower) num
+FROM follow lhs
+LEFT JOIN follow rhs
+ON lhs.follower = rhs.followee
+GROUP BY lhs.follower
+HAVING COUNT(DISTINCT rhs.follower)>0;
+```
+
 
 
 
@@ -332,5 +347,28 @@ FROM (
 SELECT name
 FROM customer
 WHERE referee_id <> 2 OR referee_id IS NULL;
+```
+
+#### 585. Investments in 2016
+
+```sql
+/* Write your T-SQL query statement below */
+SELECT SUM(TIV_2016) tiv_2016
+FROM insurance
+WHERE lat IN (
+        SELECT lat
+        FROM insurance
+        GROUP BY lat, lon
+        HAVING COUNT(*) = 1)
+    AND lon IN (
+        SELECT lon
+        FROM insurance
+        GROUP BY lat, lon
+        HAVING COUNT(*) = 1)
+    AND tiv_2015 IN (
+        SELECT tiv_2015
+        FROM insurance
+        GROUP BY tiv_2015
+        HAVING COUNT(DISTINCT pid)>1);
 ```
 
