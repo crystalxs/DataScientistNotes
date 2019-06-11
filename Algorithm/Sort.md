@@ -1,12 +1,6 @@
 # Sort
 
-At least $O(n)$
-
-## DSU
-
-- Decorate: a sequence by building a list of tuples with one or more sort keys preceding the elements from the sequence;
-- Sort: the list of tuples using the Python built-in `sort`;
-- Undecorate: by extracting the sorted elements of the sequence.
+> At least $O(n)$
 
 #### Swap
 
@@ -32,11 +26,17 @@ Keep swapping until nothing changes.
 
 ![bubble_sort](/Users/crystal/Library/Mobile Documents/com~apple~CloudDocs/dataScientistNotes/Algorithm/image/bubble_sort.png)
 
-### Time Complexity
+### Complexity
+
+#### Time 
 
 Worst-case: smallest element is in the last position.
 
-$O(n^2)​$
+$O(n^2)$ for average and worst case.
+
+#### Space
+
+$O(1)$
 
 ### Implementation
 
@@ -55,22 +55,28 @@ def bubblesort(sort_list):
 Stop early if no exchange happened in a whole inner loop. $O(n^2)$
 
 ```python
-def bubble(A):
+def bubblesort(sort_list):
     swapped=True
-    second_to_last_idx = len(A)-2
+    second_to_last_idx = len(sort_list)-2
     n = 1
     while swapped and second_to_last_idx > 0:
         swapped=False
         for i in range(second_to_last_idx+1):
-            if A[i] > A[i+1]:
-                A[i], A[i+1] = A[i+1], A[i]
+            if sort_list[i] > sort_list[i+1]:
+                sort_list[i], sort_list[i+1] = sort_list[i+1], sort_list[i]
                 swapped = True
         second_to_last_idx -= 1
 ```
 
 #### Selection Sort
 
-Exchange only once for outer loop. $O(n^2)$
+Find the smallest element using a linear scan and move it to the front (swapping it with the front element). Continue doing this until all the elements are in place.
+
+##### Complexity
+
+**Time:** $O(n^2)$ for average and worst case.
+
+**Space:** $O(1)$.
 
 ## Insertion Sort
 
@@ -99,30 +105,52 @@ $O(n^2)$
 * Sorting both the left and right subregions;
 * Merge two sorted subregions.
 
-### Time Complexity
+### Complexity
 
-$O(nlogn)$
+#### Time Complexity
 
-*Merging two sorted lists can be done in linear time.*
+$O(nlogn)$ for average and worst case.
 
-**Space complexity:** Need extra space to hold the two halves.
+*Merging two sorted lists can be done in linear time $O(n)$.*
+
+#### Space complexity
+
+Need extra space to hold the two halves (depends).
+
+### Implementation
+
+```python
+def mergesort(sort_list, lo=0, hi=len(A)-1):
+  	# if lo >= hi: return
+    
+    # qsort(A, lo, pivot_idx-1)
+    # qsort(A, pivot_idx+1, hi)
+```
 
 ## Quick Sort
 
 ### Idea
 
+> **Like building binary search tree.**
+
 * Pick pivot, usually choose first item, partition so elements left of pivot are less than pivot and elements right are greater (walk from head and tail, switch);
 * recursively partition the left and right until small enough to sort trivially.
 
-**Like building binary search tree.**
-
 Can choose a pivot value from the median of head, mid, tail.
 
-### Time Complexity
+### Complexity
 
-Worst-case: $O(n^2)​$; Typical behavior: $O(nlogn)​$
+#### Time Complexity
 
-*Merging two sorted lists can be done in linear time.*
+Worst-case: $O(n^2)$;
+
+Typical behavior: $O(nlogn)$
+
+*Merging two sorted lists can be done in linear time $O(n)$.*
+
+#### Space Complexity
+
+$O(logn)$
 
 ### Implementation
 
@@ -135,12 +163,6 @@ def partition(A,lo,hi):
     return len(left) # return index of pivot
 
 def partition_inplace(A,lo,hi):
-    """
-    Wikipedia: reorder the array so that all elements with
-    values less than the pivot come before the pivot, while
-    all elements with values greater than the pivot come after
-    it (equal values can go either way).
-    """
     i = lo
     pivot = A[hi]    # pick last element as pivot  
     for j in range(lo, hi):  
@@ -164,11 +186,19 @@ def qsort(A, lo=0, hi=len(A)-1):
 
 Map each key to unique pigeonhole in ordered range of holes; then just walk pigeonholes in order to get sorted elements.
 
-### Time Complexity
+### Complexity
 
-Worst-case: when the range of keys, $m$, the number of elements, $n$.
+#### Time Complexity
 
-$T(n,m) = n+m$, yielding $O(n)$
+> when the range of keys, $m$, the number of elements, $n$.
+
+Best case: $m$ is similar to $n$.
+
+$T(n,m) = n+m$, yielding $O(n)$.
+
+#### Space Complexity
+
+Worst-case: $O(n)$.
 
 ### Implementation
 
@@ -191,7 +221,7 @@ def psort(A:list) -> list:
 
 When $m >> n$: sort 2 numbers, $5, 500000$, $T(n,m) = 5+5000000$.
 
-Compress number of buckets, $m​$, to some fixed number instead of range of numbers.
+Compress number of buckets, $m$, to some fixed number instead of range of numbers.
 
 ## Bucket Sort (Bin Sort)
 
@@ -199,18 +229,26 @@ Compress number of buckets, $m​$, to some fixed number instead of range of num
 
 Distribute n elements across m ordered buckets, sort elements within each bucket, then concatenate elements from sorted buckets in order.
 
-### Time Complexity
+**For String:** use first letter as bucket key.
 
-Worst-Case: all values are the same, putting everything into one bucket.
+### Complexity
 
-$T(n,m)=nlogn+m​$, yielding $O(nlogn)​$
+#### Time Complexity
 
-Best-case: even distribution of elements across $m$ buckets.
+$T(n,m)=nlogn+m$, yielding $O(nlogn)$
 
-* Choose $m$ always so $\frac{n}{m}$ is so small fixed constant size $k$.
-* Sork $k$ elements $m$ times (bubble sort), merge $m$ sorted lists
+- Sorting one bucket at best $O(nlogn)$;
+- Walking $m$ bucket $O(m)$.
+
+**Worst-Case:** all values are the same, putting everything into one bucket.
+
+**Best-case:** even distribution of elements across $m$ buckets.
 
 $T(n,m,k)=m\times k^2 \times n=\frac{n}{k} \times k^2 + n = nk + n$, yielding $O(n)$
+
+- Choose $m$ always so $\frac{n}{m}$ is so small fixed constant size $k$;
+- Sork $k$ elements $m$ times (bubble sort);
+- Merge $m$ sorted lists.
 
 ### Implementation
 
@@ -235,6 +273,8 @@ def bsort(A:list, nbuckets) -> list:
 ```
 
 ## Nested Bucket Sort (on string)
+
+###Idea
 
 * Nested indexes based upon s[i];
 * With nesting $k$ deep, words are sorted uniquely to first $k$ letters, giving nested bucket sort.

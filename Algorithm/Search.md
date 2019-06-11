@@ -2,6 +2,10 @@
 
 At least $O(n)$ (linear search).
 
+## Linear Search
+
+> Scan data structure looking for elements.
+
 ## Binary Search
 
 ### Idea

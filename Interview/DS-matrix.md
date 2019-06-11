@@ -6,6 +6,12 @@
    - `directionX = [1,0,0,-1]` and `directionY = [0, 1, -1, 0]`
 2. check inbound
 
+## Attention
+
+* `memo = [[False]*len(s) for _ in range(len(s))]` not equal to `memo = [[False]*lens(s)]*len(s)`, the second one will create a list of a list and its reference.
+
+  ![image-20190608145056240](/Users/crystal/Library/Mobile Documents/com~apple~CloudDocs/dataScientistNotes/Interview/img/times.png)
+
 ## Questions Classify
 
 ### [Traversal](../algorithm/dfs&bfs.md/)

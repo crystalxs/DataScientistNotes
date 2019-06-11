@@ -1,47 +1,38 @@
 # Hash Table
 
-## Set
+## Hash Set
 
 - unique and unordered list;
 - typical implementation is a hash table;
 
-#### Python
+### Python
 
 `set` in python.
 
-#### Operations
+### Operations
 
 add, delete, contains, union, intersection
 
 contains: take constant time for hash table implementation
 
-## Dictionary
+## Hash Map
 
 Arrange two lists side-by-side and kind of glue them together, map one value to another.
-
-### Time Complexity for python built-in `dict`
-
-| operation     | Big-O Efficiency |
-| :------------ | :--------------- |
-| copy          | O(n)             |
-| get item      | O(1)             |
-| set item      | O(1)             |
-| delete item   | O(1)             |
-| contains (in) | O(1)             |
-| iteration     | O(n)             |
 
 ### Python
 
 `dict` in python.
 
-## Map
+#### Time Complexity for python built-in `dict`
 
-| operation | Sorted List | Hash Table | Binary Search Tree | AVL Tree    |
-| --------- | ----------- | ---------- | ------------------ | ----------- |
-| put       | $O(n)$      | $O(1)$     | $O(n)$             | $O(log_2n)$ |
-| get       | $O(log_2n)$ | $O(1)$     | $O(n)$             | $O(log_2n)$ |
-| in        | $O(log_2n)$ | $O(1)$     | $O(n)$             | $O(log_2n)$ |
-| del       | $O(n)$      | $O(1)$     | $O(n)$             | $O(log_2n)$ |
+| operation     | Big-O Efficiency |
+| :------------ | :--------------- |
+| copy          | O(n)             |
+| get           | O(1)             |
+| set           | O(1)             |
+| delete        | O(1)             |
+| contains (in) | O(1)             |
+| iteration     | O(n)             |
 
 ### Interface
 
@@ -72,13 +63,22 @@ Insert: `O(1)` vs `O(n)`
 
 Delete: `O(1)` vs `O(n)`
 
-### Hash Function
+## Hash Function
 
-#### Remainder Method
+### Remainder Method
 
-`h(item)=item%11`
+`h(item)=item%HASH_TABLE_SIZE`
 
-Magic Number: 31
+#### Hash table size
+
+* Prime number better
+* Magic Number: 31
+
+### Collision
+
+#### Open Hashing
+
+#### Close Hashing
 
 #### Folding Method
 

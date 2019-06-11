@@ -10,18 +10,18 @@
 
 #### Vary Window Size
 
+> Two pointer
+
 ## Questions Classify
 
-- ## Noun
-
-  - Anagrams: hash table
-  - palindrome(回文): sliding windows
-  - alphanumeric: alphabet + numeric
-  - Substring:
+- Anagrams (异构): hash table
+- Palindrome (回文): sliding windows
+- Substring: sliding windows
+- Parentheses
+- Subsequence
+- alphanumeric: alphabet + numeric????
 
 ## Attention
-
-- 
 
 ## Leetcode
 
@@ -185,8 +185,6 @@ class Solution:
         return -1
 ```
 
-### Prefix
-
 #### 14. Longest Common Prefix
 
 ```python
@@ -240,7 +238,7 @@ class Solution:
         return ' '.join(slist)
 ```
 
-### idk
+### IDK
 
 #### 20. Valid Parentheses
 

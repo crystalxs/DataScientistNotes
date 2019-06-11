@@ -1,16 +1,21 @@
 # Array
 
-## Questions Classify
-
-- sort
-- duplicate (use hash table)
-
 ## Methods
 
 - Multi-pointers from begin and end or even med, in `python` commonly use index to be the pointer.
 - [Hash table](Interview/hash.md)
 
-- 
+### Rotate Array
+
+* Special Case: no-rotation in the array
+* 
+
+## Questions Classify
+
+- Sort
+- Interval
+- Counter
+- duplicate (use hash table)？？？
 
 ## Attention
 

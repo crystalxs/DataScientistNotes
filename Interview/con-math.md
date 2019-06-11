@@ -1,5 +1,15 @@
 # Math
 
+## Methods
+
+## Questions Classify
+
+- Sum
+
+## Attention
+
+##Leetcode
+
 ## 7. Reverse Integer
 
 ```python
@@ -152,9 +162,7 @@ class Solution:
         return sum(prime)
 ```
 
-
-
-#### 67. Add Binary
+## 67. Add Binary
 
 ```python
 class Solution(object):
@@ -191,4 +199,14 @@ class Solution(object):
         return binarysum
 ```
 
-#### 
+## 1025. Divisor Game
+
+```python
+class Solution:
+    def divisorGame(self, N: int) -> bool:
+        return N%2 == 0
+```
+
+
+
+ 
