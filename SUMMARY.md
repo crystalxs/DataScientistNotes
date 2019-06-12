@@ -41,7 +41,7 @@
         * [Sequential List](DS/array.md)
         * [Linked List](DS/linked_list.md)
         * [Queue & Stack](DS/queue_stack.md)
-        * [Map](DS/map.md)
+        * [Hash](DS/hash.md)
     * [Tree Structure](DS/tree.md)
     * [Graph Structure](DS/graph.md)
 * [Algorithm](Algorithm/0.README.md)
@@ -55,6 +55,7 @@
     * Bit Manipulation
     * Memory (stack & heap)
 * Machine Architecture and Organization
+    * [Cache](MAO/cache.md)
 * Operating System
 * Formal Language and Automata
 * [Machine Learning](ML/0.README.md)
@@ -81,10 +82,11 @@
         * [Bias v.s. Variance](ML/bias_variance.md)
         * Overfitting v.s. Underfitting
     * [Model Tunning](ML/model-tunning.md)
-    * Cases
+    * Industry
+        * [Predicting Clickthrough rate (CTR)](ML/industry-CTR.md)
         * Info Retrieval & Search Engine
-        * Recommendation System
-        * [Anomaly Detection](ML/anomaly_detection.md)
+        * [Recommendation System](ML/industry-recommendataion.md)
+        * [Anomaly Detection](ML/industry-anomaly_detection.md)
 * [Deep Learning](DL/0.README.md)
 * [Neuro Linguistic Programming](NLP/0.README.md)
 * Reinforcement Learning
@@ -123,6 +125,8 @@
         * [Exception Handling](Python/style-bug_free.md)
     * Package
         * [Pandas](Python/package-pandas.md)
+        * [collections](Python/package-collections.md)
+        * [heapq](Python/package-heapq.md)
         * [Running Time](Python/package-running_time.md)
         * [Green unicorn](Python/package-green_unicorm.md)
         * [Regular Expression](Python/package-regular_expression.md)
@@ -176,7 +180,7 @@
 
 ## Part VI Interview Preparation (Leetcode)
 * [Introduction](Interview/0.README.md)
-* Data Structure
+* [Data Structure](Interview/DS.md)
     * [Array](Interview/DS-array.md)
     * [String](Interview/DS-string.md)
     * [Matrix](Interview/DS-matrix.md)
