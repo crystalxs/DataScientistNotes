@@ -16,7 +16,7 @@ Every Dynamic Programming problem has a schema to be followed:
 
 ### Classification
 
-> **Bottom up vs. Top Down:**
+> **Bottom up vs. Top Down**
 >
 > In Top Down, you start building the big solution right away by explaining how you build it from smaller solutions.
 >
@@ -68,12 +68,48 @@ Every Dynamic Programming problem has a schema to be followed:
 
 #### One Dimension
 
+##### 53. Maximum Sub-array
+
+If the previous one is positive, update the current one to be the sum of previous + current; keep the maximum so far has seen.
+
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        if not nums: return 0
+        max_sum = nums[0]
+        for idx in range(1, len(nums)):
+            if nums[idx-1]>0: nums[idx] = nums[idx]+nums[idx-1]
+            if nums[idx] > max_sum: max_sum = nums[idx]
+        print(nums)
+        return max_sum
+```
+
+##### 152. Maximum Product Subarray
+
+Since it is product, keep both current max and min.
+
+```python
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        ans = 0
+        if not nums: return 0
+        ans = nums[0]
+        max_product = nums[0]
+        min_product = nums[0]
+        for idx in range(1, len(nums)):
+            current_max = max_product*nums[idx]
+            current_min = min_product*nums[idx]
+            min_product = min(current_min, nums[idx], current_max)
+            max_product = max(current_max, nums[idx], current_min)
+            ans = max(max_product, ans)
+        return ans
+```
+
 ##### 322. Coin Change
 
 1. Create a list to store the current min coins for each amount;
 2. Update from smallest amount to largest amount;
-3. Check if there is a feasible solution;
-4. Return.
+3. Check if there is a feasible solution.
 
 ```python
 class Solution:
@@ -123,6 +159,69 @@ class Solution:
                               min_cost[i-2]+cost[i-2])
         return min_cost[-1]
 ```
+
+##### 198. House Robber
+
+```python
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        if not nums: return 0
+        if len(nums) == 1: return nums[0]
+
+        max_list = [0]*(len(nums))
+        max_list[0] = nums[0]
+        max_list[1] = max(nums[0], nums[1])
+        for idx in range(2, len(nums)):
+            max_list[idx] = max(max_list[idx-1], max_list[idx-2]+nums[idx])
+        return max_list[-1]
+```
+
+##### 403. Frog Jump
+
+```python
+class Solution:
+    def canCross(self, stones: List[int]) -> bool:
+        river = {stone: [] for stone in stones}
+        river[0].append(0)
+        for stone in stones:
+            for step in river[stone]:
+                for jump in (step-1, step, step+1):
+                    if jump+stone == stones[-1]:
+                        return True
+                    elif jump+stone in river:
+                        if not river[stone+jump] or river[stone+jump][-1]>jump:
+                            river[stone+jump].append(jump)
+        return False
+```
+
+##### 279. Perfect Squares (LTE)
+
+```python
+class Solution:
+    def numSquares(self, n: int) -> int:
+        if n < 1: return 0
+        nums = [0]*(n+1)
+        nums[1] = 1
+        for num in range(2, n+1):
+            # print(num, nums)
+            if num**2 <= n: nums[num**2] = 1
+            if nums[num] != 1:
+                for i in range(1, num//2+1):
+                    if nums[i]+nums[num-i]<nums[num] or not nums[num]:
+                        nums[num]=nums[i]+nums[num-i]
+        return nums[-1]
+```
+
+#### One Dimension - Double loop
+
+> Inner loop from first to current;
+>
+> Outer loop from bottom to top.
+
+Check:
+
+1. Satisfy the condition
+2. Satisfy the updated condition (larger / smaller than the current)
 
 ##### 300. Longest Increasing Subsequence
 
@@ -176,44 +275,6 @@ class Solution:
                 ans = subset[idx][1]
         return ans
 ```
-
-##### 403. Frog Jump
-
-```python
-class Solution:
-    def canCross(self, stones: List[int]) -> bool:
-        river = {stone: [] for stone in stones}
-        river[0].append(0)
-        for stone in stones:
-            for step in river[stone]:
-                for jump in (step-1, step, step+1):
-                    if jump+stone == stones[-1]:
-                        return True
-                    elif jump+stone in river:
-                        if not river[stone+jump] or river[stone+jump][-1]>jump:
-                            river[stone+jump].append(jump)
-        return False
-```
-
-##### 279. Perfect Squares (LTE)
-
-```python
-class Solution:
-    def numSquares(self, n: int) -> int:
-        if n < 1: return 0
-        nums = [0]*(n+1)
-        nums[1] = 1
-        for num in range(2, n+1):
-            # print(num, nums)
-            if num**2 <= n: nums[num**2] = 1
-            if nums[num] != 1:
-                for i in range(1, num//2+1):
-                    if nums[i]+nums[num-i]<nums[num] or not nums[num]:
-                        nums[num]=nums[i]+nums[num-i]
-        return nums[-1]
-```
-
-
 
 #### Two Dimension
 
@@ -295,6 +356,74 @@ class Solution:
         return path[-1][-1]
 ```
 
+##### 221. Maximal Square
+
+```python
+class Solution:
+    def maximalSquare(self, matrix: List[List[str]]) -> int:
+        if not matrix or not matrix[0]: return 0
+        dp = copy.deepcopy(matrix)
+        n = len(matrix)
+        m = len(matrix[0])
+        
+        max_length = 0
+        if max_length == 0:
+            for i in range(0, n):
+                if dp[i][0]!='0': max_length =int(dp[i][0])
+        if max_length == 0:
+            for j in range(0, m):
+                if dp[0][j]!='0': max_length =int(dp[0][j])
+
+        for i in range(1, n):
+            for j in range(1, m):
+                if max_length == 0 and dp[i][j]!='0': max_length =int(dp[i][j])
+                if dp[i-1][j-1]!='0' and dp[i-1][j]!='0' and dp[i][j-1]!='0' and dp[i][j]!='0':
+                    new_length = min(int(dp[i-1][j-1]), int(dp[i-1][j]), int(dp[i][j-1]))+1
+                    if new_length > max_length: max_length = new_length
+                    dp[i][j] = str(new_length)
+        # print(dp)
+        return max_length**2
+```
+
+##### 304. Range Sum Query 2D - Immutable
+
+```python
+class NumMatrix:
+
+    def __init__(self, matrix: List[List[int]]):
+        if not matrix or not matrix[0]: return
+        
+        n = len(matrix)
+        m = len(matrix[0])
+        self.sum = [[0]*m for _ in range(n)]
+        
+        self.sum[0][0] = matrix[0][0]
+        
+        for i in range(n):
+            for j in range(m):
+                if i==0 and j==0: continue
+                self.sum[i][j] = matrix[i][j]
+                if i!=0: self.sum[i][j] += self.sum[i-1][j]
+                if j!=0: self.sum[i][j] += self.sum[i][j-1]
+                if i!=0 and j!=0: self.sum[i][j] -= self.sum[i-1][j-1]
+        print(self.sum)
+        
+
+    def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+        ans = self.sum[row2][col2]
+        if row1 != 0: ans -= self.sum[row1-1][col2]
+        if col1 != 0: ans -= self.sum[row2][col1-1]
+        if row1!=0 and col1!=0: ans += self.sum[row1-1][col1-1]
+        return ans
+
+
+# Your NumMatrix object will be instantiated and called as such:
+# obj = NumMatrix(matrix)
+# param_1 = obj.sumRegion(row1,col1,row2,col2)
+```
+
+#### String
+
 ##### 72. Edit Distance
 
 ```python
@@ -353,49 +482,7 @@ class Solution:
         return False
 ```
 
-
-
-#### Simplify
-
-##### 198. House Robber
-
-```python
-class Solution:
-    def rob(self, nums: List[int]) -> int:
-        if not nums: return 0
-        if len(nums) == 1: return nums[0]
-
-        max_list = [0]*(len(nums))
-        max_list[0] = nums[0]
-        max_list[1] = max(nums[0], nums[1])
-        for idx in range(2, len(nums)):
-            max_list[idx] = max(max_list[idx-1], max_list[idx-2]+nums[idx])
-        return max_list[-1]
-```
-
 ### Count the feasible solutions number
-
-#### 276. Paint Fence
-
-Use math logic to calculate ways.
-
-```python
-class Solution:
-    def numWays(self, n: int, k: int) -> int:
-        if n < 1: return 0
-        if n == 1: return k
-        if k == 0: return 0
-        if k == 1 and n > 2: return 0
-
-        paint_ways = [k, k**2]
-        adjacent = k
-        for i in range(2, n):
-            paint_ways.append(adjacent*(k-1)+(paint_ways[i-1]-adjacent)*k)
-            adjacent=paint_ways[i-1]-adjacent
-        # print(paint_ways)
-                
-        return paint_ways[-1]
-```
 
 #### 91. Decode Ways
 
@@ -455,7 +542,27 @@ class Solution:
         return path[-1][-1]
 ```
 
+#### 276. Paint Fence
 
+Use math logic to calculate ways.
+
+```python
+class Solution:
+    def numWays(self, n: int, k: int) -> int:
+        if n < 1: return 0
+        if n == 1: return k
+        if k == 0: return 0
+        if k == 1 and n > 2: return 0
+
+        paint_ways = [k, k**2]
+        adjacent = k
+        for i in range(2, n):
+            paint_ways.append(adjacent*(k-1)+(paint_ways[i-1]-adjacent)*k)
+            adjacent=paint_ways[i-1]-adjacent
+        # print(paint_ways)
+                
+        return paint_ways[-1]
+```
 
 ### String
 
