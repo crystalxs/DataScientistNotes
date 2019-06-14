@@ -34,6 +34,10 @@
 * [Computational Statistics](Bayesian/0.README.md)
     * [Loss Function](Bayesian/loss_function.md)
 * [Experiments Design](ABtesting/0.README.md)
+    * [A/B Testing](ABtesting/AB_testing.md)
+    * Multivariate Experiments
+    * Multi-armed Bandit Experiments
+    * Response surface Methodology
 
 ## Part III Computer Science Fundamentals
 * [Data Structure](DS/0.README.md)
@@ -48,7 +52,7 @@
     * [Complexity](Algorithm/complexity.md)
     * [Sort](Algorithm/sort.md)
     * [Searching](Algorithm/search.md)
-    * [Breadth First Search & Depth First Search](Algorithm/bfs_bfs.md)
+    * [Breadth First Search & Depth First Search](Algorithm/bfs_dfs.md)
     * [Recursion](Algorithm/recursion.md)
     * [Dynamic Programming](Algorithm/dynamic_programming.md)
     * [Greedy](Algorithm/greedy.md)
