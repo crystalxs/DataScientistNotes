@@ -95,11 +95,11 @@ With unsupervised learning there is **no feedback** based on the prediction resu
 2. Check data
    * Type (memory, category)
    * Duplicate
-   * Distribution
-   * Imbalance
-   * Correlation (perfect multicol 90% -> remove)
+   * Distribution (continuous data)
    * Missing Value
-   * Outlier
+   * Outlier (both target and feature)
+   * Imbalance (both target and feature)
+   * Correlation (perfect multicol 90% -> remove) 
 3. Train & Test split
 4. Feature Engineering
 5. Train model

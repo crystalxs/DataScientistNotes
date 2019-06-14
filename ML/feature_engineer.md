@@ -28,7 +28,7 @@ Pipeline = [Transformer, Transformer, Transformer]
 
 ### Vectorizing
 
-> Categorical (nominal or ordinal) needs to be transformed to a reasonable numbers for ML algorithms to be applied.
+> **Categorical** (nominal or ordinal) needs to be transformed to a reasonable numbers for ML algorithms to be applied.
 
 | Methods          | Size requirement                        | Growth                   |
 | ---------------- | --------------------------------------- | ------------------------ |
@@ -58,7 +58,7 @@ If you have any sequential discrete data, embedded it. Examples: Words, emojis, 
 
 ### Binning, aka Quantization
 
-> Discretize continuous values into a smaller number of "bins".
+> Discretize **continuous** values into a smaller number of "bins".
 
 * It makes sense for your goal (e.g., categorize people's age by decade for marketing)
 * Improve signal-to-noise ratio (e.g., aggregate GPS data)
@@ -98,14 +98,47 @@ Several ML algorithms are sensitive to feature scaling, they exploit distances o
 - SVM
 - neural network
 
+### Special Type of Data
+
+#### Date and time
+
+- Periodicity
+  - Day number in week, month, season, year, second, minute, hour.
+- Time since
+- Difference between dates
+
+#### Coordinates
+
+- Distance to interesting points from external data or training data
+- Cluster your data and use the center of the cluster to compute distances
+- Compute agregated statistics
+  - Mean sale price per neighborhood
+
+#### Aggregate by one or multiple categorical features
+
+Here are some fetures that we can compute
+
+- Number of times `device_ip` appears on the training data. It would be better if we had `user_id`.
+- Number of times `device_ip` appears per month on the training data.
+- Min, max, average `C1` per `site_id`.
+
+We can compute these features using `groupby` to aggregate to a new dataframe and then use `merge` to make the new feature.
+
+#### Features based on KNN
+
+K nearest neighbor (KNN) classifier. Looks at the K points in the training set that are nearest to the test input xx and returns the mean of the target variable.
+
+There are many other possibilities here.
+
 ### Feature selection
 
 > Way to remove uninformative features.
 
 #### Methods
 
-1. Filtering
-2. Wrapper methods
-3. Embedded methods
-4. sklearn `feature_selection`
-5. deep learning
+1. Check correlation
+2. Filtering
+3. Wrapper methods
+4. Embedded methods
+5. sklearn `feature_selection`
+6. deep learning
