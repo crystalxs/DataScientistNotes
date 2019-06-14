@@ -50,7 +50,9 @@ Every Dynamic Programming problem has a schema to be followed:
 
 #### Optimization problems
 
-> Select a feasible solution, so that the value of the required function is minimized or maximized. 
+> Select a feasible solution;
+>
+> Find a feasible solution, so that the value of the required function is minimized or maximized or optimal. 
 
 #### Combinatorial problems
 
@@ -67,43 +69,6 @@ Every Dynamic Programming problem has a schema to be followed:
 ### Min & Max (Bottom-Up)
 
 #### One Dimension
-
-##### 53. Maximum Sub-array
-
-If the previous one is positive, update the current one to be the sum of previous + current; keep the maximum so far has seen.
-
-```python
-class Solution:
-    def maxSubArray(self, nums: List[int]) -> int:
-        if not nums: return 0
-        max_sum = nums[0]
-        for idx in range(1, len(nums)):
-            if nums[idx-1]>0: nums[idx] = nums[idx]+nums[idx-1]
-            if nums[idx] > max_sum: max_sum = nums[idx]
-        print(nums)
-        return max_sum
-```
-
-##### 152. Maximum Product Subarray
-
-Since it is product, keep both current max and min.
-
-```python
-class Solution:
-    def maxProduct(self, nums: List[int]) -> int:
-        ans = 0
-        if not nums: return 0
-        ans = nums[0]
-        max_product = nums[0]
-        min_product = nums[0]
-        for idx in range(1, len(nums)):
-            current_max = max_product*nums[idx]
-            current_min = min_product*nums[idx]
-            min_product = min(current_min, nums[idx], current_max)
-            max_product = max(current_max, nums[idx], current_min)
-            ans = max(max_product, ans)
-        return ans
-```
 
 ##### 322. Coin Change
 
@@ -194,6 +159,47 @@ class Solution:
         return False
 ```
 
+#### One Dimension - variable start point
+
+##### 53. Maximum Sub-array
+
+If the previous one is positive, update the current one to be the sum of previous + current; keep the maximum so far has seen.
+
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        if not nums: return 0
+        max_sum = nums[0]
+        for idx in range(1, len(nums)):
+            if nums[idx-1]>0: nums[idx] = nums[idx]+nums[idx-1]
+            if nums[idx] > max_sum: max_sum = nums[idx]
+        print(nums)
+        return max_sum
+```
+
+##### 152. Maximum Product Subarray
+
+Since it is product, keep both current max and min.
+
+```python
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        ans = 0
+        if not nums: return 0
+        ans = nums[0]
+        max_product = nums[0]
+        min_product = nums[0]
+        for idx in range(1, len(nums)):
+            current_max = max_product*nums[idx]
+            current_min = min_product*nums[idx]
+            min_product = min(current_min, nums[idx], current_max)
+            max_product = max(current_max, nums[idx], current_min)
+            ans = max(max_product, ans)
+        return ans
+```
+
+##### 
+
 ##### 279. Perfect Squares (LTE)
 
 ```python
@@ -212,7 +218,7 @@ class Solution:
         return nums[-1]
 ```
 
-#### One Dimension - Double loop
+#### One Dimension - Memorization Search (Double loop)
 
 > Inner loop from first to current;
 >
@@ -482,6 +488,8 @@ class Solution:
         return False
 ```
 
+#### Backpack
+
 ### Count the feasible solutions number
 
 #### 91. Decode Ways
@@ -616,4 +624,23 @@ class Solution:
 ```
 
 
+
+#### 238. Product of Array Except Self
+
+```python
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        if n < 2: return 0
+        dp_front = [1]*n
+        dp_back = 1
+        for i in range(1, n):
+            dp_front[i] = nums[i-1]*dp_front[i-1]
+
+        for i in range(n-2,-1,-1):
+            dp_back = nums[i+1]*dp_back
+            dp_front[i] = dp_front[i]*dp_back
+        
+        return dp_front
+```
 

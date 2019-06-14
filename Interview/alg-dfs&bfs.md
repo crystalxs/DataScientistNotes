@@ -9,9 +9,9 @@
 ### Questions Classify
 
 - Traversal in Tree or Graph
-  - [Binary Tree Level order traversal](tree.md/ "level-order")
-  - [Graph level order traversal](graph.md/#bfs) TODO
-  - [Matrix traversal](matrix.md/#traverse)
+  - [Binary Tree Level order traversal](tree.md/ "level-order") ($O(n)$)
+  - [Graph level order traversal](graph.md/#bfs) ($O(n+m) \sim O(n^2)$)
+  - [Matrix traversal](matrix.md/#traverse) ($O(n*m)$)
 - [Connected component](graph.md/)
 - [Topological Sorting](graph.md/#topo-sort)
 - Shortest path
@@ -19,7 +19,6 @@
 ### Attention
 
 - If handle inside the for loop, don't forget the first one outside the loop;
-- 
 
 ## Depth first search (Backtracking)
 
@@ -44,15 +43,27 @@
 
 ### Questions Classify
 
-- Combination
-- Permutation
-- Finding all feasible solutions
+> Finding all feasible solutions, O(# of answer * time of construct each answer).
+
+#### Combination
+
+> All qualified combination, $O(2^n)$.
+
+* Limitation
+* Duplicate in input: remove duplicate
+* Reuse: from `index` rather than `index+1`
+
+**Attention:** partition for n numbers is n-1 combination question.
+
+#### Permutation
+
+> All qualified permutation (ordered combination), O(n!).
 
 ### Attention
 
-- end case and when to add to return set;
-- shadow copy, or the parameter of recursion function:
-  - use `deepcopy()` to create a deep copy;
+- End case and when to add to return set;
+- Shadow copy, or the parameter of recursion function:
+  - use `copy.deepcopy(matrix)` to create a deep copy;
   - use `nums[index+1:]+nums[:index]`
 
 #### How to remove duplicate
@@ -190,6 +201,78 @@ class Solution:
 
 ### [Topological Sorting](../DS/graph.md/#topo-sort)
 
+#### 207. Course Schedule
+
+```python
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        post_dict = {}
+        pre_dict ={}
+        for pre in prerequisites:
+            if pre[0] not in pre_dict:
+                pre_dict[pre[0]] = [pre[1]]
+            else:
+                pre_dict[pre[0]].append(pre[1])
+
+            if pre[1] not in post_dict:
+                post_dict[pre[1]] = [pre[0]]
+            else:
+                post_dict[pre[1]].append(pre[0])
+        # print(pre_dict, post_dict)
+
+        waitlist = []
+        token = set()
+        for num in range(numCourses):
+            if num not in pre_dict:
+                token.add(num)
+                if num in post_dict:
+                    for course in post_dict[num]:
+                        pre_dict[course].remove(num)
+                        if not pre_dict[course]:
+                            waitlist.append(course)
+        while waitlist:
+            current = waitlist.pop(0)
+            token.add(current)
+            if current in post_dict:
+                for course in post_dict[current]:
+                    pre_dict[course].remove(current)
+                    if not pre_dict[course]:
+                        waitlist.append(course)
+        return len(token)==numCourses
+```
+
+#### 210. Course Schedule II
+
+```python
+from collections import defaultdict
+class Solution:
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        pre_dict = defaultdict(list)
+        post_dict = defaultdict(list)
+        for pre in prerequisites:
+            pre_dict[pre[0]].append(pre[1])
+            post_dict[pre[1]].append(pre[0])
+        
+        token = []
+        waitlist = []
+        for num in range(numCourses):
+            if num not in pre_dict:
+                token.append(num)
+                if num in post_dict:
+                    for post in post_dict[num]:
+                        pre_dict[post].remove(num)
+                        if not pre_dict[post]: waitlist.append(post)
+        while waitlist:
+            current = waitlist.pop(0)
+            token.append(current)
+            if current in post_dict:
+                for post in post_dict[current]:
+                    pre_dict[post].remove(current)
+                    if not pre_dict[post]: waitlist.append(post)
+        if len(token) != numCourses: return []
+        else: return token
+```
+
 ### Shortest path
 
 #### 127. Word Ladder
@@ -293,7 +376,36 @@ class Solution:
             else: self.dfs(newset, nums[:idx]+nums[idx+1:], k)
 ```
 
+#### 131. Palindrome Partitioning
 
+```python
+class Solution:
+    def partition(self, s: str) -> List[List[str]]:
+        if not s: return []
+        
+        ans = []
+        self.dfs(s, 0, ans, [])
+        return ans
+    
+    def dfs(self, s, position, ans, current):
+        # print(position, current)
+        n = len(s)
+        if self.palindrome(s[position:]):
+            ans.append(current+[s[position:]])
+        for cut in range(position+1, n):
+            if self.palindrome(s[position:cut]):
+                self.dfs(s, cut, ans, current+[s[position:cut]])
+
+    def palindrome(self, s):
+        if not s or len(s) == 1: return True
+        left = 0
+        right = len(s)-1
+        while left < right:
+            if s[left] != s[right]: return False
+            left += 1
+            right -= 1
+        return True
+```
 
 ### Permutations
 

@@ -2,13 +2,29 @@
 
 ## Methods
 
-- Multi-pointers from begin and end or even med, in `python` commonly use index to be the pointer.
 - [Hash table](Interview/hash.md)
+
+### Two Pointers
+
+> In `python` commonly use index to be the pointer.
+
+#### Same direction
+
+* Sliding window
+* Partition array
+* remove duplicate (one pointer loop the others)
+
+#### Opposite direction
+
+> Multi-pointers from begin and end or even med.
 
 ### Rotate Array
 
 * Special Case: no-rotation in the array
-* 
+
+###Cyclic sort
+
+This pattern describes an interesting approach to deal with problems involving arrays containing numbers in a given range. The Cyclic Sort pattern iterates over the array one number at a time, and if the current number you are iterating is not at the correct index, you swap it with the number at its correct index. You could try placing the number in its correct index, but this will produce a complexity of O(n^2) which is not optimal, hence the Cyclic Sort pattern.
 
 ## Questions Classify
 
@@ -16,6 +32,18 @@
 - Interval
 - Counter
 - duplicate (use hash table)？？？
+
+### Partition
+
+**Special case:** `=`
+
+### 2 Sum
+
+### Merge Interval
+
+![img](/Users/crystal/Library/Mobile Documents/com~apple~CloudDocs/dataScientistNotes/Interview/img/interval.png)
+
+
 
 ## Attention
 
