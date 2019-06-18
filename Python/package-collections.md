@@ -18,7 +18,7 @@ If the key doesn't exist in the dict, it won't return error, instead, it will re
 
 ## `counter`
 
-> Dict subclass for counting hashable objects.
+> Dict subclass for counting hashable objects. It is an unordered collection where elements are stored as dictionary keys and their counts are stored as dictionary values. Counts are allowed to be any integer value including zero or negative counts.
 
 ### Declaration
 
@@ -43,3 +43,22 @@ c = Counter(cats=4, dogs=8)             # a new counter from keyword args
 | [`Counter`](https://docs.python.org/2/library/collections.html#collections.Counter) | dict subclass for counting hashable objects                  | *New in version 2.7.* |
 | [`OrderedDict`](https://docs.python.org/2/library/collections.html#collections.OrderedDict) | dict subclass that remembers the order entries were added    | *New in version 2.7.* |
 | [`defaultdict`](https://docs.python.org/2/library/collections.html#collections.defaultdict) |                                                              | *New in version 2.5.* |
+
+## `OrderedDict`
+
+> Ordered dictionaries are just like regular dictionaries but they remember the order that items were inserted. When iterating over an ordered dictionary, the items are returned in the order their keys were first added. If a new entry overwrites an existing entry, the original insertion position is left unchanged. Deleting an entry and reinserting it will move it to the end.
+
+### Declaration
+
+```python
+OrderedDict(sorted(d.items(), key=lambda t: t[0]))
+```
+
+### Method
+
+`.popitem(last=True)`: returns and removes a (key, value) pair. The pairs are returned in LIFO order if *last*is true or FIFO order if false.
+
+`.move_to_end(key, last=True)`: move an existing *key* to either end of an ordered dictionary. The item is moved to the right end if *last* is true (the default) or to the beginning if *last* is false.
+
+`.reversed()`
+

@@ -18,18 +18,19 @@ Dummy = ListNode()
 
 ### Reverse Linked List
 
-1. Create dummy node `head` before start node.
-
 2. Keep 2 pointer `prev` and `curt`,
 
 3. Revert
 
    ```python
+   prev = dummy
+   curt = head
    while (curt != None):
        temp = curt.next
        curt.next = prev
        prev = curt
        curt = temp
+   return prev
    ```
 
 ### Multi Pointer
@@ -112,16 +113,14 @@ class Solution(object):
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         # iteration
-        # if not head:
-        #     self.ans = None
-        #     return self.ans
-        # self.ans = ListNode(head.val)
-        # while head.next:
-        #     head = head.next
-        #     tmp = ListNode(head.val)
-        #     tmp.next=self.ans
-        #     self.ans=tmp
-        # return self.ans
+        # prev = None
+        # curt = head
+        # while curt:
+        #     temp = curt.next
+        #     curt.next = prev
+        #     prev = curt
+        #     curt = temp
+        # return prev
         if not head or not head.next:
             return head
         tmp = self.reverseList(head.next)
@@ -214,7 +213,8 @@ class Solution(object):
 > fast and slow point & reverse list
 
 - pointer find mid
-- reverse list left half then right half
+- reverse right half list
+- connect 2 half lists
 
 ```python
 # Definition for singly-linked list.
@@ -234,17 +234,13 @@ class Solution(object):
         ps = head
         while ps and ps.next:
             ps=ps.next.next
-            pf=pf.next #pf=n//2+1
+            pf=pf.next # pf=n//2+1
             
         pre, pf.next, pf = None, None, pf.next
         while pf:
             pf.next, pre, pf = pre, pf, pf.next
         while head and pre:
             head.next, head, pre.next, pre = pre, head.next, head.next, pre.next
-            
-
-        # pre, pf.next, pf = None, None, pf.next
-            # head.next, head, pre.next, pre = pre, head.next, head.next, pre.next 
 ```
 
 #### 61. Rotate List
