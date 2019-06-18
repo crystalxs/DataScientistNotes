@@ -4,12 +4,6 @@
 
 ## Common Approaches
 
-### Hand crafted rules
-
-* A good place to start
-* Very common
-* Requires domain expertise
-
 ### Learned models
 
 Apply ML to Feature Engineering, typically unsupervised (e.g., dimension reduction or clustering).
@@ -38,13 +32,71 @@ Pipeline = [Transformer, Transformer, Transformer]
 | Bin Counting     | m bin table size                        | fixed                    |
 | Embedding        | d number of dimensions of feature space | fixed                    |
 
+Tree based methods:
+
+- When categorical feature is ordinal **label encoding** can lead to better quality if it preserves correct order of values. In this case a split made by a tree will divide the feature to values 'lower' and 'higher' that the value chosen for this split.
+
+Non-tree based methods:
+
+- One-hot encoding or embedings should be used.
+- Unless there is a linear relashionship between the label encoding and the dependent variable non-tree based methods will have a hard time with label encoding.
+
 #### One-Hot Encoding
 
-#### Dummy Coding
+> Takes each category value and turns it into a binary vector of size |i|(number of values in category i) where all columns are equal to zero besides the category column. 
+
+- Often used for **linear models**.
+- High cardinality can create very sparse data. One-hot-encoding can be used with sparse matrices.
+- Produces very high dimensionality, this causes an increase in the model’s training and serving time and memory consumption.
+- Can easily cause a model to overfit the data.
+- Can’t handle categories that weren’t in the training data (e.g new city or device type). This can be problematic in domains that change all the time.
+- Some of this disadvantages can be reduced by encoding all rare categories to the same features ("Other"). This method can reduce the dimensionality drastically in some datasets with a small or no decrease in performance.
+- One-hot encoding a categorical feature with huge number of values can lead to high memory consumption. You can use sparse matrices to deal with this problem.
+
+#### Label encoding
+
+> Encode labels with value between 0 and n_classes-1.
+
+- It is used to transform non-numerical labels to numerical labels.
+- This method is usedful for **tree-based** methods.
+
+#### Frequency encoding
+
+> Each category is replaced by the frequency of that category in the training data.
+
+- Used for tree-based methods.
+
+#### Target or mean encoding
+
+> Use the target variable to generate features.
+
+- Note that mean encodoing needs to be computed on train and joined latter with validation and test.
+
+```python
+data = pd.DataFrame({
+        'state': ['Ohio', 'Ohio', 'Ohio', 'Nevada', 'Nevada'],
+        'y': [1, 1, 0, 0, 0]})
+m =  pd.DataFrame({'y_mean' : data["y"].groupby(data["state"]).mean()}).reset_index()
+pd.merge(data, m, how="left", on=["state"])
+```
 
 #### Feature Hashing
 
 > Fit a model on the hash indexes as features. The raw data is vectorized and compressed but loses all interpretability.
+
+Hashes the high dimensional input vectors $x \in R^n$ into a lower dimensional feature space $R^m$ where $m << n$. The hashing-trick preserves sparsity and approximately preserves the Euclidean norm.
+
+It is often use for representing text but it can also be used for in settings with a large number of categories.
+
+Pros:
+
+- It is low dimensional thus it is very efficient in processing time and memory.
+- It can be computed online (without seeing all the data)
+
+Cons:
+
+- Hashing functions sometimes have collision so if H(New York) = H(Tehran) the model can’t know what city were in the data. Studies have shown that collisions usually doesn’t affect significantly on the models performance.
+- Hashed features are not interpretable so doing things like feature importance and model debugging is very hard.
 
 #### Bin Counting
 
@@ -54,7 +106,9 @@ Turns a large, sparse, binary representation of the categorical variable (e.g., 
 
 #### Embeddings
 
-If you have any sequential discrete data, embedded it. Examples: Words, emojis, website browsing, images, videos, product purchasing …
+> https://blog.myyellowroad.com/using-categorical-data-in-machine-learning-with-python-from-dummy-variables-to-deep-category-42fd0a43b009
+
+If you have any sequential discrete data, embedded it. Examples: Words, emojis, website browsing, images, videos, product purchasing
 
 ### Binning, aka Quantization
 
@@ -116,19 +170,17 @@ Several ML algorithms are sensitive to feature scaling, they exploit distances o
 
 #### Aggregate by one or multiple categorical features
 
+> Using `groupby` to aggregate to a new dataframe and then use `merge` to make the new feature.
+
 Here are some fetures that we can compute
 
 - Number of times `device_ip` appears on the training data. It would be better if we had `user_id`.
 - Number of times `device_ip` appears per month on the training data.
 - Min, max, average `C1` per `site_id`.
 
-We can compute these features using `groupby` to aggregate to a new dataframe and then use `merge` to make the new feature.
-
 #### Features based on KNN
 
 K nearest neighbor (KNN) classifier. Looks at the K points in the training set that are nearest to the test input xx and returns the mean of the target variable.
-
-There are many other possibilities here.
 
 ### Feature selection
 

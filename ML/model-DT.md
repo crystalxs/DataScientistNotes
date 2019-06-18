@@ -2,14 +2,6 @@
 
 > A supervised, non-parametric model.
 
-4 TREE & ENSEMBLE
-•        解释tree模型
-•        解释random forest模型，并且对比着解释boosting 模型（GBT比较常考）
-•        Random forest 和GBT 模型在编程语言中的可调参数
-•        要知道random forest的每棵树最好造深一些，因为random forest更适用于low bias high variance; boosting model的每棵树不要太深 
-•        最欢什么模型？为什么？
-• 总之建议了解下各个模型的优缺点，适用于什么情况，什么data，复杂度和计算量与什么有关。 
-
 The **root** of a decision tree is located on the top, it is the first split.
 
 The **node** do a binary split based a specific value of a specific attribute to minimize entropy.
@@ -30,18 +22,32 @@ The **leaf** classifies **all** members in the defined feature space as belongin
 - Training: minimize error (typically mean squared)
 - Inference: mean of the leaf node
 
-## Steps
+## Pro v.s. Con
+
+### Advantages
+
+- Simple to use (explain and visualize)
+- DT requires little data preparation
+- Handle numerical and categorical data
+- Handle many types of outputs (regression and multi-class classification)
+
+### Disadvantage
+
+- **Easily overfit**
+- Cannot handle imbalance data well, it might overfit the most frequent class
+
+## Algorithm
 
 > Decision Trees learn **top-down, greedily, recursively**.
 >
 > The **goal** of DT is divide the dataset into pure regions.
 
-1. Divide-and-conquer : split the data into subsets;
-2. Top-down: from a single split
+1. Divide-and-conquer: split the data into subsets;
+2. Top-down: from a single split;
 3. Greedily: choose the split that has results in the most pure feature space
    1. Calculate the entropy of the dataset
    2. For every feature, calculate the entropy for all values
-   3. Pick feature and value that has the highest Information Gain
+   3. Pick feature and value that has the highest information gain
 
 The process stops:
 
@@ -50,29 +56,11 @@ The process stops:
 * The tree is deeper than some minimum
 * The improvement of class impurity is less than a specified minimum
 
-DT are **greedy**: find and choose the current best value.
-
 Greedy algorithms can have local minimums. There could be complex / future choice dependent rules that could perform better.
 
-### Information Theory
+### Split
 
-> How decision tree actually decide.
-
-#### Entropy
-
-> The measure of the uncertainty in a random variable.
-
-##### Shannon Entropy
-
-$$
-H=−\sum p(x)log_2 p(x)
-$$
-
-##### Binary Entropy
-
-$$
-H=−\sum plog_2 p - (1-p)log_2(1-p)
-$$
+![compare](/Users/crystal/Library/Mobile Documents/com~apple~CloudDocs/dataScientistNotes/ML/img/dt-information-thoery.png)
 
 #### Information Gain
 
@@ -85,9 +73,29 @@ $$
 Gain(S,A) = Entropy(S) - \sum_{v \in values(A)} \frac{|S_v|}{|S|} Entropy(S_v)
 $$
 
+##### Entropy
+
+> The measure of the uncertainty in a random variable.
+>
+> The entropy is zero: each toss of the coin delivers no new information as the outcome of each coin toss is always certain.
+
+###### Shannon Entropy
+
+$$
+H=−\sum p(x)log_2 p(x)
+$$
+
+###### Binary Entropy
+
+$$
+H=−\sum plog_2 p - (1-p)log_2(1-p)
+$$
+
 #### Gini Index
 
 > A measure of how often a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset.
+>
+> Maximized when elements are heterogeneous; minimized when elements are homogeneous.
 
 $$
 Gini = 1 - \sum_{i=1}^K p_k^2
@@ -104,8 +112,6 @@ $\text{𝐶𝑙𝑎𝑠𝑠𝑖𝑓𝑖𝑐𝑎𝑡𝑖𝑜𝑛 𝐸𝑟𝑟𝑜
 
 where $𝑝_𝑘$ denotes the proportion of instances belonging to class $𝑘$.
 
-![compare](/Users/crystal/Library/Mobile Documents/com~apple~CloudDocs/dataScientistNotes/ML/img/dt-information-thoery.png)
-
 #### How would we split for multi-nominal features?
 
 1. Consider all possible pairs of splits. For k classes there are 2k-1-1 splits, which is computationally prohibitive if k is a large number.
@@ -114,36 +120,31 @@ where $𝑝_𝑘$ denotes the proportion of instances belonging to class $𝑘$.
 
 #### How would we split for continuous features?
 
-We need a threshold split (i.e., x ≤ 42)
+* We need a threshold split (i.e., x ≤ 42)
+* One option is to sort the data and perform binary search for optional split value.
+* This could be computational intractable because it requires sorting $O(nlogn)$ then binary search $O(logn)$.
 
-One option is to sort the data and perform binary search for optional split value.
+## Regularization & Under-fitting
 
-This could be computational intractable because it requires sorting $O(nlogn)$ then binary search $O(logn)$.
+### Overfitting
 
-### Avoid overfitting
+> By creating over-complex tree
 
-* Acquire more training data
-* Pruning
-* Setting the maximum depth of the tree
-* Setting the minimum number of samples required at each leaf node
-* Setting how much IG required to make another split
+**Avoid**
 
-## Pro v.s. Con
+- Acquire more training data.
+- Pruning: replacing a whole subtree by a leaf node.
+- Setting the maximum depth of the tree.
+- Setting the minimum number of samples required at each leaf node.
+- Setting how much IG required to make another split.
 
-### Advantages
+## Train Model
 
-- Simple to use (explain and visualize)
-- DT requires little data preparation
-- Handle numerical and categorical data
-- Handle many types of outputs (regression and multi-class classification)
+### how to train hyper-parameter
 
-### Disadvantage
+### scikit-learn
 
-- **Easily overfit**
-
-## Sklearn
-
-https://scikit-learn.org/stable/modules/classes.html#module-sklearn.tree
+> https://scikit-learn.org/stable/modules/classes.html#module-sklearn.tree
 
 ```python
 from sklearn import tree
@@ -155,9 +156,9 @@ clf = clf.fit(features_train, labels_train)
 clf.predict(features_test)
 ```
 
-### Tunning the pararmeters
+#### Tunning the pararmeters
 
-https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
+> https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
 
 ```python
 class sklearn.tree.DecisionTreeClassifier(criterion=’gini’, splitter=’best’, max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=None, random_state=None, max_leaf_nodes=None, min_impurity_decrease=0.0, min_impurity_split=None, class_weight=None, presort=False)
@@ -167,7 +168,7 @@ class sklearn.tree.DecisionTreeClassifier(criterion=’gini’, splitter=’best
 
 `min_samples_split` vs overfitting:
 
-### Plot Decision Tree
+#### Plot Decision Tree
 
 ```python
 from IPython.display import Image  
@@ -182,7 +183,7 @@ graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 Image(graph.create_png())
 ```
 
-### `tree_` Attribute
+#### `tree_` Attribute
 
 The decision estimator has an attribute called tree_ which stores the entire tree structure and allows access to low level attributes.
 

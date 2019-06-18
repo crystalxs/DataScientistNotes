@@ -9,8 +9,6 @@
    •        要知道SVM的复杂度依赖于什么，样本量还是变量数
    •        解释SVM模型的几个重要参数
 
-
-
 **Find the optimal hyperplane that maximums the margin between support vectors**.
 
 * A **point \(or a scalar\)** in 1 dimension.

@@ -1,6 +1,6 @@
 # 1.4. Random Forest
 
-## Steps
+## Algorithm
 
 1. Bootstrap sample: the default is to have the randomly selected data be the same size as the initial dataset, limit each node of the Decision Tree to only consider splitting on a random subset of the features.
 2. Build a Decision Tree with each new resample, and at each split bootstrap variables.
@@ -14,6 +14,8 @@ Classification: $m = \sqrt{p}$
 Regression: $m = \frac{p}{3}$
 
 *Where p is the total number features, m is a hyper-parameter that can be learned.*
+
+## Model
 
 ### Sklearn
 
@@ -43,24 +45,6 @@ feature_importance = dict(zip(iris.feature_names, rf.feature_importances_))
 for name, importance in sorted(feature_importance.items(), key=lambda x: x[1], reverse=True):
     print(f"{name:<17}: {importance:>6.2%}")
 ```
-
-## Out-of-Bag Error
-
-`rf.oob_score_ `
-
-> The mean prediction error on each training sample, using only the trees that did **not** have the data in their bootstrap sample.
->
-> Can be used to measure the prediction error for any bagging method.
-
-### Why useful
-
-Typically we do a three-way split (train, validation, and test).
-
-OOB gives use another method to assess our generalization error.
-
-### When should we not use OOB
-
-Comparing across algorithms that are not bagged with the same procedure. For example, use CV to compare Random Forest™ to k-NN.
 
 ## Adavantage
 
